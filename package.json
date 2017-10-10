@@ -1,0 +1,56 @@
+{
+  "name": "material-ui-timepicker",
+  "version": "0.1.0",
+  "description": "A time picker for material-ui 1.0-beta.",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "jest && standard",
+    "storybook": "start-storybook -p 6006"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TeamWertarbyte/material-ui-timepicker.git"
+  },
+  "keywords": [
+    "material-ui",
+    "material",
+    "design",
+    "timepicker",
+    "time",
+    "form",
+    "react",
+    "ui"
+  ],
+  "author": "Wertarbyte",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TeamWertarbyte/material-ui-timepicker/issues"
+  },
+  "homepage": "https://github.com/TeamWertarbyte/material-ui-timepicker#readme",
+  "devDependencies": {
+    "@storybook/addon-actions": "^3.2.12",
+    "@storybook/react": "^3.2.12",
+    "babel-eslint": "^8.0.1",
+    "babel-jest": "^21.2.0",
+    "jest": "^21.2.1",
+    "material-ui": "^1.0.0-beta.16",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "standard": "^10.0.3"
+  },
+  "jest": {
+    "setupFiles": [
+      "./test/shim.js",
+      "./test/jestsetup.js"
+    ],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
+  },
+  "standard": {
+    "parser": "babel-eslint"
+  },
+  "dependencies": {
+    "prop-types": "^15.6.0"
+  }
+}
