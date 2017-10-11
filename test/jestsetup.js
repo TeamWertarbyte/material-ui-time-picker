@@ -1,4 +1,8 @@
-// temporary fix, see https://github.com/facebookincubator/create-react-app/issues/3199 and https://github.com/facebook/jest/issues/4545
-global.requestAnimationFrame = (cb) => {
-  setTimeout(cb, 0)
+import Enzyme from 'enzyme'
+import Adapter from 'enzyme-adapter-react-16'
+// React 16 Enzyme adapter
+Enzyme.configure({ adapter: new Adapter() })
+// Fail tests on any warning
+console.error = message => {
+  throw new Error(message)
 }
