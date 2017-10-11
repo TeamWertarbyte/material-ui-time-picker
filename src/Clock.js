@@ -92,7 +92,7 @@ class Clock extends React.Component {
 
   movePointer (x, y) { 
     const value = getPointerValue(x, y, this.props.mode)
-    if (value !== this.props.value) {
+    if (value !== this.props.value && this.props.onChange != null) {
       this.props.onChange(value)
     }
   }
@@ -169,7 +169,7 @@ class Clock extends React.Component {
 
 Clock.propTypes = {
   mode: PropTypes.oneOf(['12h', '24h', 'minutes']).isRequired,
-  onChange: PropTypes.func.isRequired,
+  onChange: PropTypes.func,
   value: PropTypes.number.isRequired
 }
 

@@ -27,6 +27,9 @@ exports[`<Clock /> 12h matches the snapshot 1`] = `
     >
       <div
         className="Clock-circle-2"
+        onClick={[Function]}
+        onMouseMove={[Function]}
+        onTouchMove={[Function]}
       >
         <div
           className="Clock-pointer-5"
@@ -209,6 +212,9 @@ exports[`<Clock /> 24h matches the snapshot 1`] = `
     >
       <div
         className="Clock-circle-2"
+        onClick={[Function]}
+        onMouseMove={[Function]}
+        onTouchMove={[Function]}
       >
         <div
           className="Clock-pointer-5"
@@ -523,6 +529,9 @@ exports[`<Clock /> minutes matches the snapshot 1`] = `
     >
       <div
         className="Clock-circle-2"
+        onClick={[Function]}
+        onMouseMove={[Function]}
+        onTouchMove={[Function]}
       >
         <div
           className="Clock-pointer-5"

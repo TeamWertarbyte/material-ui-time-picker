@@ -1,11 +1,11 @@
 /* eslint-env jest */
 import React from 'react'
-import { shallow, mount, render } from 'enzyme'
+import { mount } from 'enzyme'
 import Clock from './Clock'
 
 describe('<Clock />', () => {
   describe('24h', () => {
-    it ('matches the snapshot', () => {
+    it('matches the snapshot', () => {
       const tree = mount(
         <Clock mode='24h' value={7} />
       )
@@ -19,10 +19,10 @@ describe('<Clock />', () => {
 
       const spans = tree.find('span')
       for (let i = 1; i <= 23; i++) {
-        expect(spans.findWhere((e) => e.type() === 'span' && e.text() == i).length).toBe(1)
+        expect(spans.findWhere((e) => e.type() === 'span' && parseInt(e.text()) === i).length).toBe(1)
       }
     })
-    
+
     it('rotates the pointer to point to the selected hour', () => {
       expect(getPointer(mount(<Clock mode='24h' value={3} />)).getDOMNode().style.transform).toBe('rotate(0deg)')
       expect(getPointer(mount(<Clock mode='24h' value={6} />)).getDOMNode().style.transform).toBe('rotate(90deg)')
@@ -35,9 +35,9 @@ describe('<Clock />', () => {
       expect(getPointer(mount(<Clock mode='24h' value={0} />)).getDOMNode().style.transform).toBe('rotate(-90deg)')
     })
   })
-  
+
   describe('12h', () => {
-    it ('matches the snapshot', () => {
+    it('matches the snapshot', () => {
       const tree = mount(
         <Clock mode='12h' value={7} />
       )
@@ -51,38 +51,38 @@ describe('<Clock />', () => {
 
       const spans = tree.find('span')
       for (let i = 1; i <= 12; i++) {
-        expect(spans.findWhere((e) => e.type() === 'span' && e.text() == i).length).toBe(1)
+        expect(spans.findWhere((e) => e.type() === 'span' && parseInt(e.text()) === i).length).toBe(1)
       }
     })
-    
+
     it('rotates the pointer to point to the selected hour', () => {
       expect(getPointer(mount(<Clock mode='12h' value={3} />)).getDOMNode().style.transform).toBe('rotate(0deg)')
       expect(getPointer(mount(<Clock mode='12h' value={6} />)).getDOMNode().style.transform).toBe('rotate(90deg)')
       expect(getPointer(mount(<Clock mode='12h' value={9} />)).getDOMNode().style.transform).toBe('rotate(180deg)')
       expect(getPointer(mount(<Clock mode='12h' value={12} />)).getDOMNode().style.transform).toBe('rotate(270deg)')
     })
-    
+
     it('calls onChange when a different value is selected', () => {
       const onChangeCallback = jest.fn()
       const tree = mount(<Clock mode='12h' value={12} onChange={onChangeCallback} />)
       const circle = tree.findWhere((e) => e.type() === 'div' && e.getDOMNode().className.indexOf('Clock-circle') === 0)
-      
+
       circle.simulate('click', { clientX: 250, clientY: 128 }) // click on 3
       expect(onChangeCallback).toHaveBeenCalledWith(3)
     })
-    
+
     it('only calls onChange if the value actually changed', () => {
       const onChangeCallback = jest.fn()
       const tree = mount(<Clock mode='12h' value={12} onChange={onChangeCallback} />)
       const circle = tree.findWhere((e) => e.type() === 'div' && e.getDOMNode().className.indexOf('Clock-circle') === 0)
-      
+
       circle.simulate('click', { clientX: 128, clientY: 30 }) // click on 12
       expect(onChangeCallback).not.toHaveBeenCalled()
     })
   })
-  
+
   describe('minutes', () => {
-    it ('matches the snapshot', () => {
+    it('matches the snapshot', () => {
       const tree = mount(
         <Clock mode='minutes' value={42} />
       )
@@ -97,7 +97,7 @@ describe('<Clock />', () => {
       const spans = tree.find('span')
       expect(spans.findWhere((e) => e.type() === 'span' && e.text() === '00').length).toBe(1)
       for (let i = 1; i <= 11; i++) {
-        expect(spans.findWhere((e) => e.type() === 'span' && e.text() == i * 5).length).toBe(1)
+        expect(spans.findWhere((e) => e.type() === 'span' && parseInt(e.text()) === i * 5).length).toBe(1)
       }
     })
 
@@ -106,15 +106,15 @@ describe('<Clock />', () => {
         <Clock mode='minutes' value={40} />
       )
       const evenPointer = getPointer(evenTree)
-      
+
       const oddTree = mount(
         <Clock mode='minutes' value={42} />
       )
       const oddPointer = getPointer(oddTree)
-      
+
       expect(evenPointer.html()).not.toBe(oddPointer.html())
     })
-    
+
     it('rotates the pointer to point to the selected minutes', () => {
       expect(getPointer(mount(<Clock mode='minutes' value={0} />)).getDOMNode().style.transform).toBe('rotate(-90deg)')
       expect(getPointer(mount(<Clock mode='minutes' value={15} />)).getDOMNode().style.transform).toBe('rotate(0deg)')
