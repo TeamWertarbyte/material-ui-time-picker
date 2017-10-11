@@ -28,7 +28,8 @@ const styles = (theme) => ({
     cursor: 'pointer',
     fontSize: '14px',
     pointerEvents: 'none',
-    ['&.selected']: {
+    userSelect: 'none',
+    '&.selected': {
       color: getContrastRatio(theme.palette.primary[500], theme.palette.common.fullBlack) < 7 ? theme.palette.common.fullWhite : theme.palette.common.fullBlack
     }
   },
@@ -76,21 +77,25 @@ const styles = (theme) => ({
 const size = 256
 
 class Clock extends React.Component {
-  handleTouchMove (e) {
-    this.movePointer(e.touches[0].clientX, e.touches[0].clientY)
+  handleTouchMove = (e) => {
+    const rect = e.target.getBoundingClientRect()
+    this.movePointer(e.touches[0].clientX - rect.left, e.touches[0].clientY - rect.top)
   }
 
-  handleMouseMove (e) {
-    if (e.buttons === 1) { // TODO magic constant (left mouse button)
-      this.movePointer(e.clientX, e.clientY)
+  handleMouseMove = (e) => {
+    // MouseEvent.which is deprecated, but MouseEvent.buttons is not supported in Safari
+    if (e.buttons === 1 || e.which === 1) {
+      const rect = e.target.getBoundingClientRect()
+      this.movePointer(e.clientX - rect.left, e.clientY - rect.top)
     }
   }
 
-  handleClick (e) {
-    this.movePointer(e.clientX, e.clientY)
+  handleClick = (e) => {
+    const rect = e.target.getBoundingClientRect()
+    this.movePointer(e.clientX - rect.left, e.clientY - rect.top)
   }
 
-  movePointer (x, y) { 
+  movePointer (x, y) {
     const value = getPointerValue(x, y, this.props.mode)
     if (value !== this.props.value && this.props.onChange != null) {
       this.props.onChange(value)
@@ -99,23 +104,21 @@ class Clock extends React.Component {
 
   render () {
     const { classes, mode, value } = this.props
-    const pointerAngle = getPointerAngle(value, mode)
-    const isOdd = mode === 'minutes' && value % 5 !== 0
 
     return (
       <div className={classes.root}>
         <div
           className={classes.circle}
-          onTouchMove={(e) => this.handleTouchMove(e)}
-          onMouseMove={(e) => this.handleMouseMove(e)}
-          onClick={(e) => this.handleClick(e)}
+          onTouchMove={this.handleTouchMove}
+          onMouseMove={this.handleMouseMove}
+          onClick={this.handleClick}
         >
           <div className={classes.pointer} style={{
-            transform: `rotate(${pointerAngle}deg)`,
+            transform: `rotate(${getPointerAngle(value, mode)}deg)`,
             width: mode === '24h' && value > 12 ? 'calc(50% - 52px)' : null
           }}>
             <div className={classes.innerDot} />
-            <div className={classNames(classes.outerDot, { [classes.outerDotOdd]: isOdd })} />
+            <div className={classNames(classes.outerDot, { [classes.outerDotOdd]: mode === 'minutes' && value % 5 !== 0 })} />
           </div>
           {mode === '12h' && getNumbers(12, { size }).map((digit, i) => (
             <span
@@ -142,7 +145,7 @@ class Clock extends React.Component {
           {mode === '24h' && getNumbers(12, { size: size - 64, start: 13 }).map((digit, i) => (
             <span
               key={digit.display}
-              className={classNames(classes.number, classes.smallNumber, { selected: value === digit.display || digit.display === 24 && value === 0 })}
+              className={classNames(classes.number, classes.smallNumber, { selected: value === digit.display || (digit.display === 24 && value === 0) })}
               style={{
                 transform: `translate(${digit.translateX}px, ${digit.translateY}px)`
               }}
@@ -206,15 +209,19 @@ function getPointerValue (x, y, mode) {
       return value === 0 ? 12 : value
     }
     case '24h': {
-      const radius = Math.sqrt()
-      const value = 12 - Math.round(angle * 12 / 360)
-      // TODO get distance to center to calculate the radius
-      return value === 0 ? 12 : value
+      const radius = Math.sqrt(Math.pow(size / 2 - x, 2) + Math.pow(size / 2 - y, 2))
+      let value = 12 - Math.round(angle * 12 / 360)
+      if (value === 0) {
+        value = 12
+      }
+      if (radius < size / 2 - 32) {
+        value = value === 12 ? 0 : value + 12
+      }
+      return value
     }
-      // TODO
-      // return 360 / 12 * (value % 12 - 3)
-    case 'minutes':
-      // TODO
-      // return 360 / 60 * (value - 15)
+    case 'minutes': {
+      const value = Math.round(60 - 60 * angle / 360)
+      return value === 60 ? 0 : value
+    }
   }
 }
