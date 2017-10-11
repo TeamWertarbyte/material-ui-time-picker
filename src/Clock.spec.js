@@ -61,6 +61,24 @@ describe('<Clock />', () => {
       expect(getPointer(mount(<Clock mode='12h' value={9} />)).getDOMNode().style.transform).toBe('rotate(180deg)')
       expect(getPointer(mount(<Clock mode='12h' value={12} />)).getDOMNode().style.transform).toBe('rotate(270deg)')
     })
+    
+    it('calls onChange when a different value is selected', () => {
+      const onChangeCallback = jest.fn()
+      const tree = mount(<Clock mode='12h' value={12} onChange={onChangeCallback} />)
+      const circle = tree.findWhere((e) => e.type() === 'div' && e.getDOMNode().className.indexOf('Clock-circle') === 0)
+      
+      circle.simulate('click', { clientX: 250, clientY: 128 }) // click on 3
+      expect(onChangeCallback).toHaveBeenCalledWith(3)
+    })
+    
+    it('only calls onChange if the value actually changed', () => {
+      const onChangeCallback = jest.fn()
+      const tree = mount(<Clock mode='12h' value={12} onChange={onChangeCallback} />)
+      const circle = tree.findWhere((e) => e.type() === 'div' && e.getDOMNode().className.indexOf('Clock-circle') === 0)
+      
+      circle.simulate('click', { clientX: 128, clientY: 30 }) // click on 12
+      expect(onChangeCallback).not.toHaveBeenCalled()
+    })
   })
   
   describe('minutes', () => {

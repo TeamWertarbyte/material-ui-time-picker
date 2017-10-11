@@ -27,6 +27,7 @@ const styles = (theme) => ({
     lineHeight: '32px',
     cursor: 'pointer',
     fontSize: '14px',
+    pointerEvents: 'none',
     ['&.selected']: {
       color: getContrastRatio(theme.palette.primary[500], theme.palette.common.fullBlack) < 7 ? theme.palette.common.fullWhite : theme.palette.common.fullBlack
     }
@@ -42,7 +43,8 @@ const styles = (theme) => ({
     position: 'absolute',
     left: '50%',
     top: 'calc(50% - 1px)',
-    transformOrigin: 'left center'
+    transformOrigin: 'left center',
+    pointerEvents: 'none'
   },
   innerDot: {
     backgroundColor: theme.palette.primary[500],
@@ -71,16 +73,43 @@ const styles = (theme) => ({
   }
 })
 
+const size = 256
+
 class Clock extends React.Component {
+  handleTouchMove (e) {
+    this.movePointer(e.touches[0].clientX, e.touches[0].clientY)
+  }
+
+  handleMouseMove (e) {
+    if (e.buttons === 1) { // TODO magic constant (left mouse button)
+      this.movePointer(e.clientX, e.clientY)
+    }
+  }
+
+  handleClick (e) {
+    this.movePointer(e.clientX, e.clientY)
+  }
+
+  movePointer (x, y) { 
+    const value = getPointerValue(x, y, this.props.mode)
+    if (value !== this.props.value) {
+      this.props.onChange(value)
+    }
+  }
+
   render () {
     const { classes, mode, value } = this.props
-    const size = 256
     const pointerAngle = getPointerAngle(value, mode)
     const isOdd = mode === 'minutes' && value % 5 !== 0
 
     return (
       <div className={classes.root}>
-        <div className={classes.circle}>
+        <div
+          className={classes.circle}
+          onTouchMove={(e) => this.handleTouchMove(e)}
+          onMouseMove={(e) => this.handleMouseMove(e)}
+          onClick={(e) => this.handleClick(e)}
+        >
           <div className={classes.pointer} style={{
             transform: `rotate(${pointerAngle}deg)`,
             width: mode === '24h' && value > 12 ? 'calc(50% - 52px)' : null
@@ -139,7 +168,9 @@ class Clock extends React.Component {
 }
 
 Clock.propTypes = {
-  mode: PropTypes.oneOf(['12h', '24h', 'minutes'])
+  mode: PropTypes.oneOf(['12h', '24h', 'minutes']).isRequired,
+  onChange: PropTypes.func.isRequired,
+  value: PropTypes.number.isRequired
 }
 
 export default withStyles(styles)(Clock)
@@ -160,5 +191,30 @@ function getPointerAngle (value, mode) {
       return 360 / 12 * (value % 12 - 3)
     case 'minutes':
       return 360 / 60 * (value - 15)
-  }  
+  }
+}
+
+function getPointerValue (x, y, mode) {
+  let angle = Math.atan2(size / 2 - x, size / 2 - y) / Math.PI * 180
+  if (angle < 0) {
+    angle = 360 + angle
+  }
+
+  switch (mode) {
+    case '12h': {
+      const value = 12 - Math.round(angle * 12 / 360)
+      return value === 0 ? 12 : value
+    }
+    case '24h': {
+      const radius = Math.sqrt()
+      const value = 12 - Math.round(angle * 12 / 360)
+      // TODO get distance to center to calculate the radius
+      return value === 0 ? 12 : value
+    }
+      // TODO
+      // return 360 / 12 * (value % 12 - 3)
+    case 'minutes':
+      // TODO
+      // return 360 / 60 * (value - 15)
+  }
 }
