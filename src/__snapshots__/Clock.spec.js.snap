@@ -1,0 +1,679 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Clock /> 12h matches the snapshot 1`] = `
+<withStyles(Clock)
+  mode="12h"
+  value={7}
+>
+  <Clock
+    classes={
+      Object {
+        ".Clock-number-3.selected": "Clock-number-3.selected",
+        "circle": "Clock-circle-2",
+        "innerDot": "Clock-innerDot-6",
+        "number": "Clock-number-3",
+        "outerDot": "Clock-outerDot-7",
+        "outerDotOdd": "Clock-outerDotOdd-8",
+        "pointer": "Clock-pointer-5",
+        "root": "Clock-root-1",
+        "smallNumber": "Clock-smallNumber-4",
+      }
+    }
+    mode="12h"
+    value={7}
+  >
+    <div
+      className="Clock-root-1"
+    >
+      <div
+        className="Clock-circle-2"
+      >
+        <div
+          className="Clock-pointer-5"
+          style={
+            Object {
+              "transform": "rotate(120deg)",
+              "width": null,
+            }
+          }
+        >
+          <div
+            className="Clock-innerDot-6"
+          />
+          <div
+            className="Clock-outerDot-7"
+          />
+        </div>
+        <span
+          className="Clock-number-3"
+          key="1"
+          style={
+            Object {
+              "transform": "translate(54.000000000000014px, -93.53074360871936px)",
+            }
+          }
+        >
+          1
+        </span>
+        <span
+          className="Clock-number-3"
+          key="2"
+          style={
+            Object {
+              "transform": "translate(93.53074360871938px, -53.99999999999999px)",
+            }
+          }
+        >
+          2
+        </span>
+        <span
+          className="Clock-number-3"
+          key="3"
+          style={
+            Object {
+              "transform": "translate(108px, 0px)",
+            }
+          }
+        >
+          3
+        </span>
+        <span
+          className="Clock-number-3"
+          key="4"
+          style={
+            Object {
+              "transform": "translate(93.53074360871938px, 53.99999999999999px)",
+            }
+          }
+        >
+          4
+        </span>
+        <span
+          className="Clock-number-3"
+          key="5"
+          style={
+            Object {
+              "transform": "translate(54.000000000000014px, 93.53074360871936px)",
+            }
+          }
+        >
+          5
+        </span>
+        <span
+          className="Clock-number-3"
+          key="6"
+          style={
+            Object {
+              "transform": "translate(6.6130927153957075e-15px, 108px)",
+            }
+          }
+        >
+          6
+        </span>
+        <span
+          className="Clock-number-3 selected"
+          key="7"
+          style={
+            Object {
+              "transform": "translate(-53.99999999999998px, 93.53074360871938px)",
+            }
+          }
+        >
+          7
+        </span>
+        <span
+          className="Clock-number-3"
+          key="8"
+          style={
+            Object {
+              "transform": "translate(-93.53074360871938px, 53.99999999999999px)",
+            }
+          }
+        >
+          8
+        </span>
+        <span
+          className="Clock-number-3"
+          key="9"
+          style={
+            Object {
+              "transform": "translate(-108px, 1.3226185430791415e-14px)",
+            }
+          }
+        >
+          9
+        </span>
+        <span
+          className="Clock-number-3"
+          key="10"
+          style={
+            Object {
+              "transform": "translate(-93.53074360871939px, -53.99999999999997px)",
+            }
+          }
+        >
+          10
+        </span>
+        <span
+          className="Clock-number-3"
+          key="11"
+          style={
+            Object {
+              "transform": "translate(-54.00000000000005px, -93.53074360871936px)",
+            }
+          }
+        >
+          11
+        </span>
+        <span
+          className="Clock-number-3"
+          key="12"
+          style={
+            Object {
+              "transform": "translate(-1.983927814618712e-14px, -108px)",
+            }
+          }
+        >
+          12
+        </span>
+      </div>
+    </div>
+  </Clock>
+</withStyles(Clock)>
+`;
+
+exports[`<Clock /> 24h matches the snapshot 1`] = `
+<withStyles(Clock)
+  mode="24h"
+  value={7}
+>
+  <Clock
+    classes={
+      Object {
+        ".Clock-number-3.selected": "Clock-number-3.selected",
+        "circle": "Clock-circle-2",
+        "innerDot": "Clock-innerDot-6",
+        "number": "Clock-number-3",
+        "outerDot": "Clock-outerDot-7",
+        "outerDotOdd": "Clock-outerDotOdd-8",
+        "pointer": "Clock-pointer-5",
+        "root": "Clock-root-1",
+        "smallNumber": "Clock-smallNumber-4",
+      }
+    }
+    mode="24h"
+    value={7}
+  >
+    <div
+      className="Clock-root-1"
+    >
+      <div
+        className="Clock-circle-2"
+      >
+        <div
+          className="Clock-pointer-5"
+          style={
+            Object {
+              "transform": "rotate(120deg)",
+              "width": null,
+            }
+          }
+        >
+          <div
+            className="Clock-innerDot-6"
+          />
+          <div
+            className="Clock-outerDot-7"
+          />
+        </div>
+        <span
+          className="Clock-number-3"
+          key="1"
+          style={
+            Object {
+              "transform": "translate(54.000000000000014px, -93.53074360871936px)",
+            }
+          }
+        >
+          1
+        </span>
+        <span
+          className="Clock-number-3"
+          key="2"
+          style={
+            Object {
+              "transform": "translate(93.53074360871938px, -53.99999999999999px)",
+            }
+          }
+        >
+          2
+        </span>
+        <span
+          className="Clock-number-3"
+          key="3"
+          style={
+            Object {
+              "transform": "translate(108px, 0px)",
+            }
+          }
+        >
+          3
+        </span>
+        <span
+          className="Clock-number-3"
+          key="4"
+          style={
+            Object {
+              "transform": "translate(93.53074360871938px, 53.99999999999999px)",
+            }
+          }
+        >
+          4
+        </span>
+        <span
+          className="Clock-number-3"
+          key="5"
+          style={
+            Object {
+              "transform": "translate(54.000000000000014px, 93.53074360871936px)",
+            }
+          }
+        >
+          5
+        </span>
+        <span
+          className="Clock-number-3"
+          key="6"
+          style={
+            Object {
+              "transform": "translate(6.6130927153957075e-15px, 108px)",
+            }
+          }
+        >
+          6
+        </span>
+        <span
+          className="Clock-number-3 selected"
+          key="7"
+          style={
+            Object {
+              "transform": "translate(-53.99999999999998px, 93.53074360871938px)",
+            }
+          }
+        >
+          7
+        </span>
+        <span
+          className="Clock-number-3"
+          key="8"
+          style={
+            Object {
+              "transform": "translate(-93.53074360871938px, 53.99999999999999px)",
+            }
+          }
+        >
+          8
+        </span>
+        <span
+          className="Clock-number-3"
+          key="9"
+          style={
+            Object {
+              "transform": "translate(-108px, 1.3226185430791415e-14px)",
+            }
+          }
+        >
+          9
+        </span>
+        <span
+          className="Clock-number-3"
+          key="10"
+          style={
+            Object {
+              "transform": "translate(-93.53074360871939px, -53.99999999999997px)",
+            }
+          }
+        >
+          10
+        </span>
+        <span
+          className="Clock-number-3"
+          key="11"
+          style={
+            Object {
+              "transform": "translate(-54.00000000000005px, -93.53074360871936px)",
+            }
+          }
+        >
+          11
+        </span>
+        <span
+          className="Clock-number-3"
+          key="12"
+          style={
+            Object {
+              "transform": "translate(-1.983927814618712e-14px, -108px)",
+            }
+          }
+        >
+          12
+        </span>
+        <span
+          className="Clock-number-3 Clock-smallNumber-4"
+          key="13"
+          style={
+            Object {
+              "transform": "translate(38.00000000000001px, -65.81793068761733px)",
+            }
+          }
+        >
+          13
+        </span>
+        <span
+          className="Clock-number-3 Clock-smallNumber-4"
+          key="14"
+          style={
+            Object {
+              "transform": "translate(65.81793068761735px, -37.99999999999999px)",
+            }
+          }
+        >
+          14
+        </span>
+        <span
+          className="Clock-number-3 Clock-smallNumber-4"
+          key="15"
+          style={
+            Object {
+              "transform": "translate(76px, 0px)",
+            }
+          }
+        >
+          15
+        </span>
+        <span
+          className="Clock-number-3 Clock-smallNumber-4"
+          key="16"
+          style={
+            Object {
+              "transform": "translate(65.81793068761735px, 37.99999999999999px)",
+            }
+          }
+        >
+          16
+        </span>
+        <span
+          className="Clock-number-3 Clock-smallNumber-4"
+          key="17"
+          style={
+            Object {
+              "transform": "translate(38.00000000000001px, 65.81793068761733px)",
+            }
+          }
+        >
+          17
+        </span>
+        <span
+          className="Clock-number-3 Clock-smallNumber-4"
+          key="18"
+          style={
+            Object {
+              "transform": "translate(4.653657836759942e-15px, 76px)",
+            }
+          }
+        >
+          18
+        </span>
+        <span
+          className="Clock-number-3 Clock-smallNumber-4"
+          key="19"
+          style={
+            Object {
+              "transform": "translate(-37.999999999999986px, 65.81793068761735px)",
+            }
+          }
+        >
+          19
+        </span>
+        <span
+          className="Clock-number-3 Clock-smallNumber-4"
+          key="20"
+          style={
+            Object {
+              "transform": "translate(-65.81793068761735px, 37.99999999999999px)",
+            }
+          }
+        >
+          20
+        </span>
+        <span
+          className="Clock-number-3 Clock-smallNumber-4"
+          key="21"
+          style={
+            Object {
+              "transform": "translate(-76px, 9.307315673519884e-15px)",
+            }
+          }
+        >
+          21
+        </span>
+        <span
+          className="Clock-number-3 Clock-smallNumber-4"
+          key="22"
+          style={
+            Object {
+              "transform": "translate(-65.81793068761735px, -37.99999999999998px)",
+            }
+          }
+        >
+          22
+        </span>
+        <span
+          className="Clock-number-3 Clock-smallNumber-4"
+          key="23"
+          style={
+            Object {
+              "transform": "translate(-38.000000000000036px, -65.81793068761732px)",
+            }
+          }
+        >
+          23
+        </span>
+        <span
+          className="Clock-number-3 Clock-smallNumber-4"
+          key="24"
+          style={
+            Object {
+              "transform": "translate(-1.3960973510279826e-14px, -76px)",
+            }
+          }
+        >
+          00
+        </span>
+      </div>
+    </div>
+  </Clock>
+</withStyles(Clock)>
+`;
+
+exports[`<Clock /> minutes matches the snapshot 1`] = `
+<withStyles(Clock)
+  mode="minutes"
+  value={42}
+>
+  <Clock
+    classes={
+      Object {
+        ".Clock-number-3.selected": "Clock-number-3.selected",
+        "circle": "Clock-circle-2",
+        "innerDot": "Clock-innerDot-6",
+        "number": "Clock-number-3",
+        "outerDot": "Clock-outerDot-7",
+        "outerDotOdd": "Clock-outerDotOdd-8",
+        "pointer": "Clock-pointer-5",
+        "root": "Clock-root-1",
+        "smallNumber": "Clock-smallNumber-4",
+      }
+    }
+    mode="minutes"
+    value={42}
+  >
+    <div
+      className="Clock-root-1"
+    >
+      <div
+        className="Clock-circle-2"
+      >
+        <div
+          className="Clock-pointer-5"
+          style={
+            Object {
+              "transform": "rotate(162deg)",
+              "width": null,
+            }
+          }
+        >
+          <div
+            className="Clock-innerDot-6"
+          />
+          <div
+            className="Clock-outerDot-7 Clock-outerDotOdd-8"
+          />
+        </div>
+        <span
+          className="Clock-number-3"
+          key="5"
+          style={
+            Object {
+              "transform": "translate(54.000000000000014px, -93.53074360871936px)",
+            }
+          }
+        >
+          5
+        </span>
+        <span
+          className="Clock-number-3"
+          key="10"
+          style={
+            Object {
+              "transform": "translate(93.53074360871938px, -53.99999999999999px)",
+            }
+          }
+        >
+          10
+        </span>
+        <span
+          className="Clock-number-3"
+          key="15"
+          style={
+            Object {
+              "transform": "translate(108px, 0px)",
+            }
+          }
+        >
+          15
+        </span>
+        <span
+          className="Clock-number-3"
+          key="20"
+          style={
+            Object {
+              "transform": "translate(93.53074360871938px, 53.99999999999999px)",
+            }
+          }
+        >
+          20
+        </span>
+        <span
+          className="Clock-number-3"
+          key="25"
+          style={
+            Object {
+              "transform": "translate(54.000000000000014px, 93.53074360871936px)",
+            }
+          }
+        >
+          25
+        </span>
+        <span
+          className="Clock-number-3"
+          key="30"
+          style={
+            Object {
+              "transform": "translate(6.6130927153957075e-15px, 108px)",
+            }
+          }
+        >
+          30
+        </span>
+        <span
+          className="Clock-number-3"
+          key="35"
+          style={
+            Object {
+              "transform": "translate(-53.99999999999998px, 93.53074360871938px)",
+            }
+          }
+        >
+          35
+        </span>
+        <span
+          className="Clock-number-3"
+          key="40"
+          style={
+            Object {
+              "transform": "translate(-93.53074360871938px, 53.99999999999999px)",
+            }
+          }
+        >
+          40
+        </span>
+        <span
+          className="Clock-number-3"
+          key="45"
+          style={
+            Object {
+              "transform": "translate(-108px, 1.3226185430791415e-14px)",
+            }
+          }
+        >
+          45
+        </span>
+        <span
+          className="Clock-number-3"
+          key="50"
+          style={
+            Object {
+              "transform": "translate(-93.53074360871939px, -53.99999999999997px)",
+            }
+          }
+        >
+          50
+        </span>
+        <span
+          className="Clock-number-3"
+          key="55"
+          style={
+            Object {
+              "transform": "translate(-54.00000000000005px, -93.53074360871936px)",
+            }
+          }
+        >
+          55
+        </span>
+        <span
+          className="Clock-number-3"
+          key="60"
+          style={
+            Object {
+              "transform": "translate(-1.983927814618712e-14px, -108px)",
+            }
+          }
+        >
+          00
+        </span>
+      </div>
+    </div>
+  </Clock>
+</withStyles(Clock)>
+`;
