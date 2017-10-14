@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { withStyles } from 'material-ui/styles'
 import { getContrastRatio } from 'material-ui/styles/colorManipulator'
+import { duration, easing } from 'material-ui/styles/transitions'
 import classNames from 'classnames'
 
 const styles = (theme) => ({
@@ -47,6 +48,9 @@ const styles = (theme) => ({
     transformOrigin: 'left center',
     pointerEvents: 'none'
   },
+  animatedPointer: {
+    transition: `all ${duration.short}ms ${easing.easeInOut}`
+  },
   smallPointer: {
     width: 'calc(50% - 52px)'
   },
@@ -80,6 +84,14 @@ const styles = (theme) => ({
 const size = 256
 
 class Clock extends React.PureComponent {
+  constructor (props) {
+    super(props)
+    this.state = { touching: false }
+  }
+
+  disableAnimatedPointer = () => this.setState({ touching: true })
+  enableAnimatedPointer = () => this.setState({ touching: false })
+
   handleTouchMove = (e) => {
     const rect = e.target.getBoundingClientRect()
     this.movePointer(e.touches[0].clientX - rect.left, e.touches[0].clientY - rect.top)
@@ -107,6 +119,7 @@ class Clock extends React.PureComponent {
 
   render () {
     const { classes, mode, value, ...other } = this.props
+    const { touching } = this.state
 
     return (
       <div className={classes.root} {...other}>
@@ -114,9 +127,13 @@ class Clock extends React.PureComponent {
           className={classes.circle}
           onTouchMove={this.handleTouchMove}
           onMouseMove={this.handleMouseMove}
+          onTouchStart={this.disableAnimatedPointer}
+          onMouseDown={this.disableAnimatedPointer}
+          onTouchEnd={this.enableAnimatedPointer}
+          onMouseUp={this.enableAnimatedPointer}
           onClick={this.handleClick}
         >
-          <div className={classNames(classes.pointer, { [classes.smallPointer]: mode === '24h' && (value === 0 || value > 12) })} style={{
+          <div className={classNames(classes.pointer, { [classes.smallPointer]: mode === '24h' && (value === 0 || value > 12), [classes.animatedPointer]: !touching })} style={{
             transform: `rotate(${getPointerAngle(value, mode)}deg)`
           }}>
             <div className={classes.innerDot} />

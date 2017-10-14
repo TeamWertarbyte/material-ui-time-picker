@@ -9,15 +9,16 @@ exports[`<Clock /> 12h matches the snapshot 1`] = `
     classes={
       Object {
         ".Clock-number-3.selected": "Clock-number-3.selected",
+        "animatedPointer": "Clock-animatedPointer-6",
         "circle": "Clock-circle-2",
-        "innerDot": "Clock-innerDot-7",
+        "innerDot": "Clock-innerDot-8",
         "number": "Clock-number-3",
-        "outerDot": "Clock-outerDot-8",
-        "outerDotOdd": "Clock-outerDotOdd-9",
+        "outerDot": "Clock-outerDot-9",
+        "outerDotOdd": "Clock-outerDotOdd-10",
         "pointer": "Clock-pointer-5",
         "root": "Clock-root-1",
         "smallNumber": "Clock-smallNumber-4",
-        "smallPointer": "Clock-smallPointer-6",
+        "smallPointer": "Clock-smallPointer-7",
       }
     }
     mode="12h"
@@ -29,11 +30,15 @@ exports[`<Clock /> 12h matches the snapshot 1`] = `
       <div
         className="Clock-circle-2"
         onClick={[Function]}
+        onMouseDown={[Function]}
         onMouseMove={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
         onTouchMove={[Function]}
+        onTouchStart={[Function]}
       >
         <div
-          className="Clock-pointer-5"
+          className="Clock-pointer-5 Clock-animatedPointer-6"
           style={
             Object {
               "transform": "rotate(120deg)",
@@ -41,10 +46,10 @@ exports[`<Clock /> 12h matches the snapshot 1`] = `
           }
         >
           <div
-            className="Clock-innerDot-7"
+            className="Clock-innerDot-8"
           />
           <div
-            className="Clock-outerDot-8"
+            className="Clock-outerDot-9"
           />
         </div>
         <span
@@ -194,15 +199,16 @@ exports[`<Clock /> 24h matches the snapshot 1`] = `
     classes={
       Object {
         ".Clock-number-3.selected": "Clock-number-3.selected",
+        "animatedPointer": "Clock-animatedPointer-6",
         "circle": "Clock-circle-2",
-        "innerDot": "Clock-innerDot-7",
+        "innerDot": "Clock-innerDot-8",
         "number": "Clock-number-3",
-        "outerDot": "Clock-outerDot-8",
-        "outerDotOdd": "Clock-outerDotOdd-9",
+        "outerDot": "Clock-outerDot-9",
+        "outerDotOdd": "Clock-outerDotOdd-10",
         "pointer": "Clock-pointer-5",
         "root": "Clock-root-1",
         "smallNumber": "Clock-smallNumber-4",
-        "smallPointer": "Clock-smallPointer-6",
+        "smallPointer": "Clock-smallPointer-7",
       }
     }
     mode="24h"
@@ -214,11 +220,15 @@ exports[`<Clock /> 24h matches the snapshot 1`] = `
       <div
         className="Clock-circle-2"
         onClick={[Function]}
+        onMouseDown={[Function]}
         onMouseMove={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
         onTouchMove={[Function]}
+        onTouchStart={[Function]}
       >
         <div
-          className="Clock-pointer-5"
+          className="Clock-pointer-5 Clock-animatedPointer-6"
           style={
             Object {
               "transform": "rotate(120deg)",
@@ -226,10 +236,10 @@ exports[`<Clock /> 24h matches the snapshot 1`] = `
           }
         >
           <div
-            className="Clock-innerDot-7"
+            className="Clock-innerDot-8"
           />
           <div
-            className="Clock-outerDot-8"
+            className="Clock-outerDot-9"
           />
         </div>
         <span
@@ -511,15 +521,16 @@ exports[`<Clock /> minutes matches the snapshot 1`] = `
     classes={
       Object {
         ".Clock-number-3.selected": "Clock-number-3.selected",
+        "animatedPointer": "Clock-animatedPointer-6",
         "circle": "Clock-circle-2",
-        "innerDot": "Clock-innerDot-7",
+        "innerDot": "Clock-innerDot-8",
         "number": "Clock-number-3",
-        "outerDot": "Clock-outerDot-8",
-        "outerDotOdd": "Clock-outerDotOdd-9",
+        "outerDot": "Clock-outerDot-9",
+        "outerDotOdd": "Clock-outerDotOdd-10",
         "pointer": "Clock-pointer-5",
         "root": "Clock-root-1",
         "smallNumber": "Clock-smallNumber-4",
-        "smallPointer": "Clock-smallPointer-6",
+        "smallPointer": "Clock-smallPointer-7",
       }
     }
     mode="minutes"
@@ -531,11 +542,15 @@ exports[`<Clock /> minutes matches the snapshot 1`] = `
       <div
         className="Clock-circle-2"
         onClick={[Function]}
+        onMouseDown={[Function]}
         onMouseMove={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
         onTouchMove={[Function]}
+        onTouchStart={[Function]}
       >
         <div
-          className="Clock-pointer-5"
+          className="Clock-pointer-5 Clock-animatedPointer-6"
           style={
             Object {
               "transform": "rotate(162deg)",
@@ -543,10 +558,10 @@ exports[`<Clock /> minutes matches the snapshot 1`] = `
           }
         >
           <div
-            className="Clock-innerDot-7"
+            className="Clock-innerDot-8"
           />
           <div
-            className="Clock-outerDot-8 Clock-outerDotOdd-9"
+            className="Clock-outerDot-9 Clock-outerDotOdd-10"
           />
         </div>
         <span
