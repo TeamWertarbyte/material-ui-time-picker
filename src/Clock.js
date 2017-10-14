@@ -79,7 +79,7 @@ const styles = (theme) => ({
 
 const size = 256
 
-class Clock extends React.Component {
+class Clock extends React.PureComponent {
   handleTouchMove = (e) => {
     const rect = e.target.getBoundingClientRect()
     this.movePointer(e.touches[0].clientX - rect.left, e.touches[0].clientY - rect.top)
