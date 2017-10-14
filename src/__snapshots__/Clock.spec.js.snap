@@ -10,13 +10,14 @@ exports[`<Clock /> 12h matches the snapshot 1`] = `
       Object {
         ".Clock-number-3.selected": "Clock-number-3.selected",
         "circle": "Clock-circle-2",
-        "innerDot": "Clock-innerDot-6",
+        "innerDot": "Clock-innerDot-7",
         "number": "Clock-number-3",
-        "outerDot": "Clock-outerDot-7",
-        "outerDotOdd": "Clock-outerDotOdd-8",
+        "outerDot": "Clock-outerDot-8",
+        "outerDotOdd": "Clock-outerDotOdd-9",
         "pointer": "Clock-pointer-5",
         "root": "Clock-root-1",
         "smallNumber": "Clock-smallNumber-4",
+        "smallPointer": "Clock-smallPointer-6",
       }
     }
     mode="12h"
@@ -36,15 +37,14 @@ exports[`<Clock /> 12h matches the snapshot 1`] = `
           style={
             Object {
               "transform": "rotate(120deg)",
-              "width": null,
             }
           }
         >
           <div
-            className="Clock-innerDot-6"
+            className="Clock-innerDot-7"
           />
           <div
-            className="Clock-outerDot-7"
+            className="Clock-outerDot-8"
           />
         </div>
         <span
@@ -195,13 +195,14 @@ exports[`<Clock /> 24h matches the snapshot 1`] = `
       Object {
         ".Clock-number-3.selected": "Clock-number-3.selected",
         "circle": "Clock-circle-2",
-        "innerDot": "Clock-innerDot-6",
+        "innerDot": "Clock-innerDot-7",
         "number": "Clock-number-3",
-        "outerDot": "Clock-outerDot-7",
-        "outerDotOdd": "Clock-outerDotOdd-8",
+        "outerDot": "Clock-outerDot-8",
+        "outerDotOdd": "Clock-outerDotOdd-9",
         "pointer": "Clock-pointer-5",
         "root": "Clock-root-1",
         "smallNumber": "Clock-smallNumber-4",
+        "smallPointer": "Clock-smallPointer-6",
       }
     }
     mode="24h"
@@ -221,15 +222,14 @@ exports[`<Clock /> 24h matches the snapshot 1`] = `
           style={
             Object {
               "transform": "rotate(120deg)",
-              "width": null,
             }
           }
         >
           <div
-            className="Clock-innerDot-6"
+            className="Clock-innerDot-7"
           />
           <div
-            className="Clock-outerDot-7"
+            className="Clock-outerDot-8"
           />
         </div>
         <span
@@ -512,13 +512,14 @@ exports[`<Clock /> minutes matches the snapshot 1`] = `
       Object {
         ".Clock-number-3.selected": "Clock-number-3.selected",
         "circle": "Clock-circle-2",
-        "innerDot": "Clock-innerDot-6",
+        "innerDot": "Clock-innerDot-7",
         "number": "Clock-number-3",
-        "outerDot": "Clock-outerDot-7",
-        "outerDotOdd": "Clock-outerDotOdd-8",
+        "outerDot": "Clock-outerDot-8",
+        "outerDotOdd": "Clock-outerDotOdd-9",
         "pointer": "Clock-pointer-5",
         "root": "Clock-root-1",
         "smallNumber": "Clock-smallNumber-4",
+        "smallPointer": "Clock-smallPointer-6",
       }
     }
     mode="minutes"
@@ -538,15 +539,14 @@ exports[`<Clock /> minutes matches the snapshot 1`] = `
           style={
             Object {
               "transform": "rotate(162deg)",
-              "width": null,
             }
           }
         >
           <div
-            className="Clock-innerDot-6"
+            className="Clock-innerDot-7"
           />
           <div
-            className="Clock-outerDot-7 Clock-outerDotOdd-8"
+            className="Clock-outerDot-8 Clock-outerDotOdd-9"
           />
         </div>
         <span

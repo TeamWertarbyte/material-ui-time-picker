@@ -5,6 +5,15 @@ import * as testUtils from '../test/utils'
 import Clock from './Clock'
 
 describe('<Clock />', () => {
+  it('propagates unknown props through to the child component', () => {
+    const callback = jest.fn()
+    const tree = mount(
+      <Clock mode='12h' value={7} onClick={callback} />
+    )
+    tree.simulate('click')
+    expect(callback).toBeCalled()
+  })
+
   describe('24h', () => {
     it('matches the snapshot', () => {
       const tree = mount(
@@ -34,6 +43,17 @@ describe('<Clock />', () => {
       expect(getPointer(mount(<Clock mode='24h' value={18} />)).getDOMNode().style.transform).toBe('rotate(90deg)')
       expect(getPointer(mount(<Clock mode='24h' value={21} />)).getDOMNode().style.transform).toBe('rotate(180deg)')
       expect(getPointer(mount(<Clock mode='24h' value={0} />)).getDOMNode().style.transform).toBe('rotate(-90deg)')
+    })
+
+    it('changes the pointer length when pointing to inner hours', () => {
+      const isSmall = testUtils.hasClass(/-smallPointer/)
+
+      expect(isSmall(getPointer(mount(<Clock mode='24h' value={15} />)))).toBeTruthy()
+      expect(isSmall(getPointer(mount(<Clock mode='24h' value={6} />)))).toBeFalsy()
+
+      // 12 is in the outer circle, 00 is in the inner circle
+      expect(isSmall(getPointer(mount(<Clock mode='24h' value={12} />)))).toBeFalsy()
+      expect(isSmall(getPointer(mount(<Clock mode='24h' value={0} />)))).toBeTruthy()
     })
 
     it('calls onChange when a different value is selected', () => {
@@ -137,6 +157,22 @@ describe('<Clock />', () => {
       const tree = mount(<Clock mode='minutes' value={12} onChange={onChangeCallback} />)
       getCircle(tree).simulate('click', testUtils.stubClickEvent(190, 230)) // click on 25
       expect(onChangeCallback).toHaveBeenCalledWith(25)
+    })
+
+    it('highlights the selected minute', () => {
+      const tree55 = mount(
+        <Clock mode='minutes' value={55} />
+      )
+      const number55 = tree55.findWhere((e) => e.type() === 'span' && e.text() === '55')
+      expect(testUtils.hasClass('selected')(number55)).toBeTruthy()
+      const number50 = tree55.findWhere((e) => e.type() === 'span' && e.text() === '50')
+      expect(testUtils.hasClass('selected')(number50)).toBeFalsy()
+
+      const tree0 = mount(
+        <Clock mode='minutes' value={0} />
+      )
+      const number0 = tree0.findWhere((e) => e.type() === 'span' && e.text() === '00')
+      expect(testUtils.hasClass('selected')(number0)).toBeTruthy()
     })
   })
 })

@@ -51,3 +51,11 @@ export function stubMouseMoveEvent (x, y, buttons) {
     }
   }
 }
+
+export function hasClass (className) {
+  if (typeof className === 'string') {
+    return (element) => element.getDOMNode().className.split(' ').some((name) => name === className)
+  } else { // regex
+    return (element) => element.getDOMNode().className.split(' ').some((name) => className.test(name))
+  }
+}

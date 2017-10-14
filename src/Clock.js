@@ -47,6 +47,9 @@ const styles = (theme) => ({
     transformOrigin: 'left center',
     pointerEvents: 'none'
   },
+  smallPointer: {
+    width: 'calc(50% - 52px)'
+  },
   innerDot: {
     backgroundColor: theme.palette.primary[500],
     position: 'absolute',
@@ -103,19 +106,18 @@ class Clock extends React.Component {
   }
 
   render () {
-    const { classes, mode, value } = this.props
+    const { classes, mode, value, ...other } = this.props
 
     return (
-      <div className={classes.root}>
+      <div className={classes.root} {...other}>
         <div
           className={classes.circle}
           onTouchMove={this.handleTouchMove}
           onMouseMove={this.handleMouseMove}
           onClick={this.handleClick}
         >
-          <div className={classes.pointer} style={{
-            transform: `rotate(${getPointerAngle(value, mode)}deg)`,
-            width: mode === '24h' && value > 12 ? 'calc(50% - 52px)' : null
+          <div className={classNames(classes.pointer, { [classes.smallPointer]: mode === '24h' && (value === 0 || value > 12) })} style={{
+            transform: `rotate(${getPointerAngle(value, mode)}deg)`
           }}>
             <div className={classes.innerDot} />
             <div className={classNames(classes.outerDot, { [classes.outerDotOdd]: mode === 'minutes' && value % 5 !== 0 })} />
@@ -156,7 +158,7 @@ class Clock extends React.Component {
           {mode === 'minutes' && getNumbers(12, { size, start: 5, step: 5 }).map((digit, i) => (
             <span
               key={digit.display}
-              className={classNames(classes.number, { selected: value === digit.display })}
+              className={classNames(classes.number, { selected: value === digit.display || (digit.display === 60 && value === 0) })}
               style={{
                 transform: `translate(${digit.translateX}px, ${digit.translateY}px)`
               }}
