@@ -37,7 +37,7 @@ storiesOf('TimeInput', module)
     <TimeInput mode='12h' onChange={action('onChange')} />
   ))
   .add('24 hours', () => (
-    <TimeInput autoOk mode='24h' onChange={action('onChange')} />
+    <TimeInput mode='24h' onChange={action('onChange')} />
   ))
   .add('complex example', () => (
     <FormControl disabled>

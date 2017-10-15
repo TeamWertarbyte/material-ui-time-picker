@@ -4,11 +4,13 @@
   "description": "A time picker for material-ui 1.0-beta.",
   "main": "lib/index.js",
   "scripts": {
-    "test": "jest && standard",
+    "test": "standard && jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "test:unit": "jest",
     "build": "babel src -d lib",
     "prepublish": "babel src -d lib",
-    "storybook": "start-storybook -p 6006"
+    "storybook": "start-storybook -p 6006",
+    "styleguide": "styleguidist server",
+    "styleguide:build": "styleguidist build"
   },
   "repository": {
     "type": "git",
@@ -40,6 +42,7 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
+    "coveralls": "^3.0.0",
     "enzyme": "^3.1.0",
     "enzyme-adapter-react-16": "^1.0.1",
     "enzyme-to-json": "^3.1.2",
@@ -48,8 +51,11 @@
     "mockdate": "^2.0.2",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
+    "react-styleguidist": "^6.0.31",
     "react-test-renderer": "^16.0.0",
-    "standard": "^10.0.3"
+    "standard": "^10.0.3",
+    "webpack": "^3.7.1",
+    "webpack-blocks": "^1.0.0-rc"
   },
   "jest": {
     "setupFiles": [
