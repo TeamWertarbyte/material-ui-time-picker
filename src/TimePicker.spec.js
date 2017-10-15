@@ -7,10 +7,10 @@ import TimePicker from './TimePicker'
 
 describe('<TimePicker />', () => {
   it('supports controlled mode', () => {
-    const tree = mount(<TimePicker value={new Date(2017, 15, 14, 13, 37, 0, 0)} mode='24h' />)
+    const tree = mount(<TimePicker value={new Date(2017, 10, 15, 13, 37, 0, 0)} mode='24h' />)
     expect(tree.findWhere((e) => e.type() === 'div' && testUtils.hasClass(/^TimePicker-header-/)(e)).text()).toBe('13:37')
 
-    tree.setProps({ value: new Date(2017, 15, 14, 14, 42, 0, 0) })
+    tree.setProps({ value: new Date(2017, 10, 15, 14, 42, 0, 0) })
     expect(tree.findWhere((e) => e.type() === 'div' && testUtils.hasClass(/^TimePicker-header-/)(e)).text()).toBe('14:42')
   })
 
@@ -20,12 +20,12 @@ describe('<TimePicker />', () => {
     })
 
     it('supports uncontrolled mode with a default value', () => {
-      const tree = mount(<TimePicker defaultValue={new Date(2017, 15, 14, 13, 37, 0, 0)} mode='24h' />)
+      const tree = mount(<TimePicker defaultValue={new Date(2017, 10, 15, 13, 37, 0, 0)} mode='24h' />)
       expect(tree.findWhere((e) => e.type() === 'div' && testUtils.hasClass(/^TimePicker-header-/)(e)).text()).toBe('13:37')
     })
 
     it('uses the current time if no value or default value is set', () => {
-      MockDate.set(new Date(2017, 15, 14, 13, 37, 0, 0))
+      MockDate.set(new Date(2017, 10, 15, 13, 37, 0, 0))
       const tree = mount(<TimePicker mode='24h' />)
       expect(tree.findWhere((e) => e.type() === 'div' && testUtils.hasClass(/^TimePicker-header-/)(e)).text()).toBe('13:37')
     })
@@ -40,7 +40,7 @@ describe('<TimePicker />', () => {
     })
 
     it('starts with the hour selection', () => {
-      const date = new Date(2017, 15, 14, 13, 37, 0, 0)
+      const date = new Date(2017, 10, 15, 13, 37, 0, 0)
       const tree = mount(
         <TimePicker mode='12h' value={date} />
       )
@@ -51,7 +51,7 @@ describe('<TimePicker />', () => {
     it('changes the value and the clock mode correctly', () => {
       jest.useFakeTimers()
       const changeHandler = jest.fn()
-      const date = new Date(2017, 15, 14, 13, 37, 0, 0)
+      const date = new Date(2017, 10, 15, 13, 37, 0, 0)
       const tree = mount(
         <TimePicker mode='12h' value={date} onChange={changeHandler} />
       )
@@ -101,7 +101,7 @@ describe('<TimePicker />', () => {
 
     it('can toggle between editing the hours and the minutes', () => {
       const tree = mount(
-        <TimePicker mode='12h' value={new Date(2017, 15, 14, 13, 37, 0, 0)} />
+        <TimePicker mode='12h' value={new Date(2017, 10, 15, 13, 37, 0, 0)} />
       )
 
       tree.findWhere((e) => e != null && e.getDOMNode() != null && e.text() === '37')
@@ -117,7 +117,7 @@ describe('<TimePicker />', () => {
       jest.useFakeTimers()
       const changeHandler = jest.fn()
       let tree = mount(
-        <TimePicker mode='12h' value={new Date(2017, 15, 14, 13, 37, 0, 0)} onChange={changeHandler} />
+        <TimePicker mode='12h' value={new Date(2017, 10, 15, 13, 37, 0, 0)} onChange={changeHandler} />
       )
 
       // 13:37 = 1:37 pm --> 01:37
@@ -136,7 +136,7 @@ describe('<TimePicker />', () => {
       expect(changeHandler.mock.calls[0][0].getMinutes()).toBe(37)
 
       tree = mount(
-        <TimePicker mode='12h' value={new Date(2017, 15, 14, 1, 37, 0, 0)} onChange={changeHandler} />
+        <TimePicker mode='12h' value={new Date(2017, 10, 15, 1, 37, 0, 0)} onChange={changeHandler} />
       )
       // 01:37 = 1:37 am --> 01:37
       changeHandler.mockClear()
@@ -145,7 +145,7 @@ describe('<TimePicker />', () => {
       expect(changeHandler).not.toBeCalled()
 
       tree = mount(
-        <TimePicker mode='12h' value={new Date(2017, 15, 14, 13, 37, 0, 0)} onChange={changeHandler} />
+        <TimePicker mode='12h' value={new Date(2017, 10, 15, 13, 37, 0, 0)} onChange={changeHandler} />
       )
       // 13:37 = 1:37 pm --> 13:37
       changeHandler.mockClear()
@@ -164,7 +164,7 @@ describe('<TimePicker />', () => {
     })
 
     it('starts with the hour selection', () => {
-      const date = new Date(2017, 15, 14, 13, 37, 0, 0)
+      const date = new Date(2017, 10, 15, 13, 37, 0, 0)
       const tree = mount(
         <TimePicker mode='24h' value={date} />
       )
@@ -175,7 +175,7 @@ describe('<TimePicker />', () => {
     it('changes the value and the clock mode correctly', () => {
       jest.useFakeTimers()
       const changeHandler = jest.fn()
-      const date = new Date(2017, 15, 14, 13, 37, 0, 0)
+      const date = new Date(2017, 10, 15, 13, 37, 0, 0)
       const tree = mount(
         <TimePicker mode='24h' value={date} onChange={changeHandler} />
       )
@@ -225,7 +225,7 @@ describe('<TimePicker />', () => {
 
     it('can toggle between editing the hours and the minutes', () => {
       const tree = mount(
-        <TimePicker mode='24h' value={new Date(2017, 15, 14, 13, 37, 0, 0)} />
+        <TimePicker mode='24h' value={new Date(2017, 10, 15, 13, 37, 0, 0)} />
       )
 
       tree.findWhere((e) => e != null && e.getDOMNode() != null && e.text() === '37')
