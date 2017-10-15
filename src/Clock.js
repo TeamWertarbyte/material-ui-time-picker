@@ -8,7 +8,8 @@ import classNames from 'classnames'
 const styles = (theme) => ({
   root: {
     width: 256,
-    height: 256
+    height: 256,
+    fontFamily: theme.typography.fontFamily
   },
   circle: {
     width: 256,
