@@ -6,6 +6,8 @@
   "scripts": {
     "test": "jest && standard",
     "test:unit": "jest",
+    "build": "babel src -d lib",
+    "prepublish": "babel src -d lib",
     "storybook": "start-storybook -p 6006"
   },
   "repository": {
