@@ -4,7 +4,8 @@
   "description": "A time picker for material-ui 1.0-beta.",
   "main": "lib/index.js",
   "scripts": {
-    "test": "standard && jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "test": "standard && jest",
+    "test:coverage": "jest --coverage && cat ./coverage/lcov.info | coveralls",
     "test:unit": "jest",
     "build": "babel src -d lib",
     "prepublish": "babel src -d lib",
@@ -67,6 +68,10 @@
     ],
     "coveragePathIgnorePatterns": [
       "<rootDir>/test"
+    ],
+    "roots": [
+      "src",
+      "test"
     ]
   },
   "standard": {
