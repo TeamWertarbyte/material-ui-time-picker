@@ -11,11 +11,12 @@
     "prepublish": "babel src -d lib",
     "storybook": "start-storybook -p 6006",
     "styleguide": "styleguidist server",
-    "styleguide:build": "styleguidist build"
+    "styleguide:build": "styleguidist build",
+    "styleguide:deploy": "npm run styleguide:build && gh-pages -d styleguide"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TeamWertarbyte/material-ui-timepicker.git"
+    "url": "git+https://github.com/TeamWertarbyte/material-ui-time-picker.git"
   },
   "keywords": [
     "material-ui",
@@ -30,9 +31,9 @@
   "author": "Wertarbyte",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/TeamWertarbyte/material-ui-timepicker/issues"
+    "url": "https://github.com/TeamWertarbyte/material-ui-time-picker/issues"
   },
-  "homepage": "https://github.com/TeamWertarbyte/material-ui-timepicker#readme",
+  "homepage": "https://github.com/TeamWertarbyte/material-ui-time-picker#readme",
   "devDependencies": {
     "@storybook/addon-actions": "^3.2.12",
     "@storybook/react": "^3.2.12",
@@ -47,6 +48,7 @@
     "enzyme": "^3.1.0",
     "enzyme-adapter-react-16": "^1.0.1",
     "enzyme-to-json": "^3.1.2",
+    "gh-pages": "^1.0.0",
     "jest": "^21.2.1",
     "material-ui": "^1.0.0-beta.16",
     "mockdate": "^2.0.2",
