@@ -190,8 +190,11 @@ class Clock extends React.PureComponent {
 }
 
 Clock.propTypes = {
+  /** Sets the mode of this clock. It can either select hours (supports 12- and 24-hour-clock) or minutes. */
   mode: PropTypes.oneOf(['12h', '24h', 'minutes']).isRequired,
+  /** Callback that is called with the new hours/minutes (as a number) when the value is changed. */
   onChange: PropTypes.func,
+  /** The value of the clock. */
   value: PropTypes.number.isRequired
 }
 

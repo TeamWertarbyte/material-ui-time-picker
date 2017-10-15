@@ -103,12 +103,19 @@ class TimeInput extends React.Component {
 }
 
 TimeInput.propTypes = {
+  /** If true, automatically accept and close the picker on set minutes. */
   autoOk: PropTypes.bool,
+  /** Override the label of the cancel button. */
   cancelLabel: PropTypes.string,
+  /** The initial value of the time picker. */
   defaultValue: PropTypes.instanceOf(Date),
+  /** Sets the clock mode, 12-hour or 24-hour clocks are supported. */
   mode: PropTypes.oneOf(['12h', '24h']),
+  /** Override the label of the ok button. */
   okLabel: PropTypes.string,
+  /** Callback that is called with the new date (as Date instance) when the value is changed. */
   onChange: PropTypes.func,
+  /** The value of the time picker, for use in controlled mode. */
   value: PropTypes.instanceOf(Date)
 }
 
