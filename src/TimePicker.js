@@ -5,6 +5,7 @@ import { duration, easing } from 'material-ui/styles/transitions'
 import { getContrastRatio } from 'material-ui/styles/colorManipulator'
 import classNames from 'classnames'
 import Clock from './Clock'
+import { formatHours, twoDigits } from './util'
 
 const styles = (theme) => ({
   root: {
@@ -19,7 +20,8 @@ const styles = (theme) => ({
     fontSize: '58px',
     display: 'flex',
     justifyContent: 'center',
-    alignItems: 'baseline'
+    alignItems: 'baseline',
+    userSelect: 'none'
   },
   time: {
     transition: `all ${duration.short}ms ${easing.easeInOut}`,
@@ -59,7 +61,7 @@ class TimePicker extends React.Component {
   }
 
   componentWillReceiveProps (nextProps) {
-    if (nextProps.value != null && nextProps.value.getTime() !== this.props.value.getTime()) {
+    if (nextProps.value != null && (this.props.value == null || nextProps.value.getTime() !== this.props.value.getTime())) {
       this.setState({
         hours: nextProps.value.getHours(),
         minutes: nextProps.value.getMinutes()
@@ -75,16 +77,26 @@ class TimePicker extends React.Component {
         this.setState({ hours: value === 12 ? 0 : value }, this.propagateChange)
       }
     } else {
-      this.setState({ minutes: value }, this.propagateChange)
+      this.setState({ minutes: value }, () => {
+        this.propagateChange()
+      })
     }
   }
 
   handleClockChangeDone = (e) => {
     e.preventDefault() // prevent mouseUp after touchEnd
 
-    setTimeout(() => {
-      this.setState({ select: 'm' })
-    }, 300)
+    if (this.state.select === 'm') {
+      if (this.props.onMinutesSelected) {
+        setTimeout(() => {
+          this.props.onMinutesSelected()
+        }, 300)
+      }
+    } else {
+      setTimeout(() => {
+        this.setState({ select: 'm' })
+      }, 300)
+    }
   }
 
   editHours = () => this.setState({ select: 'h' })
@@ -122,7 +134,7 @@ class TimePicker extends React.Component {
 
     const clockMode = this.state.select === 'm' ? 'minutes' : mode
     const { minutes } = this.state
-    const { hours, isPm } = convert12HourClock(this.state.hours, mode)
+    const { hours, isPm } = formatHours(this.state.hours, mode)
 
     return (
       <div className={classes.root}>
@@ -133,14 +145,14 @@ class TimePicker extends React.Component {
               className={classNames(classes.time, { [classes.select]: this.state.select === 'h' && 'active' })}
               onClick={this.editHours}
             >
-              {hours < 10 ? `0${hours}` : hours}
+              {twoDigits(hours)}
             </span>
             :
             <span
               className={classNames(classes.time, { [classes.select]: this.state.select === 'm' && 'active' })}
               onClick={this.editMinutes}
             >
-              {minutes < 10 ? `0${minutes}` : minutes}
+              {twoDigits(minutes)}
             </span>
           </div>
           {mode === '12h' ? (
@@ -177,20 +189,8 @@ class TimePicker extends React.Component {
 TimePicker.propTypes = {
   mode: PropTypes.oneOf(['12h', '24h']).isRequired,
   onChange: PropTypes.func,
+  onMinutesSelected: PropTypes.func,
   value: PropTypes.instanceOf(Date)
 }
 
 export default withStyles(styles)(TimePicker)
-
-function convert12HourClock (hours, mode) {
-  const isPm = hours >= 12
-  if (mode === '24h') {
-    return { hours, isPm }
-  } else if (hours === 0 || hours === 12) {
-    return { hours: 12, isPm }
-  } else if (hours < 12) {
-    return { hours, isPm }
-  } else {
-    return { hours: hours - 12, isPm }
-  }
-}
