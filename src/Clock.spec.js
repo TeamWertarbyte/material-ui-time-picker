@@ -57,12 +57,12 @@ describe('<Clock />', () => {
     })
 
     it('calls onChange when a different value is selected', () => {
-      const onChangeCallback = jest.fn()
+      let onChangeCallback = jest.fn()
       const tree = mount(<Clock mode='24h' value={12} onChange={onChangeCallback} />)
       getCircle(tree).simulate('click', testUtils.stubClickEvent(175, 200)) // click on 17
       expect(onChangeCallback).toHaveBeenCalledWith(17)
 
-      onChangeCallback.mockReset()
+      onChangeCallback.mockClear()
       getCircle(tree).simulate('click', testUtils.stubClickEvent(35, 70)) // click on 10
       expect(onChangeCallback).toHaveBeenCalledWith(10)
     })

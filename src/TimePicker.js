@@ -52,7 +52,7 @@ class TimePicker extends React.Component {
   constructor (props) {
     super(props)
 
-    const time = props.value || new Date()
+    const time = props.value || props.defaultValue || new Date()
     this.state = {
       select: 'h',
       hours: time.getHours(),
@@ -74,7 +74,7 @@ class TimePicker extends React.Component {
       if (this.props.mode === '12h' && this.state.hours >= 12) {
         this.setState({ hours: value + 12 }, this.propagateChange)
       } else {
-        this.setState({ hours: value === 12 ? 0 : value }, this.propagateChange)
+        this.setState({ hours: value }, this.propagateChange)
       }
     } else {
       this.setState({ minutes: value }, () => {
@@ -187,6 +187,7 @@ class TimePicker extends React.Component {
 }
 
 TimePicker.propTypes = {
+  defaultValue: PropTypes.instanceOf(Date),
   mode: PropTypes.oneOf(['12h', '24h']).isRequired,
   onChange: PropTypes.func,
   onMinutesSelected: PropTypes.func,
