@@ -52,7 +52,10 @@ class TimePicker extends React.Component {
   constructor (props) {
     super(props)
 
-    const time = props.value || props.defaultValue || new Date()
+    const defaultValue = new Date()
+    defaultValue.setSeconds(0)
+    defaultValue.setMilliseconds(0)
+    const time = props.value || props.defaultValue || defaultValue
     this.state = {
       select: 'h',
       hours: time.getHours(),

@@ -1,0 +1,385 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TimeInput /> 12h matches the snapshot 1`] = `
+<withStyles(TimeInput)
+  defaultValue={2018-04-14T11:37:00.000Z}
+  mode="12h"
+>
+  <TimeInput
+    autoOk={false}
+    cancelLabel="Cancel"
+    classes={
+      Object {
+        "body": "TimeInput-body-2",
+        "header": "TimeInput-header-1",
+      }
+    }
+    defaultValue={2018-04-14T11:37:00.000Z}
+    mode="12h"
+    okLabel="Ok"
+  >
+    <withStyles(Input)
+      disabled={false}
+      key="TimeInput-input"
+      onClick={[Function]}
+      readOnly={true}
+      value="1:37 pm"
+    >
+      <Input
+        classes={
+          Object {
+            ".MuiInput-error-6:after": "MuiInput-error-6:after",
+            ".MuiInput-inkbar-5.MuiInput-focused-10:after": "MuiInput-inkbar-5.MuiInput-focused-10:after",
+            ".MuiInput-inkbar-5:after": "MuiInput-inkbar-5:after",
+            ".MuiInput-input-7:-ms-input-placeholder": "MuiInput-input-7:-ms-input-placeholder",
+            ".MuiInput-input-7::-moz-placeholder": "MuiInput-input-7::-moz-placeholder",
+            ".MuiInput-input-7::-ms-input-placeholder": "MuiInput-input-7::-ms-input-placeholder",
+            ".MuiInput-input-7::-webkit-input-placeholder": "MuiInput-input-7::-webkit-input-placeholder",
+            ".MuiInput-input-7::-webkit-search-decoration": "MuiInput-input-7::-webkit-search-decoration",
+            ".MuiInput-input-7:focus": "MuiInput-input-7:focus",
+            ".MuiInput-input-7:invalid": "MuiInput-input-7:invalid",
+            ".MuiInput-underline-11.MuiInput-disabled-9:before": "MuiInput-underline-11.MuiInput-disabled-9:before",
+            ".MuiInput-underline-11:before": "MuiInput-underline-11:before",
+            ".MuiInput-underline-11:hover:not(.MuiInput-disabled-9):before": "MuiInput-underline-11:hover:not(.MuiInput-disabled-9):before",
+            "disabled": "MuiInput-disabled-9",
+            "error": "MuiInput-error-6",
+            "focused": "MuiInput-focused-10",
+            "formControl": "MuiInput-formControl-4",
+            "fullWidth": "MuiInput-fullWidth-17",
+            "inkbar": "MuiInput-inkbar-5",
+            "input": "MuiInput-input-7",
+            "inputDense": "MuiInput-inputDense-8",
+            "inputDisabled": "MuiInput-inputDisabled-13",
+            "inputMultiline": "MuiInput-inputMultiline-16",
+            "inputSearch": "MuiInput-inputSearch-15",
+            "inputSingleline": "MuiInput-inputSingleline-14",
+            "label + .MuiInput-formControl-4": "abel + .MuiInput-formControl-4",
+            "label[data-shrink=false] + .MuiInput-formControl-4 .MuiInput-input-7": "abel[data-shrink=false] + .MuiInput-formControl-4 .MuiInput-input-7",
+            "label[data-shrink=false] + .MuiInput-formControl-4 .MuiInput-input-7:-ms-input-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-4 .MuiInput-input-7:-ms-input-placeholder",
+            "label[data-shrink=false] + .MuiInput-formControl-4 .MuiInput-input-7::-moz-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-4 .MuiInput-input-7::-moz-placeholder",
+            "label[data-shrink=false] + .MuiInput-formControl-4 .MuiInput-input-7::-ms-input-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-4 .MuiInput-input-7::-ms-input-placeholder",
+            "label[data-shrink=false] + .MuiInput-formControl-4 .MuiInput-input-7::-webkit-input-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-4 .MuiInput-input-7::-webkit-input-placeholder",
+            "label[data-shrink=false] + .MuiInput-formControl-4 .MuiInput-input-7:focus:-ms-input-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-4 .MuiInput-input-7:focus:-ms-input-placeholder",
+            "label[data-shrink=false] + .MuiInput-formControl-4 .MuiInput-input-7:focus::-moz-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-4 .MuiInput-input-7:focus::-moz-placeholder",
+            "label[data-shrink=false] + .MuiInput-formControl-4 .MuiInput-input-7:focus::-ms-input-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-4 .MuiInput-input-7:focus::-ms-input-placeholder",
+            "label[data-shrink=false] + .MuiInput-formControl-4 .MuiInput-input-7:focus::-webkit-input-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-4 .MuiInput-input-7:focus::-webkit-input-placeholder",
+            "multiline": "MuiInput-multiline-12",
+            "root": "MuiInput-root-3",
+            "underline": "MuiInput-underline-11",
+          }
+        }
+        disableUnderline={false}
+        disabled={false}
+        fullWidth={false}
+        multiline={false}
+        onClick={[Function]}
+        readOnly={true}
+        type="text"
+        value="1:37 pm"
+      >
+        <div
+          className="MuiInput-root-3 MuiInput-inkbar-5 MuiInput-underline-11"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+        >
+          <input
+            autoComplete={undefined}
+            autoFocus={undefined}
+            className="MuiInput-input-7 MuiInput-inputSingleline-14"
+            defaultValue={undefined}
+            disabled={false}
+            id={undefined}
+            name={undefined}
+            onChange={[Function]}
+            onKeyDown={undefined}
+            onKeyUp={undefined}
+            placeholder={undefined}
+            readOnly={true}
+            required={undefined}
+            rows={undefined}
+            type="text"
+            value="1:37 pm"
+          />
+        </div>
+      </Input>
+    </withStyles(Input)>
+    <withStyles(Dialog)
+      key="TimeInput-dialog"
+      maxWidth="xs"
+      onRequestClose={[Function]}
+      open={false}
+    >
+      <Dialog
+        classes={
+          Object {
+            ".MuiDialog-paper-19:focus": "MuiDialog-paper-19:focus",
+            "fullScreen": "MuiDialog-fullScreen-24",
+            "fullWidth": "MuiDialog-fullWidth-23",
+            "paper": "MuiDialog-paper-19",
+            "paperWidthMd": "MuiDialog-paperWidthMd-22",
+            "paperWidthSm": "MuiDialog-paperWidthSm-21",
+            "paperWidthXs": "MuiDialog-paperWidthXs-20",
+            "root": "MuiDialog-root-18",
+          }
+        }
+        fullScreen={false}
+        fullWidth={false}
+        ignoreBackdropClick={false}
+        ignoreEscapeKeyUp={false}
+        maxWidth="xs"
+        onRequestClose={[Function]}
+        open={false}
+        transition={[Function]}
+        transitionDuration={
+          Object {
+            "enter": 225,
+            "exit": 195,
+          }
+        }
+      >
+        <withStyles(Modal)
+          backdropTransitionDuration={
+            Object {
+              "enter": 225,
+              "exit": 195,
+            }
+          }
+          className="MuiDialog-root-18"
+          ignoreBackdropClick={false}
+          ignoreEscapeKeyUp={false}
+          onBackdropClick={undefined}
+          onEscapeKeyUp={undefined}
+          onRequestClose={[Function]}
+          show={false}
+        >
+          <Modal
+            backdropComponent={[Function]}
+            backdropInvisible={false}
+            backdropTransitionDuration={
+              Object {
+                "enter": 225,
+                "exit": 195,
+              }
+            }
+            className="MuiDialog-root-18"
+            classes={
+              Object {
+                "hidden": "MuiModal-hidden-26",
+                "root": "MuiModal-root-25",
+              }
+            }
+            disableBackdrop={false}
+            ignoreBackdropClick={false}
+            ignoreEscapeKeyUp={false}
+            keepMounted={false}
+            modalManager={
+              Object {
+                "add": [Function],
+                "isTopModal": [Function],
+                "remove": [Function],
+              }
+            }
+            onBackdropClick={undefined}
+            onEscapeKeyUp={undefined}
+            onRequestClose={[Function]}
+            show={false}
+          />
+        </withStyles(Modal)>
+      </Dialog>
+    </withStyles(Dialog)>
+  </TimeInput>
+</withStyles(TimeInput)>
+`;
+
+exports[`<TimeInput /> 24h matches the snapshot 1`] = `
+<withStyles(TimeInput)
+  defaultValue={2018-04-14T11:37:00.000Z}
+  mode="24h"
+>
+  <TimeInput
+    autoOk={false}
+    cancelLabel="Cancel"
+    classes={
+      Object {
+        "body": "TimeInput-body-2",
+        "header": "TimeInput-header-1",
+      }
+    }
+    defaultValue={2018-04-14T11:37:00.000Z}
+    mode="24h"
+    okLabel="Ok"
+  >
+    <withStyles(Input)
+      disabled={false}
+      key="TimeInput-input"
+      onClick={[Function]}
+      readOnly={true}
+      value="13:37"
+    >
+      <Input
+        classes={
+          Object {
+            ".MuiInput-error-6:after": "MuiInput-error-6:after",
+            ".MuiInput-inkbar-5.MuiInput-focused-10:after": "MuiInput-inkbar-5.MuiInput-focused-10:after",
+            ".MuiInput-inkbar-5:after": "MuiInput-inkbar-5:after",
+            ".MuiInput-input-7:-ms-input-placeholder": "MuiInput-input-7:-ms-input-placeholder",
+            ".MuiInput-input-7::-moz-placeholder": "MuiInput-input-7::-moz-placeholder",
+            ".MuiInput-input-7::-ms-input-placeholder": "MuiInput-input-7::-ms-input-placeholder",
+            ".MuiInput-input-7::-webkit-input-placeholder": "MuiInput-input-7::-webkit-input-placeholder",
+            ".MuiInput-input-7::-webkit-search-decoration": "MuiInput-input-7::-webkit-search-decoration",
+            ".MuiInput-input-7:focus": "MuiInput-input-7:focus",
+            ".MuiInput-input-7:invalid": "MuiInput-input-7:invalid",
+            ".MuiInput-underline-11.MuiInput-disabled-9:before": "MuiInput-underline-11.MuiInput-disabled-9:before",
+            ".MuiInput-underline-11:before": "MuiInput-underline-11:before",
+            ".MuiInput-underline-11:hover:not(.MuiInput-disabled-9):before": "MuiInput-underline-11:hover:not(.MuiInput-disabled-9):before",
+            "disabled": "MuiInput-disabled-9",
+            "error": "MuiInput-error-6",
+            "focused": "MuiInput-focused-10",
+            "formControl": "MuiInput-formControl-4",
+            "fullWidth": "MuiInput-fullWidth-17",
+            "inkbar": "MuiInput-inkbar-5",
+            "input": "MuiInput-input-7",
+            "inputDense": "MuiInput-inputDense-8",
+            "inputDisabled": "MuiInput-inputDisabled-13",
+            "inputMultiline": "MuiInput-inputMultiline-16",
+            "inputSearch": "MuiInput-inputSearch-15",
+            "inputSingleline": "MuiInput-inputSingleline-14",
+            "label + .MuiInput-formControl-4": "abel + .MuiInput-formControl-4",
+            "label[data-shrink=false] + .MuiInput-formControl-4 .MuiInput-input-7": "abel[data-shrink=false] + .MuiInput-formControl-4 .MuiInput-input-7",
+            "label[data-shrink=false] + .MuiInput-formControl-4 .MuiInput-input-7:-ms-input-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-4 .MuiInput-input-7:-ms-input-placeholder",
+            "label[data-shrink=false] + .MuiInput-formControl-4 .MuiInput-input-7::-moz-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-4 .MuiInput-input-7::-moz-placeholder",
+            "label[data-shrink=false] + .MuiInput-formControl-4 .MuiInput-input-7::-ms-input-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-4 .MuiInput-input-7::-ms-input-placeholder",
+            "label[data-shrink=false] + .MuiInput-formControl-4 .MuiInput-input-7::-webkit-input-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-4 .MuiInput-input-7::-webkit-input-placeholder",
+            "label[data-shrink=false] + .MuiInput-formControl-4 .MuiInput-input-7:focus:-ms-input-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-4 .MuiInput-input-7:focus:-ms-input-placeholder",
+            "label[data-shrink=false] + .MuiInput-formControl-4 .MuiInput-input-7:focus::-moz-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-4 .MuiInput-input-7:focus::-moz-placeholder",
+            "label[data-shrink=false] + .MuiInput-formControl-4 .MuiInput-input-7:focus::-ms-input-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-4 .MuiInput-input-7:focus::-ms-input-placeholder",
+            "label[data-shrink=false] + .MuiInput-formControl-4 .MuiInput-input-7:focus::-webkit-input-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-4 .MuiInput-input-7:focus::-webkit-input-placeholder",
+            "multiline": "MuiInput-multiline-12",
+            "root": "MuiInput-root-3",
+            "underline": "MuiInput-underline-11",
+          }
+        }
+        disableUnderline={false}
+        disabled={false}
+        fullWidth={false}
+        multiline={false}
+        onClick={[Function]}
+        readOnly={true}
+        type="text"
+        value="13:37"
+      >
+        <div
+          className="MuiInput-root-3 MuiInput-inkbar-5 MuiInput-underline-11"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+        >
+          <input
+            autoComplete={undefined}
+            autoFocus={undefined}
+            className="MuiInput-input-7 MuiInput-inputSingleline-14"
+            defaultValue={undefined}
+            disabled={false}
+            id={undefined}
+            name={undefined}
+            onChange={[Function]}
+            onKeyDown={undefined}
+            onKeyUp={undefined}
+            placeholder={undefined}
+            readOnly={true}
+            required={undefined}
+            rows={undefined}
+            type="text"
+            value="13:37"
+          />
+        </div>
+      </Input>
+    </withStyles(Input)>
+    <withStyles(Dialog)
+      key="TimeInput-dialog"
+      maxWidth="xs"
+      onRequestClose={[Function]}
+      open={false}
+    >
+      <Dialog
+        classes={
+          Object {
+            ".MuiDialog-paper-19:focus": "MuiDialog-paper-19:focus",
+            "fullScreen": "MuiDialog-fullScreen-24",
+            "fullWidth": "MuiDialog-fullWidth-23",
+            "paper": "MuiDialog-paper-19",
+            "paperWidthMd": "MuiDialog-paperWidthMd-22",
+            "paperWidthSm": "MuiDialog-paperWidthSm-21",
+            "paperWidthXs": "MuiDialog-paperWidthXs-20",
+            "root": "MuiDialog-root-18",
+          }
+        }
+        fullScreen={false}
+        fullWidth={false}
+        ignoreBackdropClick={false}
+        ignoreEscapeKeyUp={false}
+        maxWidth="xs"
+        onRequestClose={[Function]}
+        open={false}
+        transition={[Function]}
+        transitionDuration={
+          Object {
+            "enter": 225,
+            "exit": 195,
+          }
+        }
+      >
+        <withStyles(Modal)
+          backdropTransitionDuration={
+            Object {
+              "enter": 225,
+              "exit": 195,
+            }
+          }
+          className="MuiDialog-root-18"
+          ignoreBackdropClick={false}
+          ignoreEscapeKeyUp={false}
+          onBackdropClick={undefined}
+          onEscapeKeyUp={undefined}
+          onRequestClose={[Function]}
+          show={false}
+        >
+          <Modal
+            backdropComponent={[Function]}
+            backdropInvisible={false}
+            backdropTransitionDuration={
+              Object {
+                "enter": 225,
+                "exit": 195,
+              }
+            }
+            className="MuiDialog-root-18"
+            classes={
+              Object {
+                "hidden": "MuiModal-hidden-26",
+                "root": "MuiModal-root-25",
+              }
+            }
+            disableBackdrop={false}
+            ignoreBackdropClick={false}
+            ignoreEscapeKeyUp={false}
+            keepMounted={false}
+            modalManager={
+              Object {
+                "add": [Function],
+                "isTopModal": [Function],
+                "remove": [Function],
+              }
+            }
+            onBackdropClick={undefined}
+            onEscapeKeyUp={undefined}
+            onRequestClose={[Function]}
+            show={false}
+          />
+        </withStyles(Modal)>
+      </Dialog>
+    </withStyles(Dialog)>
+  </TimeInput>
+</withStyles(TimeInput)>
+`;
