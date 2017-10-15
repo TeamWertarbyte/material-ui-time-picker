@@ -33,9 +33,8 @@ describe('<TimePicker />', () => {
 
   describe('12h', () => {
     it('matches the snapshot', () => {
-      const date = new Date(2017, 15, 14, 13, 37, 0, 0)
       const tree = mount(
-        <TimePicker mode='12h' value={date} />
+        <TimePicker mode='12h' value={new Date('2017-10-15T13:37Z')} />
       )
       expect(tree).toMatchSnapshot()
     })
@@ -158,9 +157,8 @@ describe('<TimePicker />', () => {
 
   describe('24h', () => {
     it('matches the snapshot', () => {
-      const date = new Date(2017, 15, 14, 13, 37, 0, 0)
       const tree = mount(
-        <TimePicker mode='24h' value={date} />
+        <TimePicker mode='24h' value={new Date('2017-10-15T13:37Z')} />
       )
       expect(tree).toMatchSnapshot()
     })

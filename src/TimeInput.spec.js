@@ -7,7 +7,7 @@ import TimeInput from './TimeInput'
 describe.only('<TimeInput />', () => {
   describe('24h', () => {
     it('matches the snapshot', () => {
-      const tree = mount(<TimeInput defaultValue={new Date(2017, 15, 14, 13, 37, 0, 0)} mode='24h' />)
+      const tree = mount(<TimeInput defaultValue={new Date('2017-10-15T13:37Z')} mode='24h' />)
       expect(tree).toMatchSnapshot()
     })
 
@@ -22,7 +22,7 @@ describe.only('<TimeInput />', () => {
 
   describe('12h', () => {
     it('matches the snapshot', () => {
-      const tree = mount(<TimeInput defaultValue={new Date(2017, 15, 14, 13, 37, 0, 0)} mode='12h' />)
+      const tree = mount(<TimeInput defaultValue={new Date('2017-10-15T13:37Z')} mode='12h' />)
       expect(tree).toMatchSnapshot()
     })
 
