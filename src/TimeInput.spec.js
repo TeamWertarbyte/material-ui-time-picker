@@ -2,7 +2,6 @@
 import React from 'react'
 import { mount } from 'enzyme'
 import MockDate from 'mockdate'
-import * as testUtils from '../test/utils'
 import TimeInput from './TimeInput'
 
 describe.only('<TimeInput />', () => {
