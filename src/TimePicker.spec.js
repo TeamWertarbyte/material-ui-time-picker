@@ -33,10 +33,13 @@ describe('<TimePicker />', () => {
 
   describe('12h', () => {
     it('matches the snapshot', () => {
+      const originalGetHours = Date.prototype.getHours
+      Date.prototype.getHours = Date.prototype.getUTCHours // eslint-disable-line
       const tree = mount(
         <TimePicker mode='12h' value={new Date('2017-10-15T13:37Z')} />
       )
       expect(tree).toMatchSnapshot()
+      Date.prototype.getHours = originalGetHours // eslint-disable-line
     })
 
     it('starts with the hour selection', () => {
@@ -157,10 +160,13 @@ describe('<TimePicker />', () => {
 
   describe('24h', () => {
     it('matches the snapshot', () => {
+      const originalGetHours = Date.prototype.getHours
+      Date.prototype.getHours = Date.prototype.getUTCHours // eslint-disable-line
       const tree = mount(
         <TimePicker mode='24h' value={new Date('2017-10-15T13:37Z')} />
       )
       expect(tree).toMatchSnapshot()
+      Date.prototype.getHours = originalGetHours // eslint-disable-line
     })
 
     it('starts with the hour selection', () => {

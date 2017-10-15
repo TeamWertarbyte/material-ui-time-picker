@@ -23,7 +23,7 @@ exports[`<TimeInput /> 12h matches the snapshot 1`] = `
       key="TimeInput-input"
       onClick={[Function]}
       readOnly={true}
-      value="3:37 pm"
+      value="1:37 pm"
     >
       <Input
         classes={
@@ -75,7 +75,7 @@ exports[`<TimeInput /> 12h matches the snapshot 1`] = `
         onClick={[Function]}
         readOnly={true}
         type="text"
-        value="3:37 pm"
+        value="1:37 pm"
       >
         <div
           className="MuiInput-root-3 MuiInput-inkbar-5 MuiInput-underline-11"
@@ -99,7 +99,7 @@ exports[`<TimeInput /> 12h matches the snapshot 1`] = `
             required={undefined}
             rows={undefined}
             type="text"
-            value="3:37 pm"
+            value="1:37 pm"
           />
         </div>
       </Input>
@@ -215,7 +215,7 @@ exports[`<TimeInput /> 24h matches the snapshot 1`] = `
       key="TimeInput-input"
       onClick={[Function]}
       readOnly={true}
-      value="15:37"
+      value="13:37"
     >
       <Input
         classes={
@@ -267,7 +267,7 @@ exports[`<TimeInput /> 24h matches the snapshot 1`] = `
         onClick={[Function]}
         readOnly={true}
         type="text"
-        value="15:37"
+        value="13:37"
       >
         <div
           className="MuiInput-root-3 MuiInput-inkbar-5 MuiInput-underline-11"
@@ -291,7 +291,7 @@ exports[`<TimeInput /> 24h matches the snapshot 1`] = `
             required={undefined}
             rows={undefined}
             type="text"
-            value="15:37"
+            value="13:37"
           />
         </div>
       </Input>

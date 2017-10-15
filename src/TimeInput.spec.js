@@ -7,8 +7,11 @@ import TimeInput from './TimeInput'
 describe.only('<TimeInput />', () => {
   describe('24h', () => {
     it('matches the snapshot', () => {
+      const originalGetHours = Date.prototype.getHours
+      Date.prototype.getHours = Date.prototype.getUTCHours // eslint-disable-line
       const tree = mount(<TimeInput defaultValue={new Date('2017-10-15T13:37Z')} mode='24h' />)
       expect(tree).toMatchSnapshot()
+      Date.prototype.getHours = originalGetHours // eslint-disable-line
     })
 
     it('displays the formatted time', () => {
@@ -22,8 +25,11 @@ describe.only('<TimeInput />', () => {
 
   describe('12h', () => {
     it('matches the snapshot', () => {
+      const originalGetHours = Date.prototype.getHours
+      Date.prototype.getHours = Date.prototype.getUTCHours // eslint-disable-line
       const tree = mount(<TimeInput defaultValue={new Date('2017-10-15T13:37Z')} mode='12h' />)
       expect(tree).toMatchSnapshot()
+      Date.prototype.getHours = originalGetHours // eslint-disable-line
     })
 
     it('displays the formatted time', () => {
