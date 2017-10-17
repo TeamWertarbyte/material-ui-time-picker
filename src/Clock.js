@@ -72,7 +72,8 @@ const styles = (theme) => ({
     right: -16,
     width: 0,
     height: 0,
-    borderRadius: '50%'
+    borderRadius: '50%',
+    boxSizing: 'content-box'
   },
   outerDotOdd: {
     background: getContrastRatio(theme.palette.primary[500], theme.palette.common.fullBlack) < 7 ? theme.palette.common.fullWhite : theme.palette.common.fullBlack,

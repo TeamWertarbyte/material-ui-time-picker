@@ -17,7 +17,6 @@ const styles = (theme) => ({
     color: getContrastRatio(theme.palette.primary[500], theme.palette.common.lightBlack) < 7 ? theme.palette.common.lightWhite : theme.palette.common.lightBlack,
     padding: '20px 0',
     lineHeight: '58px',
-    height: 58,
     fontSize: '58px',
     display: 'flex',
     justifyContent: 'center',
