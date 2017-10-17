@@ -9,7 +9,7 @@ import { formatHours, twoDigits } from './util'
 
 const styles = (theme) => ({
   root: {
-    width: 280,
+    width: 288,
     fontFamily: theme.typography.fontFamily
   },
   header: {
