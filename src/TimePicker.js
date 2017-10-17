@@ -74,8 +74,12 @@ class TimePicker extends React.Component {
 
   handleClockChange = (value) => {
     if (this.state.select === 'h') {
-      if (this.props.mode === '12h' && this.state.hours >= 12) {
-        this.setState({ hours: value + 12 }, this.propagateChange)
+      if (this.props.mode === '12h') {
+        if (this.state.hours >= 12) {
+          this.setState({ hours: value === 12 ? value : value + 12 }, this.propagateChange)
+        } else {
+          this.setState({ hours: value === 12 ? 0 : value }, this.propagateChange)
+        }
       } else {
         this.setState({ hours: value }, this.propagateChange)
       }
