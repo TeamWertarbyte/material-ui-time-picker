@@ -3,12 +3,18 @@
   "version": "0.1.1",
   "description": "A time picker for material-ui 1.0-beta.",
   "main": "lib/index.js",
+  "files": [
+    "lib/**/*.js",
+    "README.md",
+    "LICENSE",
+    "demo.gif"
+  ],
   "scripts": {
     "test": "standard && jest",
     "test:coverage": "jest --coverage && cat ./coverage/lcov.info | coveralls",
     "test:unit": "jest",
-    "build": "babel src -d lib",
-    "prepublish": "babel src -d lib",
+    "build": "babel src -d lib --ignore '**/*.spec.js'",
+    "prepublish": "babel src -d lib --ignore '**/*.spec.js'",
     "storybook": "start-storybook -p 6006",
     "styleguide": "styleguidist server",
     "styleguide:build": "styleguidist build",
