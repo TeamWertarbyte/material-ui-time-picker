@@ -14,6 +14,20 @@ describe('<Clock />', () => {
     expect(callback).toBeCalled()
   })
 
+  it('handles clicks', () => {
+    const onChangeCallback = jest.fn()
+    const tree = mount(<Clock mode='24h' value={12} onChange={onChangeCallback} />)
+    getCircle(tree).simulate('click', testUtils.stubClickEvent(175, 200)) // click on 17
+    expect(onChangeCallback).toHaveBeenCalledWith(17)
+  })
+
+  it('handles taps', () => {
+    const onChangeCallback = jest.fn()
+    const tree = mount(<Clock mode='24h' value={12} onChange={onChangeCallback} />)
+    getCircle(tree).simulate('touchend', testUtils.stubTouchEndEvent(175, 200)) // click on 17
+    expect(onChangeCallback).toHaveBeenCalledWith(17)
+  })
+
   describe('24h', () => {
     it('matches the snapshot', () => {
       const tree = mount(
@@ -57,7 +71,7 @@ describe('<Clock />', () => {
     })
 
     it('calls onChange when a different value is selected', () => {
-      let onChangeCallback = jest.fn()
+      const onChangeCallback = jest.fn()
       const tree = mount(<Clock mode='24h' value={12} onChange={onChangeCallback} />)
       getCircle(tree).simulate('click', testUtils.stubClickEvent(175, 200)) // click on 17
       expect(onChangeCallback).toHaveBeenCalledWith(17)

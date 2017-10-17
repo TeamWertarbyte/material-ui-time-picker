@@ -96,7 +96,12 @@ class Clock extends React.PureComponent {
 
   handleTouchMove = (e) => {
     const rect = e.target.getBoundingClientRect()
-    this.movePointer(e.touches[0].clientX - rect.left, e.touches[0].clientY - rect.top)
+    this.movePointer(e.changedTouches[0].clientX - rect.left, e.changedTouches[0].clientY - rect.top)
+  }
+
+  handleTouchEnd = (e) => {
+    this.handleTouchMove(e)
+    this.enableAnimatedPointer()
   }
 
   handleMouseMove = (e) => {
@@ -131,7 +136,7 @@ class Clock extends React.PureComponent {
           onMouseMove={this.handleMouseMove}
           onTouchStart={this.disableAnimatedPointer}
           onMouseDown={this.disableAnimatedPointer}
-          onTouchEnd={this.enableAnimatedPointer}
+          onTouchEnd={this.handleTouchEnd}
           onMouseUp={this.enableAnimatedPointer}
           onClick={this.handleClick}
         >
