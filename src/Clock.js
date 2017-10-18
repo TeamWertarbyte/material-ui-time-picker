@@ -9,7 +9,8 @@ const styles = (theme) => ({
   root: {
     width: 256,
     height: 256,
-    fontFamily: theme.typography.fontFamily
+    fontFamily: theme.typography.fontFamily,
+    cursor: 'default'
   },
   circle: {
     width: 256,
