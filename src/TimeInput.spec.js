@@ -4,7 +4,7 @@ import { mount } from 'enzyme'
 import MockDate from 'mockdate'
 import TimeInput from './TimeInput'
 
-describe.only('<TimeInput />', () => {
+describe('<TimeInput />', () => {
   describe('24h', () => {
     it('matches the snapshot', () => {
       const originalGetHours = Date.prototype.getHours
