@@ -4,6 +4,7 @@ import { withStyles } from 'material-ui/styles'
 import { getContrastRatio } from 'material-ui/styles/colorManipulator'
 import { duration, easing } from 'material-ui/styles/transitions'
 import classNames from 'classnames'
+import { getShortestAngle } from './util'
 
 const styles = (theme) => ({
   root: {
@@ -89,7 +90,13 @@ const size = 256
 class Clock extends React.PureComponent {
   constructor (props) {
     super(props)
-    this.state = { touching: false }
+    this.state = { touching: false, angle: getPointerAngle(props.value, props.mode) }
+  }
+
+  componentWillReceiveProps ({ value, mode }) {
+    if (mode !== this.props.mode || value !== this.props.value) {
+      this.setState({ angle: getShortestAngle(this.state.angle, getPointerAngle(value, mode)) })
+    }
   }
 
   disableAnimatedPointer = () => this.setState({ touching: true })
@@ -142,7 +149,7 @@ class Clock extends React.PureComponent {
           onClick={this.handleClick}
         >
           <div className={classNames(classes.pointer, { [classes.smallPointer]: mode === '24h' && (value === 0 || value > 12), [classes.animatedPointer]: !touching })} style={{
-            transform: `rotate(${getPointerAngle(value, mode)}deg)`
+            transform: `rotate(${this.state.angle}deg)`
           }}>
             <div className={classes.innerDot} />
             <div className={classNames(classes.outerDot, { [classes.outerDotOdd]: mode === 'minutes' && value % 5 !== 0 })} />

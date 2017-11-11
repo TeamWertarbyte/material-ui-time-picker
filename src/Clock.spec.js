@@ -28,6 +28,14 @@ describe('<Clock />', () => {
     expect(onChangeCallback).toHaveBeenCalledWith(17)
   })
 
+  it('takes the shortest route when moving the hand', () => {
+    const tree = mount(<Clock mode='minutes' value={0} />)
+    tree.setProps({ value: 5 })
+    expect(getPointer(tree).getDOMNode().style.transform).toBe('rotate(-60deg)')
+    tree.setProps({ value: 55 })
+    expect(getPointer(tree).getDOMNode().style.transform).toBe('rotate(-120deg)')
+  })
+
   describe('24h', () => {
     it('matches the snapshot', () => {
       const tree = mount(

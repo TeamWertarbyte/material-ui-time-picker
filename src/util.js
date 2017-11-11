@@ -14,3 +14,12 @@ export function formatHours (hours, mode) {
     return { hours: hours - 12, isPm }
   }
 }
+
+function mod (a, b) {
+  return a - Math.floor(a / b) * b
+}
+
+export function getShortestAngle (from, to) {
+  const difference = to - from
+  return from + mod(difference + 180, 360) - 180
+}

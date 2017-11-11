@@ -1,5 +1,5 @@
 /* eslint-env jest */
-import { twoDigits, formatHours } from './util'
+import { twoDigits, formatHours, getShortestAngle } from './util'
 
 describe('twoDigits', () => {
   it('adds a leading zero to one-digit numbers', () => {
@@ -31,5 +31,16 @@ describe('formatHours', () => {
     expect(formatHours(13, '24h').hours).toBe(13)
     expect(formatHours(12, '24h').hours).toBe(12)
     expect(formatHours(0, '24h').hours).toBe(0)
+  })
+})
+
+describe('getShortestAngle', () => {
+  it('calculates the angle with the shortest distance from a specific angle to another angle (modulo 360)', () => {
+    expect(getShortestAngle(0, 90)).toBe(90)
+    expect(getShortestAngle(20, 90)).toBe(90)
+    expect(getShortestAngle(210, 240)).toBe(240)
+    expect(getShortestAngle(-60, 240)).toBe(-120)
+    expect(getShortestAngle(-60, 150)).toBe(-210)
+    expect(getShortestAngle(42, 42)).toBe(42)
   })
 })
