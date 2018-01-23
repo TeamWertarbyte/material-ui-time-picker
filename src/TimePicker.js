@@ -13,8 +13,8 @@ const styles = (theme) => ({
     fontFamily: theme.typography.fontFamily
   },
   header: {
-    background: theme.palette.primary[500],
-    color: getContrastRatio(theme.palette.primary[500], theme.palette.common.lightBlack) < 7 ? theme.palette.common.lightWhite : theme.palette.common.lightBlack,
+    background: theme.palette.primary.main,
+    color: getContrastRatio(theme.palette.primary.main, theme.palette.common.fullBlack) < 7 ? theme.palette.common.fullWhite : theme.palette.common.fullBlack,
     padding: '20px 0',
     lineHeight: '58px',
     fontSize: '58px',
@@ -40,7 +40,7 @@ const styles = (theme) => ({
     fontWeight: 700
   },
   select: {
-    color: getContrastRatio(theme.palette.primary[500], theme.palette.common.fullBlack) < 7 ? theme.palette.common.fullWhite : theme.palette.common.fullBlack
+    color: getContrastRatio(theme.palette.primary.main, theme.palette.common.fullBlack) < 7 ? theme.palette.common.fullWhite : theme.palette.common.fullBlack
   },
   body: {
     padding: '24px 16px',
