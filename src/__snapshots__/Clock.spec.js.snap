@@ -1,14 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Clock /> 12h matches the snapshot 1`] = `
-<withStyles(Clock)
+<WithStyles(Clock)
   mode="12h"
   value={7}
 >
   <Clock
     classes={
       Object {
-        ".Clock-number-3.selected": "Clock-number-3.selected",
         "animatedPointer": "Clock-animatedPointer-6",
         "circle": "Clock-circle-2",
         "innerDot": "Clock-innerDot-8",
@@ -187,18 +186,17 @@ exports[`<Clock /> 12h matches the snapshot 1`] = `
       </div>
     </div>
   </Clock>
-</withStyles(Clock)>
+</WithStyles(Clock)>
 `;
 
 exports[`<Clock /> 24h matches the snapshot 1`] = `
-<withStyles(Clock)
+<WithStyles(Clock)
   mode="24h"
   value={7}
 >
   <Clock
     classes={
       Object {
-        ".Clock-number-3.selected": "Clock-number-3.selected",
         "animatedPointer": "Clock-animatedPointer-6",
         "circle": "Clock-circle-2",
         "innerDot": "Clock-innerDot-8",
@@ -509,18 +507,17 @@ exports[`<Clock /> 24h matches the snapshot 1`] = `
       </div>
     </div>
   </Clock>
-</withStyles(Clock)>
+</WithStyles(Clock)>
 `;
 
 exports[`<Clock /> minutes matches the snapshot 1`] = `
-<withStyles(Clock)
+<WithStyles(Clock)
   mode="minutes"
   value={42}
 >
   <Clock
     classes={
       Object {
-        ".Clock-number-3.selected": "Clock-number-3.selected",
         "animatedPointer": "Clock-animatedPointer-6",
         "circle": "Clock-circle-2",
         "innerDot": "Clock-innerDot-8",
@@ -699,5 +696,5 @@ exports[`<Clock /> minutes matches the snapshot 1`] = `
       </div>
     </div>
   </Clock>
-</withStyles(Clock)>
+</WithStyles(Clock)>
 `;

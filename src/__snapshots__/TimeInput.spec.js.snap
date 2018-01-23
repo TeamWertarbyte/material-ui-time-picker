@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<TimeInput /> 12h matches the snapshot 1`] = `
-<withStyles(TimeInput)
+<WithStyles(TimeInput)
   defaultValue={2017-10-15T13:37:00.000Z}
   mode="12h"
 >
@@ -18,7 +18,7 @@ exports[`<TimeInput /> 12h matches the snapshot 1`] = `
     mode="12h"
     okLabel="Ok"
   >
-    <withStyles(Input)
+    <WithStyles(Input)
       disabled={false}
       key="TimeInput-input"
       onClick={[Function]}
@@ -28,44 +28,21 @@ exports[`<TimeInput /> 12h matches the snapshot 1`] = `
       <Input
         classes={
           Object {
-            ".MuiInput-error-6:after": "MuiInput-error-6:after",
-            ".MuiInput-inkbar-5.MuiInput-focused-10:after": "MuiInput-inkbar-5.MuiInput-focused-10:after",
-            ".MuiInput-inkbar-5:after": "MuiInput-inkbar-5:after",
-            ".MuiInput-input-7:-ms-input-placeholder": "MuiInput-input-7:-ms-input-placeholder",
-            ".MuiInput-input-7::-moz-placeholder": "MuiInput-input-7::-moz-placeholder",
-            ".MuiInput-input-7::-ms-input-placeholder": "MuiInput-input-7::-ms-input-placeholder",
-            ".MuiInput-input-7::-webkit-input-placeholder": "MuiInput-input-7::-webkit-input-placeholder",
-            ".MuiInput-input-7::-webkit-search-decoration": "MuiInput-input-7::-webkit-search-decoration",
-            ".MuiInput-input-7:focus": "MuiInput-input-7:focus",
-            ".MuiInput-input-7:invalid": "MuiInput-input-7:invalid",
-            ".MuiInput-underline-11.MuiInput-disabled-9:before": "MuiInput-underline-11.MuiInput-disabled-9:before",
-            ".MuiInput-underline-11:before": "MuiInput-underline-11:before",
-            ".MuiInput-underline-11:hover:not(.MuiInput-disabled-9):before": "MuiInput-underline-11:hover:not(.MuiInput-disabled-9):before",
-            "disabled": "MuiInput-disabled-9",
+            "disabled": "MuiInput-disabled-8",
             "error": "MuiInput-error-6",
-            "focused": "MuiInput-focused-10",
+            "focused": "MuiInput-focused-7",
             "formControl": "MuiInput-formControl-4",
-            "fullWidth": "MuiInput-fullWidth-17",
+            "fullWidth": "MuiInput-fullWidth-11",
             "inkbar": "MuiInput-inkbar-5",
-            "input": "MuiInput-input-7",
-            "inputDense": "MuiInput-inputDense-8",
-            "inputDisabled": "MuiInput-inputDisabled-13",
+            "input": "MuiInput-input-12",
+            "inputDense": "MuiInput-inputDense-13",
+            "inputDisabled": "MuiInput-inputDisabled-14",
             "inputMultiline": "MuiInput-inputMultiline-16",
-            "inputSearch": "MuiInput-inputSearch-15",
-            "inputSingleline": "MuiInput-inputSingleline-14",
-            "label + .MuiInput-formControl-4": "abel + .MuiInput-formControl-4",
-            "label[data-shrink=false] + .MuiInput-formControl-4 .MuiInput-input-7": "abel[data-shrink=false] + .MuiInput-formControl-4 .MuiInput-input-7",
-            "label[data-shrink=false] + .MuiInput-formControl-4 .MuiInput-input-7:-ms-input-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-4 .MuiInput-input-7:-ms-input-placeholder",
-            "label[data-shrink=false] + .MuiInput-formControl-4 .MuiInput-input-7::-moz-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-4 .MuiInput-input-7::-moz-placeholder",
-            "label[data-shrink=false] + .MuiInput-formControl-4 .MuiInput-input-7::-ms-input-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-4 .MuiInput-input-7::-ms-input-placeholder",
-            "label[data-shrink=false] + .MuiInput-formControl-4 .MuiInput-input-7::-webkit-input-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-4 .MuiInput-input-7::-webkit-input-placeholder",
-            "label[data-shrink=false] + .MuiInput-formControl-4 .MuiInput-input-7:focus:-ms-input-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-4 .MuiInput-input-7:focus:-ms-input-placeholder",
-            "label[data-shrink=false] + .MuiInput-formControl-4 .MuiInput-input-7:focus::-moz-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-4 .MuiInput-input-7:focus::-moz-placeholder",
-            "label[data-shrink=false] + .MuiInput-formControl-4 .MuiInput-input-7:focus::-ms-input-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-4 .MuiInput-input-7:focus::-ms-input-placeholder",
-            "label[data-shrink=false] + .MuiInput-formControl-4 .MuiInput-input-7:focus::-webkit-input-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-4 .MuiInput-input-7:focus::-webkit-input-placeholder",
-            "multiline": "MuiInput-multiline-12",
+            "inputSearch": "MuiInput-inputSearch-17",
+            "inputSingleline": "MuiInput-inputSingleline-15",
+            "multiline": "MuiInput-multiline-10",
             "root": "MuiInput-root-3",
-            "underline": "MuiInput-underline-11",
+            "underline": "MuiInput-underline-9",
           }
         }
         disableUnderline={false}
@@ -78,15 +55,17 @@ exports[`<TimeInput /> 12h matches the snapshot 1`] = `
         value="1:37 pm"
       >
         <div
-          className="MuiInput-root-3 MuiInput-inkbar-5 MuiInput-underline-11"
+          className="MuiInput-root-3 MuiInput-inkbar-5 MuiInput-underline-9"
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
         >
           <input
+            aria-invalid={undefined}
+            aria-required={undefined}
             autoComplete={undefined}
             autoFocus={undefined}
-            className="MuiInput-input-7 MuiInput-inputSingleline-14"
+            className="MuiInput-input-12 MuiInput-inputSingleline-15"
             defaultValue={undefined}
             disabled={false}
             id={undefined}
@@ -103,8 +82,8 @@ exports[`<TimeInput /> 12h matches the snapshot 1`] = `
           />
         </div>
       </Input>
-    </withStyles(Input)>
-    <withStyles(Dialog)
+    </WithStyles(Input)>
+    <WithStyles(Dialog)
       key="TimeInput-dialog"
       maxWidth="xs"
       onRequestClose={[Function]}
@@ -113,7 +92,6 @@ exports[`<TimeInput /> 12h matches the snapshot 1`] = `
       <Dialog
         classes={
           Object {
-            ".MuiDialog-paper-19:focus": "MuiDialog-paper-19:focus",
             "fullScreen": "MuiDialog-fullScreen-24",
             "fullWidth": "MuiDialog-fullWidth-23",
             "paper": "MuiDialog-paper-19",
@@ -123,10 +101,10 @@ exports[`<TimeInput /> 12h matches the snapshot 1`] = `
             "root": "MuiDialog-root-18",
           }
         }
+        disableBackdropClick={false}
+        disableEscapeKeyDown={false}
         fullScreen={false}
         fullWidth={false}
-        ignoreBackdropClick={false}
-        ignoreEscapeKeyUp={false}
         maxWidth="xs"
         onRequestClose={[Function]}
         open={false}
@@ -138,28 +116,33 @@ exports[`<TimeInput /> 12h matches the snapshot 1`] = `
           }
         }
       >
-        <withStyles(Modal)
-          backdropTransitionDuration={
+        <WithStyles(Modal)
+          BackdropProps={
             Object {
-              "enter": 225,
-              "exit": 195,
+              "transitionDuration": Object {
+                "enter": 225,
+                "exit": 195,
+              },
             }
           }
           className="MuiDialog-root-18"
-          ignoreBackdropClick={false}
-          ignoreEscapeKeyUp={false}
+          disableBackdropClick={false}
+          disableEscapeKeyDown={false}
           onBackdropClick={undefined}
-          onEscapeKeyUp={undefined}
+          onClose={undefined}
+          onEscapeKeyDown={undefined}
           onRequestClose={[Function]}
-          show={false}
+          open={false}
+          role="dialog"
         >
           <Modal
-            backdropComponent={[Function]}
-            backdropInvisible={false}
-            backdropTransitionDuration={
+            BackdropComponent={[Function]}
+            BackdropProps={
               Object {
-                "enter": 225,
-                "exit": 195,
+                "transitionDuration": Object {
+                  "enter": 225,
+                  "exit": 195,
+                },
               }
             }
             className="MuiDialog-root-18"
@@ -169,31 +152,41 @@ exports[`<TimeInput /> 12h matches the snapshot 1`] = `
                 "root": "MuiModal-root-25",
               }
             }
-            disableBackdrop={false}
-            ignoreBackdropClick={false}
-            ignoreEscapeKeyUp={false}
+            disableAutoFocus={false}
+            disableBackdropClick={false}
+            disableEnforceFocus={false}
+            disableEscapeKeyDown={false}
+            disableRestoreFocus={false}
+            hideBackdrop={false}
             keepMounted={false}
-            modalManager={
-              Object {
+            manager={
+              ModalManager {
                 "add": [Function],
+                "containers": Array [],
+                "data": Array [],
+                "handleContainerOverflow": true,
+                "hideSiblingNodes": true,
                 "isTopModal": [Function],
+                "modals": Array [],
                 "remove": [Function],
               }
             }
             onBackdropClick={undefined}
-            onEscapeKeyUp={undefined}
+            onClose={undefined}
+            onEscapeKeyDown={undefined}
             onRequestClose={[Function]}
-            show={false}
+            open={false}
+            role="dialog"
           />
-        </withStyles(Modal)>
+        </WithStyles(Modal)>
       </Dialog>
-    </withStyles(Dialog)>
+    </WithStyles(Dialog)>
   </TimeInput>
-</withStyles(TimeInput)>
+</WithStyles(TimeInput)>
 `;
 
 exports[`<TimeInput /> 24h matches the snapshot 1`] = `
-<withStyles(TimeInput)
+<WithStyles(TimeInput)
   defaultValue={2017-10-15T13:37:00.000Z}
   mode="24h"
 >
@@ -210,7 +203,7 @@ exports[`<TimeInput /> 24h matches the snapshot 1`] = `
     mode="24h"
     okLabel="Ok"
   >
-    <withStyles(Input)
+    <WithStyles(Input)
       disabled={false}
       key="TimeInput-input"
       onClick={[Function]}
@@ -220,44 +213,21 @@ exports[`<TimeInput /> 24h matches the snapshot 1`] = `
       <Input
         classes={
           Object {
-            ".MuiInput-error-6:after": "MuiInput-error-6:after",
-            ".MuiInput-inkbar-5.MuiInput-focused-10:after": "MuiInput-inkbar-5.MuiInput-focused-10:after",
-            ".MuiInput-inkbar-5:after": "MuiInput-inkbar-5:after",
-            ".MuiInput-input-7:-ms-input-placeholder": "MuiInput-input-7:-ms-input-placeholder",
-            ".MuiInput-input-7::-moz-placeholder": "MuiInput-input-7::-moz-placeholder",
-            ".MuiInput-input-7::-ms-input-placeholder": "MuiInput-input-7::-ms-input-placeholder",
-            ".MuiInput-input-7::-webkit-input-placeholder": "MuiInput-input-7::-webkit-input-placeholder",
-            ".MuiInput-input-7::-webkit-search-decoration": "MuiInput-input-7::-webkit-search-decoration",
-            ".MuiInput-input-7:focus": "MuiInput-input-7:focus",
-            ".MuiInput-input-7:invalid": "MuiInput-input-7:invalid",
-            ".MuiInput-underline-11.MuiInput-disabled-9:before": "MuiInput-underline-11.MuiInput-disabled-9:before",
-            ".MuiInput-underline-11:before": "MuiInput-underline-11:before",
-            ".MuiInput-underline-11:hover:not(.MuiInput-disabled-9):before": "MuiInput-underline-11:hover:not(.MuiInput-disabled-9):before",
-            "disabled": "MuiInput-disabled-9",
+            "disabled": "MuiInput-disabled-8",
             "error": "MuiInput-error-6",
-            "focused": "MuiInput-focused-10",
+            "focused": "MuiInput-focused-7",
             "formControl": "MuiInput-formControl-4",
-            "fullWidth": "MuiInput-fullWidth-17",
+            "fullWidth": "MuiInput-fullWidth-11",
             "inkbar": "MuiInput-inkbar-5",
-            "input": "MuiInput-input-7",
-            "inputDense": "MuiInput-inputDense-8",
-            "inputDisabled": "MuiInput-inputDisabled-13",
+            "input": "MuiInput-input-12",
+            "inputDense": "MuiInput-inputDense-13",
+            "inputDisabled": "MuiInput-inputDisabled-14",
             "inputMultiline": "MuiInput-inputMultiline-16",
-            "inputSearch": "MuiInput-inputSearch-15",
-            "inputSingleline": "MuiInput-inputSingleline-14",
-            "label + .MuiInput-formControl-4": "abel + .MuiInput-formControl-4",
-            "label[data-shrink=false] + .MuiInput-formControl-4 .MuiInput-input-7": "abel[data-shrink=false] + .MuiInput-formControl-4 .MuiInput-input-7",
-            "label[data-shrink=false] + .MuiInput-formControl-4 .MuiInput-input-7:-ms-input-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-4 .MuiInput-input-7:-ms-input-placeholder",
-            "label[data-shrink=false] + .MuiInput-formControl-4 .MuiInput-input-7::-moz-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-4 .MuiInput-input-7::-moz-placeholder",
-            "label[data-shrink=false] + .MuiInput-formControl-4 .MuiInput-input-7::-ms-input-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-4 .MuiInput-input-7::-ms-input-placeholder",
-            "label[data-shrink=false] + .MuiInput-formControl-4 .MuiInput-input-7::-webkit-input-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-4 .MuiInput-input-7::-webkit-input-placeholder",
-            "label[data-shrink=false] + .MuiInput-formControl-4 .MuiInput-input-7:focus:-ms-input-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-4 .MuiInput-input-7:focus:-ms-input-placeholder",
-            "label[data-shrink=false] + .MuiInput-formControl-4 .MuiInput-input-7:focus::-moz-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-4 .MuiInput-input-7:focus::-moz-placeholder",
-            "label[data-shrink=false] + .MuiInput-formControl-4 .MuiInput-input-7:focus::-ms-input-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-4 .MuiInput-input-7:focus::-ms-input-placeholder",
-            "label[data-shrink=false] + .MuiInput-formControl-4 .MuiInput-input-7:focus::-webkit-input-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-4 .MuiInput-input-7:focus::-webkit-input-placeholder",
-            "multiline": "MuiInput-multiline-12",
+            "inputSearch": "MuiInput-inputSearch-17",
+            "inputSingleline": "MuiInput-inputSingleline-15",
+            "multiline": "MuiInput-multiline-10",
             "root": "MuiInput-root-3",
-            "underline": "MuiInput-underline-11",
+            "underline": "MuiInput-underline-9",
           }
         }
         disableUnderline={false}
@@ -270,15 +240,17 @@ exports[`<TimeInput /> 24h matches the snapshot 1`] = `
         value="13:37"
       >
         <div
-          className="MuiInput-root-3 MuiInput-inkbar-5 MuiInput-underline-11"
+          className="MuiInput-root-3 MuiInput-inkbar-5 MuiInput-underline-9"
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
         >
           <input
+            aria-invalid={undefined}
+            aria-required={undefined}
             autoComplete={undefined}
             autoFocus={undefined}
-            className="MuiInput-input-7 MuiInput-inputSingleline-14"
+            className="MuiInput-input-12 MuiInput-inputSingleline-15"
             defaultValue={undefined}
             disabled={false}
             id={undefined}
@@ -295,8 +267,8 @@ exports[`<TimeInput /> 24h matches the snapshot 1`] = `
           />
         </div>
       </Input>
-    </withStyles(Input)>
-    <withStyles(Dialog)
+    </WithStyles(Input)>
+    <WithStyles(Dialog)
       key="TimeInput-dialog"
       maxWidth="xs"
       onRequestClose={[Function]}
@@ -305,7 +277,6 @@ exports[`<TimeInput /> 24h matches the snapshot 1`] = `
       <Dialog
         classes={
           Object {
-            ".MuiDialog-paper-19:focus": "MuiDialog-paper-19:focus",
             "fullScreen": "MuiDialog-fullScreen-24",
             "fullWidth": "MuiDialog-fullWidth-23",
             "paper": "MuiDialog-paper-19",
@@ -315,10 +286,10 @@ exports[`<TimeInput /> 24h matches the snapshot 1`] = `
             "root": "MuiDialog-root-18",
           }
         }
+        disableBackdropClick={false}
+        disableEscapeKeyDown={false}
         fullScreen={false}
         fullWidth={false}
-        ignoreBackdropClick={false}
-        ignoreEscapeKeyUp={false}
         maxWidth="xs"
         onRequestClose={[Function]}
         open={false}
@@ -330,28 +301,33 @@ exports[`<TimeInput /> 24h matches the snapshot 1`] = `
           }
         }
       >
-        <withStyles(Modal)
-          backdropTransitionDuration={
+        <WithStyles(Modal)
+          BackdropProps={
             Object {
-              "enter": 225,
-              "exit": 195,
+              "transitionDuration": Object {
+                "enter": 225,
+                "exit": 195,
+              },
             }
           }
           className="MuiDialog-root-18"
-          ignoreBackdropClick={false}
-          ignoreEscapeKeyUp={false}
+          disableBackdropClick={false}
+          disableEscapeKeyDown={false}
           onBackdropClick={undefined}
-          onEscapeKeyUp={undefined}
+          onClose={undefined}
+          onEscapeKeyDown={undefined}
           onRequestClose={[Function]}
-          show={false}
+          open={false}
+          role="dialog"
         >
           <Modal
-            backdropComponent={[Function]}
-            backdropInvisible={false}
-            backdropTransitionDuration={
+            BackdropComponent={[Function]}
+            BackdropProps={
               Object {
-                "enter": 225,
-                "exit": 195,
+                "transitionDuration": Object {
+                  "enter": 225,
+                  "exit": 195,
+                },
               }
             }
             className="MuiDialog-root-18"
@@ -361,25 +337,35 @@ exports[`<TimeInput /> 24h matches the snapshot 1`] = `
                 "root": "MuiModal-root-25",
               }
             }
-            disableBackdrop={false}
-            ignoreBackdropClick={false}
-            ignoreEscapeKeyUp={false}
+            disableAutoFocus={false}
+            disableBackdropClick={false}
+            disableEnforceFocus={false}
+            disableEscapeKeyDown={false}
+            disableRestoreFocus={false}
+            hideBackdrop={false}
             keepMounted={false}
-            modalManager={
-              Object {
+            manager={
+              ModalManager {
                 "add": [Function],
+                "containers": Array [],
+                "data": Array [],
+                "handleContainerOverflow": true,
+                "hideSiblingNodes": true,
                 "isTopModal": [Function],
+                "modals": Array [],
                 "remove": [Function],
               }
             }
             onBackdropClick={undefined}
-            onEscapeKeyUp={undefined}
+            onClose={undefined}
+            onEscapeKeyDown={undefined}
             onRequestClose={[Function]}
-            show={false}
+            open={false}
+            role="dialog"
           />
-        </withStyles(Modal)>
+        </WithStyles(Modal)>
       </Dialog>
-    </withStyles(Dialog)>
+    </WithStyles(Dialog)>
   </TimeInput>
-</withStyles(TimeInput)>
+</WithStyles(TimeInput)>
 `;

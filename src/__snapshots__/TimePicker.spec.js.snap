@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<TimePicker /> 12h matches the snapshot 1`] = `
-<withStyles(TimePicker)
+<WithStyles(TimePicker)
   mode="12h"
   value={2017-10-15T13:37:00.000Z}
 >
@@ -64,7 +64,7 @@ exports[`<TimePicker /> 12h matches the snapshot 1`] = `
       <div
         className="TimePicker-body-7"
       >
-        <withStyles(Clock)
+        <WithStyles(Clock)
           mode="12h"
           onChange={[Function]}
           onMouseUp={[Function]}
@@ -74,7 +74,6 @@ exports[`<TimePicker /> 12h matches the snapshot 1`] = `
           <Clock
             classes={
               Object {
-                ".Clock-number-10.selected": "Clock-number-10.selected",
                 "animatedPointer": "Clock-animatedPointer-13",
                 "circle": "Clock-circle-9",
                 "innerDot": "Clock-innerDot-15",
@@ -259,15 +258,15 @@ exports[`<TimePicker /> 12h matches the snapshot 1`] = `
               </div>
             </div>
           </Clock>
-        </withStyles(Clock)>
+        </WithStyles(Clock)>
       </div>
     </div>
   </TimePicker>
-</withStyles(TimePicker)>
+</WithStyles(TimePicker)>
 `;
 
 exports[`<TimePicker /> 24h matches the snapshot 1`] = `
-<withStyles(TimePicker)
+<WithStyles(TimePicker)
   mode="24h"
   value={2017-10-15T13:37:00.000Z}
 >
@@ -317,7 +316,7 @@ exports[`<TimePicker /> 24h matches the snapshot 1`] = `
       <div
         className="TimePicker-body-7"
       >
-        <withStyles(Clock)
+        <WithStyles(Clock)
           mode="24h"
           onChange={[Function]}
           onMouseUp={[Function]}
@@ -327,7 +326,6 @@ exports[`<TimePicker /> 24h matches the snapshot 1`] = `
           <Clock
             classes={
               Object {
-                ".Clock-number-10.selected": "Clock-number-10.selected",
                 "animatedPointer": "Clock-animatedPointer-13",
                 "circle": "Clock-circle-9",
                 "innerDot": "Clock-innerDot-15",
@@ -644,9 +642,9 @@ exports[`<TimePicker /> 24h matches the snapshot 1`] = `
               </div>
             </div>
           </Clock>
-        </withStyles(Clock)>
+        </WithStyles(Clock)>
       </div>
     </div>
   </TimePicker>
-</withStyles(TimePicker)>
+</WithStyles(TimePicker)>
 `;
