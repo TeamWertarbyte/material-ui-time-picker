@@ -34,7 +34,7 @@ const styles = (theme) => ({
     pointerEvents: 'none',
     userSelect: 'none',
     '&.selected': {
-      color: getContrastRatio(theme.palette.primary.main, theme.palette.common.fullBlack) < 7 ? theme.palette.common.fullWhite : theme.palette.common.fullBlack
+      color: getContrastRatio(theme.palette.primary.main, theme.palette.common.black) < 7 ? theme.palette.common.white : theme.palette.common.black
     }
   },
   smallNumber: {
@@ -78,7 +78,7 @@ const styles = (theme) => ({
     boxSizing: 'content-box'
   },
   outerDotOdd: {
-    background: getContrastRatio(theme.palette.primary.main, theme.palette.common.fullBlack) < 7 ? theme.palette.common.fullWhite : theme.palette.common.fullBlack,
+    background: getContrastRatio(theme.palette.primary.main, theme.palette.common.black) < 7 ? theme.palette.common.white : theme.palette.common.black,
     width: 4,
     height: 4,
     borderWidth: 14

@@ -14,7 +14,7 @@ const styles = (theme) => ({
   },
   header: {
     background: theme.palette.primary.main,
-    color: fade(getContrastRatio(theme.palette.primary.main, theme.palette.common.fullBlack) < 7 ? theme.palette.common.fullWhite : theme.palette.common.fullBlack, 0.54),
+    color: fade(getContrastRatio(theme.palette.primary.main, theme.palette.common.black) < 7 ? theme.palette.common.white : theme.palette.common.black, 0.54),
     padding: '20px 0',
     lineHeight: '58px',
     fontSize: '58px',
@@ -40,7 +40,7 @@ const styles = (theme) => ({
     fontWeight: 700
   },
   select: {
-    color: getContrastRatio(theme.palette.primary.main, theme.palette.common.fullBlack) < 7 ? theme.palette.common.fullWhite : theme.palette.common.fullBlack
+    color: getContrastRatio(theme.palette.primary.main, theme.palette.common.black) < 7 ? theme.palette.common.white : theme.palette.common.black
   },
   body: {
     padding: '24px 16px',
