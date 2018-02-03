@@ -17,7 +17,7 @@ const styles = (theme) => ({
     width: 256,
     height: 256,
     borderRadius: '50%',
-    background: theme.palette.background.contentFrame,
+    background: theme.palette.type === 'light' ? theme.palette.grey[200] : theme.palette.grey[900],
     color: theme.palette.text.primary,
     position: 'relative'
   },
