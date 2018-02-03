@@ -34,7 +34,7 @@ const styles = (theme) => ({
     pointerEvents: 'none',
     userSelect: 'none',
     '&.selected': {
-      color: getContrastRatio(theme.palette.primary[500], theme.palette.common.fullBlack) < 7 ? theme.palette.common.fullWhite : theme.palette.common.fullBlack
+      color: getContrastRatio(theme.palette.primary.main, theme.palette.common.fullBlack) < 7 ? theme.palette.common.fullWhite : theme.palette.common.fullBlack
     }
   },
   smallNumber: {
@@ -44,7 +44,7 @@ const styles = (theme) => ({
   pointer: {
     width: 'calc(50% - 20px)',
     height: 2,
-    backgroundColor: theme.palette.primary[500],
+    backgroundColor: theme.palette.primary.main,
     position: 'absolute',
     left: '50%',
     top: 'calc(50% - 1px)',
@@ -58,7 +58,7 @@ const styles = (theme) => ({
     width: 'calc(50% - 52px)'
   },
   innerDot: {
-    backgroundColor: theme.palette.primary[500],
+    backgroundColor: theme.palette.primary.main,
     position: 'absolute',
     top: -4 + 1,
     left: -4,
@@ -67,7 +67,7 @@ const styles = (theme) => ({
     borderRadius: '50%'
   },
   outerDot: {
-    border: `16px solid ${theme.palette.primary[500]}`,
+    border: `16px solid ${theme.palette.primary.main}`,
     borderWidth: 16,
     position: 'absolute',
     top: -16 + 1,
@@ -78,7 +78,7 @@ const styles = (theme) => ({
     boxSizing: 'content-box'
   },
   outerDotOdd: {
-    background: getContrastRatio(theme.palette.primary[500], theme.palette.common.fullBlack) < 7 ? theme.palette.common.fullWhite : theme.palette.common.fullBlack,
+    background: getContrastRatio(theme.palette.primary.main, theme.palette.common.fullBlack) < 7 ? theme.palette.common.fullWhite : theme.palette.common.fullBlack,
     width: 4,
     height: 4,
     borderWidth: 14
