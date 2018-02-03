@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { withStyles } from 'material-ui/styles'
 import { duration, easing } from 'material-ui/styles/transitions'
-import { getContrastRatio } from 'material-ui/styles/colorManipulator'
+import { getContrastRatio, fade } from 'material-ui/styles/colorManipulator'
 import classNames from 'classnames'
 import Clock from './Clock'
 import { formatHours, twoDigits } from './util'
@@ -14,7 +14,7 @@ const styles = (theme) => ({
   },
   header: {
     background: theme.palette.primary.main,
-    color: getContrastRatio(theme.palette.primary.main, theme.palette.common.fullBlack) < 7 ? theme.palette.common.fullWhite : theme.palette.common.fullBlack,
+    color: fade(getContrastRatio(theme.palette.primary.main, theme.palette.common.fullBlack) < 7 ? theme.palette.common.fullWhite : theme.palette.common.fullBlack, 0.54),
     padding: '20px 0',
     lineHeight: '58px',
     fontSize: '58px',
