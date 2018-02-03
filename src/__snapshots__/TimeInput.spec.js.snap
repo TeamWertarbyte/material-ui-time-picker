@@ -39,7 +39,7 @@ exports[`<TimeInput /> 12h matches the snapshot 1`] = `
             "inputDisabled": "MuiInput-inputDisabled-14",
             "inputMultiline": "MuiInput-inputMultiline-16",
             "inputSearch": "MuiInput-inputSearch-17",
-            "inputSingleline": "MuiInput-inputSingleline-15",
+            "inputType": "MuiInput-inputType-15",
             "multiline": "MuiInput-multiline-10",
             "root": "MuiInput-root-3",
             "underline": "MuiInput-underline-9",
@@ -65,7 +65,7 @@ exports[`<TimeInput /> 12h matches the snapshot 1`] = `
             aria-required={undefined}
             autoComplete={undefined}
             autoFocus={undefined}
-            className="MuiInput-input-12 MuiInput-inputSingleline-15"
+            className="MuiInput-input-12"
             defaultValue={undefined}
             disabled={false}
             id={undefined}
@@ -224,7 +224,7 @@ exports[`<TimeInput /> 24h matches the snapshot 1`] = `
             "inputDisabled": "MuiInput-inputDisabled-14",
             "inputMultiline": "MuiInput-inputMultiline-16",
             "inputSearch": "MuiInput-inputSearch-17",
-            "inputSingleline": "MuiInput-inputSingleline-15",
+            "inputType": "MuiInput-inputType-15",
             "multiline": "MuiInput-multiline-10",
             "root": "MuiInput-root-3",
             "underline": "MuiInput-underline-9",
@@ -250,7 +250,7 @@ exports[`<TimeInput /> 24h matches the snapshot 1`] = `
             aria-required={undefined}
             autoComplete={undefined}
             autoFocus={undefined}
-            className="MuiInput-input-12 MuiInput-inputSingleline-15"
+            className="MuiInput-input-12"
             defaultValue={undefined}
             disabled={false}
             id={undefined}
