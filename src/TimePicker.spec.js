@@ -170,6 +170,20 @@ describe('<TimePicker />', () => {
       expect(time.getHours()).toBe(0)
     })
 
+    it('does not switch from am to pm when changing the hours', () => {
+      const changeHandler = jest.fn()
+      let tree = mount(
+        <TimePicker mode='12h' value={new Date(2017, 10, 15, 1, 23, 0, 0)} onChange={changeHandler} />
+      )
+
+      getClock(tree).findWhere((e) => e.type() === 'div' && testUtils.hasClass(/^Clock-circle/)(e))
+      .simulate('click', testUtils.stubClickEvent(250, 128 + 30)) // click on 3
+
+      expect(changeHandler).toHaveBeenCalled()
+      const time = changeHandler.mock.calls[0][0]
+      expect(time.getHours()).toBe(3)
+    })
+
     it('does not switch from pm to am when selecting 12 hours', () => {
       const changeHandler = jest.fn()
       let tree = mount(
@@ -182,6 +196,20 @@ describe('<TimePicker />', () => {
       expect(changeHandler).toHaveBeenCalled()
       const time = changeHandler.mock.calls[0][0]
       expect(time.getHours()).toBe(12)
+    })
+
+    it('does not switch from pm to am when changing the hours', () => {
+      const changeHandler = jest.fn()
+      let tree = mount(
+        <TimePicker mode='12h' value={new Date(2017, 10, 15, 13, 37, 0, 0)} onChange={changeHandler} />
+      )
+
+      getClock(tree).findWhere((e) => e.type() === 'div' && testUtils.hasClass(/^Clock-circle/)(e))
+      .simulate('click', testUtils.stubClickEvent(250, 128 + 30)) // click on 3
+
+      expect(changeHandler).toHaveBeenCalled()
+      const time = changeHandler.mock.calls[0][0]
+      expect(time.getHours()).toBe(15)
     })
   })
 

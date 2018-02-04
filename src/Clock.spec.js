@@ -1,6 +1,7 @@
 /* eslint-env jest */
 import React from 'react'
 import { mount } from 'enzyme'
+import { unwrap } from 'material-ui/test-utils'
 import * as testUtils from '../test/utils'
 import Clock from './Clock'
 
@@ -21,10 +22,28 @@ describe('<Clock />', () => {
     expect(onChangeCallback).toHaveBeenCalledWith(17)
   })
 
+  it('handles dragging with the mouse', () => {
+    const onChangeCallback = jest.fn()
+    const tree = mount(<Clock mode='24h' value={12} onChange={onChangeCallback} />)
+    getCircle(tree).simulate('mousemove', { buttons: 1, clientX: 175, clientY: 200 }) // drag the hand to 17
+    expect(onChangeCallback).toHaveBeenCalledWith(17)
+  })
+
+  it('handles dragging with the mouse in Safari (where MouseEvent.buttons is not supported)', () => {
+    const onChangeCallback = jest.fn()
+    const tree = mount(<Clock mode='24h' value={12} onChange={onChangeCallback} />)
+    getCircle(tree).simulate('mousemove', { which: 1, clientX: 175, clientY: 200 }) // drag the hand to 17
+    expect(onChangeCallback).toHaveBeenCalledWith(17)
+  })
+
   it('handles taps', () => {
     const onChangeCallback = jest.fn()
     const tree = mount(<Clock mode='24h' value={12} onChange={onChangeCallback} />)
-    getCircle(tree).simulate('touchend', testUtils.stubTouchEndEvent(175, 200)) // click on 17
+    getCircle(tree).simulate('touchend', testUtils.stubTouchEndEvent(175, 200)) // tap on 17
+    expect(onChangeCallback).toHaveBeenCalledWith(17)
+
+    onChangeCallback.mockClear()
+    getCircle(tree).simulate('touchmove', testUtils.stubTouchMoveEvent(175, 200)) // swipe over 17
     expect(onChangeCallback).toHaveBeenCalledWith(17)
   })
 
@@ -34,6 +53,26 @@ describe('<Clock />', () => {
     expect(getPointer(tree).getDOMNode().style.transform).toBe('rotate(-60deg)')
     tree.setProps({ value: 55 })
     expect(getPointer(tree).getDOMNode().style.transform).toBe('rotate(-120deg)')
+  })
+
+  it('disables the hand animation when moving the hand manually via touch', () => {
+    const UnstyledClock = unwrap(Clock)
+    const onChangeCallback = jest.fn()
+    const tree = mount(<UnstyledClock classes={{}} mode='24h' value={12} onChange={onChangeCallback} />)
+    getCircle(tree).simulate('touchstart')
+    expect(tree.state().touching).toBe(true)
+    getCircle(tree).simulate('touchend', testUtils.stubTouchEndEvent(175, 200))
+    expect(tree.state().touching).toBe(false)
+  })
+
+  it('disables the hand animation when moving the hand manually via mouse', () => {
+    const UnstyledClock = unwrap(Clock)
+    const onChangeCallback = jest.fn()
+    const tree = mount(<UnstyledClock classes={{}} mode='24h' value={12} onChange={onChangeCallback} />)
+    getCircle(tree).simulate('mousedown')
+    expect(tree.state().touching).toBe(true)
+    getCircle(tree).simulate('mouseup')
+    expect(tree.state().touching).toBe(false)
   })
 
   describe('24h', () => {
@@ -80,13 +119,21 @@ describe('<Clock />', () => {
 
     it('calls onChange when a different value is selected', () => {
       const onChangeCallback = jest.fn()
-      const tree = mount(<Clock mode='24h' value={12} onChange={onChangeCallback} />)
+      const tree = mount(<Clock mode='24h' value={11} onChange={onChangeCallback} />)
       getCircle(tree).simulate('click', testUtils.stubClickEvent(175, 200)) // click on 17
       expect(onChangeCallback).toHaveBeenCalledWith(17)
 
       onChangeCallback.mockClear()
       getCircle(tree).simulate('click', testUtils.stubClickEvent(35, 70)) // click on 10
       expect(onChangeCallback).toHaveBeenCalledWith(10)
+
+      onChangeCallback.mockClear()
+      getCircle(tree).simulate('click', testUtils.stubClickEvent(128 + 5, 30)) // click on 12, but a little more right
+      expect(onChangeCallback).toHaveBeenCalledWith(12)
+
+      onChangeCallback.mockClear()
+      getCircle(tree).simulate('click', testUtils.stubClickEvent(128 + 5, 64)) // click on 0, but a little more right
+      expect(onChangeCallback).toHaveBeenCalledWith(0)
     })
   })
 
@@ -179,6 +226,11 @@ describe('<Clock />', () => {
       const tree = mount(<Clock mode='minutes' value={12} onChange={onChangeCallback} />)
       getCircle(tree).simulate('click', testUtils.stubClickEvent(190, 230)) // click on 25
       expect(onChangeCallback).toHaveBeenCalledWith(25)
+
+      // ensure that 0 is treated as 0 and not 60
+      onChangeCallback.mockClear()
+      getCircle(tree).simulate('click', testUtils.stubClickEvent(128, 30)) // click on 0
+      expect(onChangeCallback).toHaveBeenCalledWith(0)
     })
 
     it('highlights the selected minute', () => {
@@ -204,5 +256,5 @@ function getPointer (clock) {
 }
 
 function getCircle (clock) {
-  return clock.findWhere((e) => e.type() === 'div' && e.getDOMNode().className.indexOf('Clock-circle') === 0)
+  return clock.childAt(0).children('div').childAt(0)
 }
