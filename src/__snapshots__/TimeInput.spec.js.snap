@@ -86,7 +86,7 @@ exports[`<TimeInput /> 12h matches the snapshot 1`] = `
     <WithStyles(Dialog)
       key="TimeInput-dialog"
       maxWidth="xs"
-      onRequestClose={[Function]}
+      onClose={[Function]}
       open={false}
     >
       <Dialog
@@ -106,7 +106,7 @@ exports[`<TimeInput /> 12h matches the snapshot 1`] = `
         fullScreen={false}
         fullWidth={false}
         maxWidth="xs"
-        onRequestClose={[Function]}
+        onClose={[Function]}
         open={false}
         transition={[Function]}
         transitionDuration={
@@ -129,9 +129,8 @@ exports[`<TimeInput /> 12h matches the snapshot 1`] = `
           disableBackdropClick={false}
           disableEscapeKeyDown={false}
           onBackdropClick={undefined}
-          onClose={undefined}
+          onClose={[Function]}
           onEscapeKeyDown={undefined}
-          onRequestClose={[Function]}
           open={false}
           role="dialog"
         >
@@ -172,9 +171,8 @@ exports[`<TimeInput /> 12h matches the snapshot 1`] = `
               }
             }
             onBackdropClick={undefined}
-            onClose={undefined}
+            onClose={[Function]}
             onEscapeKeyDown={undefined}
-            onRequestClose={[Function]}
             open={false}
             role="dialog"
           />
@@ -271,7 +269,7 @@ exports[`<TimeInput /> 24h matches the snapshot 1`] = `
     <WithStyles(Dialog)
       key="TimeInput-dialog"
       maxWidth="xs"
-      onRequestClose={[Function]}
+      onClose={[Function]}
       open={false}
     >
       <Dialog
@@ -291,7 +289,7 @@ exports[`<TimeInput /> 24h matches the snapshot 1`] = `
         fullScreen={false}
         fullWidth={false}
         maxWidth="xs"
-        onRequestClose={[Function]}
+        onClose={[Function]}
         open={false}
         transition={[Function]}
         transitionDuration={
@@ -314,9 +312,8 @@ exports[`<TimeInput /> 24h matches the snapshot 1`] = `
           disableBackdropClick={false}
           disableEscapeKeyDown={false}
           onBackdropClick={undefined}
-          onClose={undefined}
+          onClose={[Function]}
           onEscapeKeyDown={undefined}
-          onRequestClose={[Function]}
           open={false}
           role="dialog"
         >
@@ -357,9 +354,8 @@ exports[`<TimeInput /> 24h matches the snapshot 1`] = `
               }
             }
             onBackdropClick={undefined}
-            onClose={undefined}
+            onClose={[Function]}
             onEscapeKeyDown={undefined}
-            onRequestClose={[Function]}
             open={false}
             role="dialog"
           />

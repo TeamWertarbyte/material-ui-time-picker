@@ -84,7 +84,7 @@ class TimeInput extends React.Component {
         maxWidth='xs'
         open={this.state.open}
         key='TimeInput-dialog'
-        onRequestClose={this.handleCancel}
+        onClose={this.handleCancel}
       >
         <TimePicker
           mode={mode}
