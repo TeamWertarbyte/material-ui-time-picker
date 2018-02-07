@@ -2,7 +2,11 @@
 import React from 'react'
 import { mount } from 'enzyme'
 import MockDate from 'mockdate'
+import { unwrap } from 'material-ui/test-utils'
+import Button from 'material-ui/Button'
 import TimeInput from './TimeInput'
+import Clock from './Clock'
+import * as testUtils from '../test/utils'
 
 describe('<TimeInput />', () => {
   describe('24h', () => {
@@ -72,23 +76,60 @@ describe('<TimeInput />', () => {
     })
   })
 
-  // TODO enzyme doesn't support portals yet, add more tests one they work
-  // https://github.com/airbnb/enzyme/issues/1150
-  //
-  // describe('TimePicker dialog', () => {
-  //   it('closes when clicking ok', () => {
-  //     const tree = mount(<TimeInput />)
-  //     tree.simulate('click')
-  //     tree.findWhere((e) => e.getDOMNode() != null && e.text() === 'Ok').simulate('click')
-  //   })
-  //
-  //   it('closes when clicking cancel', () => {
-  //     const tree = mount(<TimeInput />)
-  //     tree.findWhere((e) => e.getDOMNode() != null && e.text() === 'Cancel').simulate('click')
-  //   })
-  // })
+  describe('TimePicker dialog', () => {
+    it('closes when clicking ok', () => {
+      const UnstyledTimeInput = unwrap(TimeInput)
+      const tree = mount(<UnstyledTimeInput classes={{}} />)
+      tree.simulate('click')
+      tree.find(Button).at(1).simulate('click')
+      expect(tree.state('open')).toBe(false)
+    })
+
+    it('updates uses the new time when clicking ok', () => {
+      const changeHandler = jest.fn()
+      MockDate.set(new Date(2017, 10, 15, 13, 37, 0, 0))
+      const tree = mount(<TimeInput classes={{}} mode='24h' onChange={changeHandler} />)
+
+      tree.simulate('click')
+      getCircle(tree.find(Clock))
+        .simulate('click', testUtils.stubClickEvent(128, 30)) // click on 12
+        .simulate('mouseup', testUtils.stubClickEvent(128, 30)) // click on 12
+      tree.find(Button).at(1).simulate('click')
+
+      expect(getValue(tree)).toBe('12:37')
+      expect(changeHandler).toHaveBeenCalled()
+      const time = changeHandler.mock.calls[0][0]
+      expect(time.getHours()).toBe(12)
+      expect(time.getMinutes()).toBe(37)
+    })
+
+    it('closes when clicking cancel', () => {
+      const tree = mount(<TimeInput />)
+      tree.simulate('click')
+      tree.find(Button).at(0).simulate('click')
+    })
+
+    it('discards the new time when clicking cancel', () => {
+      const changeHandler = jest.fn()
+      MockDate.set(new Date(2017, 10, 15, 13, 37, 0, 0))
+      const tree = mount(<TimeInput classes={{}} mode='24h' onChange={changeHandler} />)
+
+      tree.simulate('click')
+      getCircle(tree.find(Clock))
+        .simulate('click', testUtils.stubClickEvent(128, 30)) // click on 12
+        .simulate('mouseup', testUtils.stubClickEvent(128, 30)) // click on 12
+      tree.find(Button).at(0).simulate('click')
+
+      expect(getValue(tree)).toBe('13:37') // unchanged
+      expect(changeHandler).not.toHaveBeenCalled()
+    })
+  })
 })
 
 function getValue (timeInput) {
   return timeInput.find('input[type="text"]').getDOMNode().value
+}
+
+function getCircle (clock) {
+  return clock.childAt(0).children('div').childAt(0)
 }
