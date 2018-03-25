@@ -53,7 +53,7 @@ class TimeInput extends React.Component {
       cancelLabel,
       classes,
       defaultValue, // eslint-disable-line
-      disabledProp,
+      disabled: disabledProp,
       mode,
       okLabel,
       onChange, // eslint-disable-line

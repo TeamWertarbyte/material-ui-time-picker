@@ -4,6 +4,7 @@ import { mount } from 'enzyme'
 import MockDate from 'mockdate'
 import { unwrap } from 'material-ui/test-utils'
 import Button from 'material-ui/Button'
+import Input from 'material-ui/Input'
 import TimeInput from './TimeInput'
 import Clock from './Clock'
 import * as testUtils from '../test/utils'
@@ -24,6 +25,11 @@ describe('<TimeInput />', () => {
 
       const tree2 = mount(<TimeInput value={new Date(2017, 10, 15, 1, 23, 0, 0)} mode='24h' />)
       expect(getValue(tree2)).toBe('01:23')
+    })
+
+    it('disables the input if the disabled prop is set to true', () => {
+      const tree = mount(<TimeInput value={new Date(2017, 10, 15, 13, 37, 0, 0)} mode='24h' disabled />)
+      expect(tree.find(Input).prop('disabled')).toBe(true)
     })
   })
 
@@ -77,6 +83,20 @@ describe('<TimeInput />', () => {
   })
 
   describe('TimePicker dialog', () => {
+    it('opens when clicking the input', () => {
+      const UnstyledTimeInput = unwrap(TimeInput)
+      const tree = mount(<UnstyledTimeInput classes={{}} />)
+      tree.simulate('click')
+      expect(tree.state('open')).toBe(true)
+    })
+
+    it('opens when clicking the input if it is disabled', () => {
+      const UnstyledTimeInput = unwrap(TimeInput)
+      const tree = mount(<UnstyledTimeInput classes={{}} disabled />)
+      tree.simulate('click')
+      expect(tree.state('open')).toBe(false)
+    })
+
     it('closes when clicking ok', () => {
       const UnstyledTimeInput = unwrap(TimeInput)
       const tree = mount(<UnstyledTimeInput classes={{}} />)
