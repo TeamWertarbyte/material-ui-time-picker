@@ -1,6 +1,6 @@
 {
   "name": "material-ui-time-picker",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "A time picker for material-ui 1.0-beta.",
   "main": "lib/index.js",
   "files": [
