@@ -103,6 +103,7 @@ class Clock extends React.PureComponent {
   enableAnimatedPointer = () => this.setState({ touching: false })
 
   handleTouchMove = (e) => {
+    e.preventDefault() // prevent scrolling behind the clock on iOS
     const rect = e.target.getBoundingClientRect()
     this.movePointer(e.changedTouches[0].clientX - rect.left, e.changedTouches[0].clientY - rect.top)
   }
