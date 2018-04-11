@@ -75,6 +75,16 @@ describe('<Clock />', () => {
     expect(tree.state().touching).toBe(false)
   })
 
+  it('calls preventDefault on touchmove events to prevent scrolling through the clock on Safari', () => {
+    const tree = mount(<Clock mode='minutes' value={0} />)
+    const preventDefault = jest.fn()
+    getCircle(tree).simulate('touchmove', {
+      preventDefault,
+      changedTouches: [{ clientX: 0, clientY: 0 }]
+    })
+    expect(preventDefault).toBeCalled()
+  })
+
   describe('24h', () => {
     it('matches the snapshot', () => {
       const tree = mount(
