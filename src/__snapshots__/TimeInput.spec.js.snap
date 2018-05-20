@@ -57,24 +57,12 @@ exports[`<TimeInput /> 12h matches the snapshot 1`] = `
           onClick={[Function]}
         >
           <input
-            aria-invalid={undefined}
-            aria-required={undefined}
-            autoComplete={undefined}
-            autoFocus={undefined}
             className="MuiInput-input-11"
-            defaultValue={undefined}
             disabled={false}
-            id={undefined}
-            name={undefined}
             onBlur={[Function]}
             onChange={[Function]}
             onFocus={[Function]}
-            onKeyDown={undefined}
-            onKeyUp={undefined}
-            placeholder={undefined}
             readOnly={true}
-            required={undefined}
-            rows={undefined}
             type="text"
             value="1:37 pm"
           />
@@ -126,9 +114,7 @@ exports[`<TimeInput /> 12h matches the snapshot 1`] = `
           className="MuiDialog-root-16"
           disableBackdropClick={false}
           disableEscapeKeyDown={false}
-          onBackdropClick={undefined}
           onClose={[Function]}
-          onEscapeKeyDown={undefined}
           open={false}
           role="dialog"
         >
@@ -165,9 +151,7 @@ exports[`<TimeInput /> 12h matches the snapshot 1`] = `
                 "modals": Array [],
               }
             }
-            onBackdropClick={undefined}
             onClose={[Function]}
-            onEscapeKeyDown={undefined}
             open={false}
             role="dialog"
           />
@@ -235,24 +219,12 @@ exports[`<TimeInput /> 24h matches the snapshot 1`] = `
           onClick={[Function]}
         >
           <input
-            aria-invalid={undefined}
-            aria-required={undefined}
-            autoComplete={undefined}
-            autoFocus={undefined}
             className="MuiInput-input-11"
-            defaultValue={undefined}
             disabled={false}
-            id={undefined}
-            name={undefined}
             onBlur={[Function]}
             onChange={[Function]}
             onFocus={[Function]}
-            onKeyDown={undefined}
-            onKeyUp={undefined}
-            placeholder={undefined}
             readOnly={true}
-            required={undefined}
-            rows={undefined}
             type="text"
             value="13:37"
           />
@@ -304,9 +276,7 @@ exports[`<TimeInput /> 24h matches the snapshot 1`] = `
           className="MuiDialog-root-16"
           disableBackdropClick={false}
           disableEscapeKeyDown={false}
-          onBackdropClick={undefined}
           onClose={[Function]}
-          onEscapeKeyDown={undefined}
           open={false}
           role="dialog"
         >
@@ -343,9 +313,7 @@ exports[`<TimeInput /> 24h matches the snapshot 1`] = `
                 "modals": Array [],
               }
             }
-            onBackdropClick={undefined}
             onClose={[Function]}
-            onEscapeKeyDown={undefined}
             open={false}
             role="dialog"
           />
