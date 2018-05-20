@@ -51,6 +51,6 @@ Note: `TimeInput` behaves like Material-UI's `Input` component and can be used i
 The files included in this repository are licensed under the MIT license.
 
 [time-picker-spec]: https://material.io/guidelines/components/pickers.html#pickers-time-pickers
-[material-ui]: https://material-ui-next.com/
-[legacy-time-picker]: http://www.material-ui.com/#/components/time-picker
+[material-ui]: https://material-ui.com/
+[legacy-time-picker]: http://v0.material-ui.com/#/components/time-picker
 [styleguide]: https://teamwertarbyte.github.io/material-ui-time-picker
