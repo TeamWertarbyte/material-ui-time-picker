@@ -1,5 +1,6 @@
 ```jsx
-const { Button, Dialog, DialogActions } = require('material-ui');
+const { Button, Dialog, DialogActions } = require('@material-ui/core');
+initialState = { open: false };
 
 <div>
   <Button

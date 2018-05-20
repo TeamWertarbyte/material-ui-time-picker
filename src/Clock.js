@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { withStyles } from 'material-ui/styles'
-import { getContrastRatio } from 'material-ui/styles/colorManipulator'
-import { duration, easing } from 'material-ui/styles/transitions'
+import { withStyles } from '@material-ui/core/styles'
+import { getContrastRatio } from '@material-ui/core/styles/colorManipulator'
+import { duration, easing } from '@material-ui/core/styles/transitions'
 import classNames from 'classnames'
 import { getShortestAngle } from './util'
 

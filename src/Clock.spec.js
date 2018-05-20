@@ -1,7 +1,7 @@
 /* eslint-env jest */
 import React from 'react'
 import { mount } from 'enzyme'
-import { unwrap } from 'material-ui/test-utils'
+import { unwrap } from '@material-ui/core/test-utils'
 import * as testUtils from '../test/utils'
 import Clock from './Clock'
 

@@ -28,21 +28,19 @@ exports[`<TimeInput /> 12h matches the snapshot 1`] = `
       <Input
         classes={
           Object {
-            "disabled": "MuiInput-disabled-8",
-            "error": "MuiInput-error-6",
-            "focused": "MuiInput-focused-7",
+            "disabled": "MuiInput-disabled-6",
+            "error": "MuiInput-error-8",
+            "focused": "MuiInput-focused-5",
             "formControl": "MuiInput-formControl-4",
-            "fullWidth": "MuiInput-fullWidth-11",
-            "inkbar": "MuiInput-inkbar-5",
-            "input": "MuiInput-input-12",
-            "inputDense": "MuiInput-inputDense-13",
-            "inputDisabled": "MuiInput-inputDisabled-14",
-            "inputMultiline": "MuiInput-inputMultiline-16",
-            "inputSearch": "MuiInput-inputSearch-17",
-            "inputType": "MuiInput-inputType-15",
-            "multiline": "MuiInput-multiline-10",
+            "fullWidth": "MuiInput-fullWidth-10",
+            "input": "MuiInput-input-11",
+            "inputMarginDense": "MuiInput-inputMarginDense-12",
+            "inputMultiline": "MuiInput-inputMultiline-13",
+            "inputType": "MuiInput-inputType-14",
+            "inputTypeSearch": "MuiInput-inputTypeSearch-15",
+            "multiline": "MuiInput-multiline-9",
             "root": "MuiInput-root-3",
-            "underline": "MuiInput-underline-9",
+            "underline": "MuiInput-underline-7",
           }
         }
         disableUnderline={false}
@@ -55,22 +53,22 @@ exports[`<TimeInput /> 12h matches the snapshot 1`] = `
         value="1:37 pm"
       >
         <div
-          className="MuiInput-root-3 MuiInput-inkbar-5 MuiInput-underline-9"
-          onBlur={[Function]}
+          className="MuiInput-root-3 MuiInput-underline-7"
           onClick={[Function]}
-          onFocus={[Function]}
         >
           <input
             aria-invalid={undefined}
             aria-required={undefined}
             autoComplete={undefined}
             autoFocus={undefined}
-            className="MuiInput-input-12"
+            className="MuiInput-input-11"
             defaultValue={undefined}
             disabled={false}
             id={undefined}
             name={undefined}
+            onBlur={[Function]}
             onChange={[Function]}
+            onFocus={[Function]}
             onKeyDown={undefined}
             onKeyUp={undefined}
             placeholder={undefined}
@@ -90,15 +88,16 @@ exports[`<TimeInput /> 12h matches the snapshot 1`] = `
       open={false}
     >
       <Dialog
+        TransitionComponent={[Function]}
         classes={
           Object {
-            "fullScreen": "MuiDialog-fullScreen-24",
-            "fullWidth": "MuiDialog-fullWidth-23",
-            "paper": "MuiDialog-paper-19",
-            "paperWidthMd": "MuiDialog-paperWidthMd-22",
-            "paperWidthSm": "MuiDialog-paperWidthSm-21",
-            "paperWidthXs": "MuiDialog-paperWidthXs-20",
-            "root": "MuiDialog-root-18",
+            "paper": "MuiDialog-paper-17",
+            "paperFullScreen": "MuiDialog-paperFullScreen-22",
+            "paperFullWidth": "MuiDialog-paperFullWidth-21",
+            "paperWidthMd": "MuiDialog-paperWidthMd-20",
+            "paperWidthSm": "MuiDialog-paperWidthSm-19",
+            "paperWidthXs": "MuiDialog-paperWidthXs-18",
+            "root": "MuiDialog-root-16",
           }
         }
         disableBackdropClick={false}
@@ -108,7 +107,6 @@ exports[`<TimeInput /> 12h matches the snapshot 1`] = `
         maxWidth="xs"
         onClose={[Function]}
         open={false}
-        transition={[Function]}
         transitionDuration={
           Object {
             "enter": 225,
@@ -125,7 +123,7 @@ exports[`<TimeInput /> 12h matches the snapshot 1`] = `
               },
             }
           }
-          className="MuiDialog-root-18"
+          className="MuiDialog-root-16"
           disableBackdropClick={false}
           disableEscapeKeyDown={false}
           onBackdropClick={undefined}
@@ -144,11 +142,11 @@ exports[`<TimeInput /> 12h matches the snapshot 1`] = `
                 },
               }
             }
-            className="MuiDialog-root-18"
+            className="MuiDialog-root-16"
             classes={
               Object {
-                "hidden": "MuiModal-hidden-26",
-                "root": "MuiModal-root-25",
+                "hidden": "MuiModal-hidden-24",
+                "root": "MuiModal-root-23",
               }
             }
             disableAutoFocus={false}
@@ -160,14 +158,11 @@ exports[`<TimeInput /> 12h matches the snapshot 1`] = `
             keepMounted={false}
             manager={
               ModalManager {
-                "add": [Function],
                 "containers": Array [],
                 "data": Array [],
                 "handleContainerOverflow": true,
                 "hideSiblingNodes": true,
-                "isTopModal": [Function],
                 "modals": Array [],
-                "remove": [Function],
               }
             }
             onBackdropClick={undefined}
@@ -211,21 +206,19 @@ exports[`<TimeInput /> 24h matches the snapshot 1`] = `
       <Input
         classes={
           Object {
-            "disabled": "MuiInput-disabled-8",
-            "error": "MuiInput-error-6",
-            "focused": "MuiInput-focused-7",
+            "disabled": "MuiInput-disabled-6",
+            "error": "MuiInput-error-8",
+            "focused": "MuiInput-focused-5",
             "formControl": "MuiInput-formControl-4",
-            "fullWidth": "MuiInput-fullWidth-11",
-            "inkbar": "MuiInput-inkbar-5",
-            "input": "MuiInput-input-12",
-            "inputDense": "MuiInput-inputDense-13",
-            "inputDisabled": "MuiInput-inputDisabled-14",
-            "inputMultiline": "MuiInput-inputMultiline-16",
-            "inputSearch": "MuiInput-inputSearch-17",
-            "inputType": "MuiInput-inputType-15",
-            "multiline": "MuiInput-multiline-10",
+            "fullWidth": "MuiInput-fullWidth-10",
+            "input": "MuiInput-input-11",
+            "inputMarginDense": "MuiInput-inputMarginDense-12",
+            "inputMultiline": "MuiInput-inputMultiline-13",
+            "inputType": "MuiInput-inputType-14",
+            "inputTypeSearch": "MuiInput-inputTypeSearch-15",
+            "multiline": "MuiInput-multiline-9",
             "root": "MuiInput-root-3",
-            "underline": "MuiInput-underline-9",
+            "underline": "MuiInput-underline-7",
           }
         }
         disableUnderline={false}
@@ -238,22 +231,22 @@ exports[`<TimeInput /> 24h matches the snapshot 1`] = `
         value="13:37"
       >
         <div
-          className="MuiInput-root-3 MuiInput-inkbar-5 MuiInput-underline-9"
-          onBlur={[Function]}
+          className="MuiInput-root-3 MuiInput-underline-7"
           onClick={[Function]}
-          onFocus={[Function]}
         >
           <input
             aria-invalid={undefined}
             aria-required={undefined}
             autoComplete={undefined}
             autoFocus={undefined}
-            className="MuiInput-input-12"
+            className="MuiInput-input-11"
             defaultValue={undefined}
             disabled={false}
             id={undefined}
             name={undefined}
+            onBlur={[Function]}
             onChange={[Function]}
+            onFocus={[Function]}
             onKeyDown={undefined}
             onKeyUp={undefined}
             placeholder={undefined}
@@ -273,15 +266,16 @@ exports[`<TimeInput /> 24h matches the snapshot 1`] = `
       open={false}
     >
       <Dialog
+        TransitionComponent={[Function]}
         classes={
           Object {
-            "fullScreen": "MuiDialog-fullScreen-24",
-            "fullWidth": "MuiDialog-fullWidth-23",
-            "paper": "MuiDialog-paper-19",
-            "paperWidthMd": "MuiDialog-paperWidthMd-22",
-            "paperWidthSm": "MuiDialog-paperWidthSm-21",
-            "paperWidthXs": "MuiDialog-paperWidthXs-20",
-            "root": "MuiDialog-root-18",
+            "paper": "MuiDialog-paper-17",
+            "paperFullScreen": "MuiDialog-paperFullScreen-22",
+            "paperFullWidth": "MuiDialog-paperFullWidth-21",
+            "paperWidthMd": "MuiDialog-paperWidthMd-20",
+            "paperWidthSm": "MuiDialog-paperWidthSm-19",
+            "paperWidthXs": "MuiDialog-paperWidthXs-18",
+            "root": "MuiDialog-root-16",
           }
         }
         disableBackdropClick={false}
@@ -291,7 +285,6 @@ exports[`<TimeInput /> 24h matches the snapshot 1`] = `
         maxWidth="xs"
         onClose={[Function]}
         open={false}
-        transition={[Function]}
         transitionDuration={
           Object {
             "enter": 225,
@@ -308,7 +301,7 @@ exports[`<TimeInput /> 24h matches the snapshot 1`] = `
               },
             }
           }
-          className="MuiDialog-root-18"
+          className="MuiDialog-root-16"
           disableBackdropClick={false}
           disableEscapeKeyDown={false}
           onBackdropClick={undefined}
@@ -327,11 +320,11 @@ exports[`<TimeInput /> 24h matches the snapshot 1`] = `
                 },
               }
             }
-            className="MuiDialog-root-18"
+            className="MuiDialog-root-16"
             classes={
               Object {
-                "hidden": "MuiModal-hidden-26",
-                "root": "MuiModal-root-25",
+                "hidden": "MuiModal-hidden-24",
+                "root": "MuiModal-root-23",
               }
             }
             disableAutoFocus={false}
@@ -343,14 +336,11 @@ exports[`<TimeInput /> 24h matches the snapshot 1`] = `
             keepMounted={false}
             manager={
               ModalManager {
-                "add": [Function],
                 "containers": Array [],
                 "data": Array [],
                 "handleContainerOverflow": true,
                 "hideSiblingNodes": true,
-                "isTopModal": [Function],
                 "modals": Array [],
-                "remove": [Function],
               }
             }
             onBackdropClick={undefined}
