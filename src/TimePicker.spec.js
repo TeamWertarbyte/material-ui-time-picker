@@ -75,8 +75,8 @@ describe('<TimePicker />', () => {
       // minute selection
       changeHandler.mockClear()
       getClock(tree).findWhere((e) => e.type() === 'div' && testUtils.hasClass(/^Clock-circle/)(e))
-      .simulate('click', testUtils.stubClickEvent(190, 230)) // click on 25
-      .simulate('mouseup', testUtils.stubClickEvent(190, 230)) // click on 25
+        .simulate('click', testUtils.stubClickEvent(190, 230)) // click on 25
+        .simulate('mouseup', testUtils.stubClickEvent(190, 230)) // click on 25
 
       expect(changeHandler).toBeCalled()
       expect(changeHandler.mock.calls[0][0].getHours()).toBe(12)
@@ -90,13 +90,13 @@ describe('<TimePicker />', () => {
         <TimePicker mode='12h' onMinutesSelected={onMinutesSelected} />
       )
       getClock(tree).findWhere((e) => e.type() === 'div' && testUtils.hasClass(/^Clock-circle/)(e))
-      .simulate('click', testUtils.stubClickEvent(128, 30)) // click on 12
-      .simulate('mouseup', testUtils.stubClickEvent(128, 30)) // click on 12
+        .simulate('click', testUtils.stubClickEvent(128, 30)) // click on 12
+        .simulate('mouseup', testUtils.stubClickEvent(128, 30)) // click on 12
       jest.runAllTimers()
       tree.update()
       getClock(tree).findWhere((e) => e.type() === 'div' && testUtils.hasClass(/^Clock-circle/)(e))
-      .simulate('click', testUtils.stubClickEvent(190, 230)) // click on 25
-      .simulate('mouseup', testUtils.stubClickEvent(190, 230)) // click on 25
+        .simulate('click', testUtils.stubClickEvent(190, 230)) // click on 25
+        .simulate('mouseup', testUtils.stubClickEvent(190, 230)) // click on 25
       jest.runAllTimers()
 
       expect(onMinutesSelected).toHaveBeenCalledTimes(1)
@@ -163,7 +163,7 @@ describe('<TimePicker />', () => {
       )
 
       getClock(tree).findWhere((e) => e.type() === 'div' && testUtils.hasClass(/^Clock-circle/)(e))
-      .simulate('click', testUtils.stubClickEvent(128, 30)) // click on 12
+        .simulate('click', testUtils.stubClickEvent(128, 30)) // click on 12
 
       expect(changeHandler).toHaveBeenCalled()
       const time = changeHandler.mock.calls[0][0]
@@ -177,7 +177,7 @@ describe('<TimePicker />', () => {
       )
 
       getClock(tree).findWhere((e) => e.type() === 'div' && testUtils.hasClass(/^Clock-circle/)(e))
-      .simulate('click', testUtils.stubClickEvent(250, 128 + 30)) // click on 3
+        .simulate('click', testUtils.stubClickEvent(250, 128 + 30)) // click on 3
 
       expect(changeHandler).toHaveBeenCalled()
       const time = changeHandler.mock.calls[0][0]
@@ -191,7 +191,7 @@ describe('<TimePicker />', () => {
       )
 
       getClock(tree).findWhere((e) => e.type() === 'div' && testUtils.hasClass(/^Clock-circle/)(e))
-      .simulate('click', testUtils.stubClickEvent(128, 30)) // click on 12
+        .simulate('click', testUtils.stubClickEvent(128, 30)) // click on 12
 
       expect(changeHandler).toHaveBeenCalled()
       const time = changeHandler.mock.calls[0][0]
@@ -205,7 +205,7 @@ describe('<TimePicker />', () => {
       )
 
       getClock(tree).findWhere((e) => e.type() === 'div' && testUtils.hasClass(/^Clock-circle/)(e))
-      .simulate('click', testUtils.stubClickEvent(250, 128 + 30)) // click on 3
+        .simulate('click', testUtils.stubClickEvent(250, 128 + 30)) // click on 3
 
       expect(changeHandler).toHaveBeenCalled()
       const time = changeHandler.mock.calls[0][0]
@@ -257,8 +257,8 @@ describe('<TimePicker />', () => {
       // minute selection
       changeHandler.mockClear()
       getClock(tree).findWhere((e) => e.type() === 'div' && testUtils.hasClass(/^Clock-circle/)(e))
-      .simulate('click', testUtils.stubClickEvent(190, 230)) // click on 25
-      .simulate('mouseup', testUtils.stubClickEvent(190, 230)) // click on 25
+        .simulate('click', testUtils.stubClickEvent(190, 230)) // click on 25
+        .simulate('mouseup', testUtils.stubClickEvent(190, 230)) // click on 25
 
       expect(changeHandler).toBeCalled()
       expect(changeHandler.mock.calls[0][0].getHours()).toBe(12)
@@ -272,13 +272,13 @@ describe('<TimePicker />', () => {
         <TimePicker mode='24h' onMinutesSelected={onMinutesSelected} />
       )
       getClock(tree).findWhere((e) => e.type() === 'div' && testUtils.hasClass(/^Clock-circle/)(e))
-      .simulate('click', testUtils.stubClickEvent(128, 30)) // click on 12
-      .simulate('mouseup', testUtils.stubClickEvent(128, 30)) // click on 12
+        .simulate('click', testUtils.stubClickEvent(128, 30)) // click on 12
+        .simulate('mouseup', testUtils.stubClickEvent(128, 30)) // click on 12
       jest.runAllTimers()
       tree.update()
       getClock(tree).findWhere((e) => e.type() === 'div' && testUtils.hasClass(/^Clock-circle/)(e))
-      .simulate('click', testUtils.stubClickEvent(190, 230)) // click on 25
-      .simulate('mouseup', testUtils.stubClickEvent(190, 230)) // click on 25
+        .simulate('click', testUtils.stubClickEvent(190, 230)) // click on 25
+        .simulate('mouseup', testUtils.stubClickEvent(190, 230)) // click on 25
       jest.runAllTimers()
 
       expect(onMinutesSelected).toHaveBeenCalledTimes(1)
