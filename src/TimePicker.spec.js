@@ -78,6 +78,7 @@ describe('<TimePicker />', () => {
         .simulate('click', testUtils.stubClickEvent(190, 230)) // click on 25
         .simulate('mouseup', testUtils.stubClickEvent(190, 230)) // click on 25
 
+      expect(changeHandler).toBeCalled()
       expect(changeHandler.mock.calls[0][0].getHours()).toBe(12)
       expect(changeHandler.mock.calls[0][0].getMinutes()).toBe(25)
     })
@@ -259,6 +260,7 @@ describe('<TimePicker />', () => {
         .simulate('click', testUtils.stubClickEvent(190, 230)) // click on 25
         .simulate('mouseup', testUtils.stubClickEvent(190, 230)) // click on 25
 
+      expect(changeHandler).toBeCalled()
       expect(changeHandler.mock.calls[0][0].getHours()).toBe(12)
       expect(changeHandler.mock.calls[0][0].getMinutes()).toBe(25)
     })
