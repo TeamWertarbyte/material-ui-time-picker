@@ -134,7 +134,7 @@ class Clock extends React.PureComponent {
   }
 
   render () {
-    const { classes, mode, value, ...other } = this.props
+    const { classes, mode, value, minutesStep, ...other } = this.props
     const { touching } = this.state
 
     return (
@@ -194,7 +194,7 @@ class Clock extends React.PureComponent {
               className={classNames(classes.number, { selected: value === digit.display || (digit.display === 60 && value === 0) })}
               style={{
                 transform: `translate(${digit.translateX}px, ${digit.translateY}px)`,
-                color: digit.display % this.props.minutesStep ? "rgba(0, 0, 0, 0.3)" : "rgba(0, 0, 0, 0.87)"
+                color: digit.display % this.props.minutesStep ? 'rgba(0, 0, 0, 0.3)' : 'rgba(0, 0, 0, 0.87)'
               }}
             >
               {digit.display === 60 ? '00' : digit.display}

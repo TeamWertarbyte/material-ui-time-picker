@@ -84,10 +84,10 @@ class TimePicker extends React.Component {
         this.setState({ hours: value }, this.propagateChange)
       }
     } else {
-      if(value % this.props.minutesStep === 0) {
+      if (value % this.props.minutesStep === 0) {
         this.setState({ minutes: value }, () => {
           this.propagateChange()
-        });
+        })
       }
     }
   }

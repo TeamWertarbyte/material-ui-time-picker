@@ -31,15 +31,15 @@ class TimeInput extends React.Component {
   }
 
   showDialog = () => {
-    this.initValue = this.getInitValue();
-    this.setState({ open: true, value: this.initValue, newValue: this.state.value });
+    this.initValue = this.getInitValue()
+    this.setState({ open: true, value: this.initValue, newValue: this.state.value })
   }
 
   getInitValue = () => {
     const defaultValue = new Date()
     defaultValue.setSeconds(0)
     defaultValue.setMilliseconds(0)
-    return this.props.value || this.props.defaultValue || this.defaultValue;
+    return this.props.value || this.props.defaultValue || this.defaultValue
   }
 
   handleChange = (newValue) => {
@@ -57,7 +57,7 @@ class TimeInput extends React.Component {
     if (this.props.onChange != null) {
       this.props.onChange(this.initValue)
     }
-    this.setState({ open: false, newValue: null });
+    this.setState({ open: false, newValue: null })
   }
 
   render () {
@@ -99,7 +99,7 @@ class TimeInput extends React.Component {
         maxWidth='xs'
         open={this.state.open}
         key='TimeInput-dialog'
-        onClose={cancelOnClose ? this.handleCancel : this.handleOk }
+        onClose={cancelOnClose ? this.handleCancel : this.handleOk}
       >
         <TimePicker
           mode={mode}
