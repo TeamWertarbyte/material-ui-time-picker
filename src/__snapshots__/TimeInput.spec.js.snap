@@ -82,17 +82,13 @@ exports[`<TimeInput /> 12h matches the snapshot 1`] = `
         TransitionComponent={[Function]}
         classes={
           Object {
-            "paper": "MuiDialog-paper-19",
-            "paperFullScreen": "MuiDialog-paperFullScreen-26",
-            "paperFullWidth": "MuiDialog-paperFullWidth-25",
-            "paperScrollBody": "MuiDialog-paperScrollBody-21",
-            "paperScrollPaper": "MuiDialog-paperScrollPaper-20",
-            "paperWidthMd": "MuiDialog-paperWidthMd-24",
-            "paperWidthSm": "MuiDialog-paperWidthSm-23",
-            "paperWidthXs": "MuiDialog-paperWidthXs-22",
+            "paper": "MuiDialog-paper-17",
+            "paperFullScreen": "MuiDialog-paperFullScreen-22",
+            "paperFullWidth": "MuiDialog-paperFullWidth-21",
+            "paperWidthMd": "MuiDialog-paperWidthMd-20",
+            "paperWidthSm": "MuiDialog-paperWidthSm-19",
+            "paperWidthXs": "MuiDialog-paperWidthXs-18",
             "root": "MuiDialog-root-16",
-            "scrollBody": "MuiDialog-scrollBody-18",
-            "scrollPaper": "MuiDialog-scrollPaper-17",
           }
         }
         disableBackdropClick={false}
@@ -102,7 +98,6 @@ exports[`<TimeInput /> 12h matches the snapshot 1`] = `
         maxWidth="xs"
         onClose={[Function]}
         open={false}
-        scroll="paper"
         transitionDuration={
           Object {
             "enter": 225,
@@ -119,7 +114,7 @@ exports[`<TimeInput /> 12h matches the snapshot 1`] = `
               },
             }
           }
-          className="MuiDialog-root-16 MuiDialog-scrollPaper-17"
+          className="MuiDialog-root-16"
           disableBackdropClick={false}
           disableEscapeKeyDown={false}
           onClose={[Function]}
@@ -136,18 +131,17 @@ exports[`<TimeInput /> 12h matches the snapshot 1`] = `
                 },
               }
             }
-            className="MuiDialog-root-16 MuiDialog-scrollPaper-17"
+            className="MuiDialog-root-16"
             classes={
               Object {
-                "hidden": "MuiModal-hidden-28",
-                "root": "MuiModal-root-27",
+                "hidden": "MuiModal-hidden-24",
+                "root": "MuiModal-root-23",
               }
             }
             disableAutoFocus={false}
             disableBackdropClick={false}
             disableEnforceFocus={false}
             disableEscapeKeyDown={false}
-            disablePortal={false}
             disableRestoreFocus={false}
             hideBackdrop={false}
             keepMounted={false}
@@ -253,17 +247,13 @@ exports[`<TimeInput /> 24h matches the snapshot 1`] = `
         TransitionComponent={[Function]}
         classes={
           Object {
-            "paper": "MuiDialog-paper-19",
-            "paperFullScreen": "MuiDialog-paperFullScreen-26",
-            "paperFullWidth": "MuiDialog-paperFullWidth-25",
-            "paperScrollBody": "MuiDialog-paperScrollBody-21",
-            "paperScrollPaper": "MuiDialog-paperScrollPaper-20",
-            "paperWidthMd": "MuiDialog-paperWidthMd-24",
-            "paperWidthSm": "MuiDialog-paperWidthSm-23",
-            "paperWidthXs": "MuiDialog-paperWidthXs-22",
+            "paper": "MuiDialog-paper-17",
+            "paperFullScreen": "MuiDialog-paperFullScreen-22",
+            "paperFullWidth": "MuiDialog-paperFullWidth-21",
+            "paperWidthMd": "MuiDialog-paperWidthMd-20",
+            "paperWidthSm": "MuiDialog-paperWidthSm-19",
+            "paperWidthXs": "MuiDialog-paperWidthXs-18",
             "root": "MuiDialog-root-16",
-            "scrollBody": "MuiDialog-scrollBody-18",
-            "scrollPaper": "MuiDialog-scrollPaper-17",
           }
         }
         disableBackdropClick={false}
@@ -273,7 +263,6 @@ exports[`<TimeInput /> 24h matches the snapshot 1`] = `
         maxWidth="xs"
         onClose={[Function]}
         open={false}
-        scroll="paper"
         transitionDuration={
           Object {
             "enter": 225,
@@ -290,7 +279,7 @@ exports[`<TimeInput /> 24h matches the snapshot 1`] = `
               },
             }
           }
-          className="MuiDialog-root-16 MuiDialog-scrollPaper-17"
+          className="MuiDialog-root-16"
           disableBackdropClick={false}
           disableEscapeKeyDown={false}
           onClose={[Function]}
@@ -307,18 +296,17 @@ exports[`<TimeInput /> 24h matches the snapshot 1`] = `
                 },
               }
             }
-            className="MuiDialog-root-16 MuiDialog-scrollPaper-17"
+            className="MuiDialog-root-16"
             classes={
               Object {
-                "hidden": "MuiModal-hidden-28",
-                "root": "MuiModal-root-27",
+                "hidden": "MuiModal-hidden-24",
+                "root": "MuiModal-root-23",
               }
             }
             disableAutoFocus={false}
             disableBackdropClick={false}
             disableEnforceFocus={false}
             disableEscapeKeyDown={false}
-            disablePortal={false}
             disableRestoreFocus={false}
             hideBackdrop={false}
             keepMounted={false}
