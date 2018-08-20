@@ -83,12 +83,8 @@ class TimePicker extends React.Component {
       } else {
         this.setState({ hours: value }, this.propagateChange)
       }
-    } else {
-      if (value % this.props.minutesStep === 0) {
-        this.setState({ minutes: value }, () => {
-          this.propagateChange()
-        })
-      }
+    } else if (value % (this.props.minutesStep || 1) === 0) {
+      this.setState({ minutes: value }, this.propagateChange)
     }
   }
 
@@ -188,7 +184,7 @@ class TimePicker extends React.Component {
             value={clockMode === 'minutes' ? minutes : hours}
             onMouseUp={this.handleClockChangeDone}
             onTouchEnd={this.handleClockChangeDone}
-            minutesStep={this.props.minutesStep}
+            minutesStep={this.props.minutesStep || 1}
           />
         </div>
       </div>

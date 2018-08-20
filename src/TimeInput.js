@@ -21,7 +21,11 @@ const styles = {
 class TimeInput extends React.Component {
   constructor (props) {
     super(props)
-    this.state = { open: false, value: this.getInitValue() }
+    const defaultValue = new Date()
+    defaultValue.setSeconds(0)
+    defaultValue.setMilliseconds(0)
+    const initValue = props.value || props.defaultValue || defaultValue
+    this.state = { open: false, initValue, value: initValue }
   }
 
   componentWillReceiveProps (nextProps) {
@@ -30,34 +34,24 @@ class TimeInput extends React.Component {
     }
   }
 
-  showDialog = () => {
-    this.initValue = this.getInitValue()
-    this.setState({ open: true, value: this.initValue, newValue: this.state.value })
-  }
+  showDialog = () => this.setState({ open: true })
 
-  getInitValue = () => {
-    const defaultValue = new Date()
-    defaultValue.setSeconds(0)
-    defaultValue.setMilliseconds(0)
-    return this.props.value || this.props.defaultValue || this.defaultValue
-  }
-
-  handleChange = (newValue) => {
+  handleChange = (value) => {
     if (this.props.onChange != null) {
-      this.props.onChange(newValue)
+      this.props.onChange(value)
     }
-    this.setState({ newValue })
+    this.setState({ value })
   }
 
   handleOk = () => {
-    this.setState({ open: false, value: this.state.newValue, newValue: null })
+    this.setState({ open: false, initValue: this.state.value })
   }
 
   handleCancel = () => {
     if (this.props.onChange != null) {
-      this.props.onChange(this.initValue)
+      this.props.onChange(this.state.initValue)
     }
-    this.setState({ open: false, newValue: null })
+    this.setState({ open: false, value: this.state.initValue })
   }
 
   render () {
@@ -76,7 +70,7 @@ class TimeInput extends React.Component {
       ...other
     } = this.props
 
-    const { value, newValue } = this.state
+    const { value } = this.state
 
     const { hours, isPm } = formatHours(value.getHours(), mode)
     const formattedValue = mode === '12h'
@@ -103,11 +97,11 @@ class TimeInput extends React.Component {
       >
         <TimePicker
           mode={mode}
-          value={newValue}
+          value={value}
           onChange={this.handleChange}
           onMinutesSelected={autoOk ? this.handleOk : null}
           classes={{ header: classes.header, body: classes.body }}
-          minutesStep={minutesStep}
+          minutesStep={minutesStep || 1}
         />
         <DialogActions>
           <Button onClick={this.handleCancel} color='primary'>{cancelLabel}</Button>
