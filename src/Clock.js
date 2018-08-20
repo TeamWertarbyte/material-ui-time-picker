@@ -35,7 +35,8 @@ const styles = (theme) => ({
     userSelect: 'none',
     '&.selected': {
       color: getContrastRatio(theme.palette.primary.main, theme.palette.common.black) < 7 ? theme.palette.common.white : theme.palette.common.black
-    }
+    },
+    '&.disabled': { opacity: '0.3' }
   },
   smallNumber: {
     fontSize: '12px',
@@ -191,10 +192,12 @@ class Clock extends React.PureComponent {
           {mode === 'minutes' && getNumbers(12, { size, start: 5, step: 5 }).map((digit, i) => (
             <span
               key={digit.display}
-              className={classNames(classes.number, { selected: value === digit.display || (digit.display === 60 && value === 0) })}
+              className={classNames(
+                classes.number,
+                { selected: value === digit.display || (digit.display === 60 && value === 0) },
+                { disabled: digit.display % (this.props.minutesStep || 1) })}
               style={{
-                transform: `translate(${digit.translateX}px, ${digit.translateY}px)`,
-                color: digit.display % (this.props.minutesStep || 1) ? 'rgba(0, 0, 0, 0.3)' : 'rgba(0, 0, 0, 0.87)'
+                transform: `translate(${digit.translateX}px, ${digit.translateY}px)`
               }}
             >
               {digit.display === 60 ? '00' : digit.display}
