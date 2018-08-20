@@ -21,10 +21,7 @@ const styles = {
 class TimeInput extends React.Component {
   constructor (props) {
     super(props)
-    const defaultValue = new Date()
-    defaultValue.setSeconds(0)
-    defaultValue.setMilliseconds(0)
-    this.state = { open: false, value: props.value || props.defaultValue || defaultValue }
+    this.state = { open: false, value: this.getInitValue() }
   }
 
   componentWillReceiveProps (nextProps) {
@@ -33,20 +30,35 @@ class TimeInput extends React.Component {
     }
   }
 
-  showDialog = () => this.setState({ open: true, newValue: this.state.value })
+  showDialog = () => {
+    this.initValue = this.getInitValue();
+    this.setState({ open: true, value: this.initValue, newValue: this.state.value });
+  }
+
+  getInitValue = () => {
+    const defaultValue = new Date()
+    defaultValue.setSeconds(0)
+    defaultValue.setMilliseconds(0)
+    return this.props.value || this.props.defaultValue || this.defaultValue;
+  }
 
   handleChange = (newValue) => {
+    if (this.props.onChange != null) {
+      this.props.onChange(newValue)
+    }
     this.setState({ newValue })
   }
 
   handleOk = () => {
-    if (this.props.onChange != null) {
-      this.props.onChange(this.state.newValue)
-    }
     this.setState({ open: false, value: this.state.newValue, newValue: null })
   }
 
-  handleCancel = () => this.setState({ open: false, newValue: null })
+  handleCancel = () => {
+    if (this.props.onChange != null) {
+      this.props.onChange(this.initValue)
+    }
+    this.setState({ open: false, newValue: null });
+  }
 
   render () {
     const {
@@ -59,6 +71,8 @@ class TimeInput extends React.Component {
       okLabel,
       onChange, // eslint-disable-line
       value: valueProp, // eslint-disable-line
+      minutesStep,
+      cancelOnClose,
       ...other
     } = this.props
 
@@ -85,7 +99,7 @@ class TimeInput extends React.Component {
         maxWidth='xs'
         open={this.state.open}
         key='TimeInput-dialog'
-        onClose={this.handleCancel}
+        onClose={cancelOnClose ? this.handleCancel : this.handleOk }
       >
         <TimePicker
           mode={mode}
@@ -93,6 +107,7 @@ class TimeInput extends React.Component {
           onChange={this.handleChange}
           onMinutesSelected={autoOk ? this.handleOk : null}
           classes={{ header: classes.header, body: classes.body }}
+          minutesStep={minutesStep}
         />
         <DialogActions>
           <Button onClick={this.handleCancel} color='primary'>{cancelLabel}</Button>
@@ -117,14 +132,20 @@ TimeInput.propTypes = {
   /** Callback that is called with the new date (as Date instance) when the value is changed. */
   onChange: PropTypes.func,
   /** The value of the time picker, for use in controlled mode. */
-  value: PropTypes.instanceOf(Date)
+  value: PropTypes.instanceOf(Date),
+  /** Steps between minutes. */
+  minutesStep: PropTypes.number,
+  /** Returns init date when dialog is closed (clicking background). */
+  cancelOnClose: PropTypes.bool
 }
 
 TimeInput.defaultProps = {
   autoOk: false,
   cancelLabel: 'Cancel',
   mode: '12h',
-  okLabel: 'Ok'
+  okLabel: 'Ok',
+  minutesStep: 1,
+  cancelOnClose: true
 }
 
 TimeInput.contextTypes = {
