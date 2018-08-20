@@ -566,6 +566,7 @@ exports[`<Clock /> minutes matches the snapshot 1`] = `
           key="5"
           style={
             Object {
+              "color": "rgba(0, 0, 0, 0.87)",
               "transform": "translate(54.000000000000014px, -93.53074360871936px)",
             }
           }
@@ -577,6 +578,7 @@ exports[`<Clock /> minutes matches the snapshot 1`] = `
           key="10"
           style={
             Object {
+              "color": "rgba(0, 0, 0, 0.87)",
               "transform": "translate(93.53074360871938px, -53.99999999999999px)",
             }
           }
@@ -588,6 +590,7 @@ exports[`<Clock /> minutes matches the snapshot 1`] = `
           key="15"
           style={
             Object {
+              "color": "rgba(0, 0, 0, 0.87)",
               "transform": "translate(108px, 0px)",
             }
           }
@@ -599,6 +602,7 @@ exports[`<Clock /> minutes matches the snapshot 1`] = `
           key="20"
           style={
             Object {
+              "color": "rgba(0, 0, 0, 0.87)",
               "transform": "translate(93.53074360871938px, 53.99999999999999px)",
             }
           }
@@ -610,6 +614,7 @@ exports[`<Clock /> minutes matches the snapshot 1`] = `
           key="25"
           style={
             Object {
+              "color": "rgba(0, 0, 0, 0.87)",
               "transform": "translate(54.000000000000014px, 93.53074360871936px)",
             }
           }
@@ -621,6 +626,7 @@ exports[`<Clock /> minutes matches the snapshot 1`] = `
           key="30"
           style={
             Object {
+              "color": "rgba(0, 0, 0, 0.87)",
               "transform": "translate(6.6130927153957075e-15px, 108px)",
             }
           }
@@ -632,6 +638,7 @@ exports[`<Clock /> minutes matches the snapshot 1`] = `
           key="35"
           style={
             Object {
+              "color": "rgba(0, 0, 0, 0.87)",
               "transform": "translate(-53.99999999999998px, 93.53074360871938px)",
             }
           }
@@ -643,6 +650,7 @@ exports[`<Clock /> minutes matches the snapshot 1`] = `
           key="40"
           style={
             Object {
+              "color": "rgba(0, 0, 0, 0.87)",
               "transform": "translate(-93.53074360871938px, 53.99999999999999px)",
             }
           }
@@ -654,6 +662,7 @@ exports[`<Clock /> minutes matches the snapshot 1`] = `
           key="45"
           style={
             Object {
+              "color": "rgba(0, 0, 0, 0.87)",
               "transform": "translate(-108px, 1.3226185430791415e-14px)",
             }
           }
@@ -665,6 +674,7 @@ exports[`<Clock /> minutes matches the snapshot 1`] = `
           key="50"
           style={
             Object {
+              "color": "rgba(0, 0, 0, 0.87)",
               "transform": "translate(-93.53074360871939px, -53.99999999999997px)",
             }
           }
@@ -676,6 +686,7 @@ exports[`<Clock /> minutes matches the snapshot 1`] = `
           key="55"
           style={
             Object {
+              "color": "rgba(0, 0, 0, 0.87)",
               "transform": "translate(-54.00000000000005px, -93.53074360871936px)",
             }
           }
@@ -687,6 +698,7 @@ exports[`<Clock /> minutes matches the snapshot 1`] = `
           key="60"
           style={
             Object {
+              "color": "rgba(0, 0, 0, 0.87)",
               "transform": "translate(-1.983927814618712e-14px, -108px)",
             }
           }

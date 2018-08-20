@@ -65,6 +65,7 @@ exports[`<TimePicker /> 12h matches the snapshot 1`] = `
         className="TimePicker-body-7"
       >
         <WithStyles(Clock)
+          minutesStep={1}
           mode="12h"
           onChange={[Function]}
           onMouseUp={[Function]}
@@ -86,6 +87,7 @@ exports[`<TimePicker /> 12h matches the snapshot 1`] = `
                 "smallPointer": "Clock-smallPointer-14",
               }
             }
+            minutesStep={1}
             mode="12h"
             onChange={[Function]}
             onMouseUp={[Function]}
@@ -317,6 +319,7 @@ exports[`<TimePicker /> 24h matches the snapshot 1`] = `
         className="TimePicker-body-7"
       >
         <WithStyles(Clock)
+          minutesStep={1}
           mode="24h"
           onChange={[Function]}
           onMouseUp={[Function]}
@@ -338,6 +341,7 @@ exports[`<TimePicker /> 24h matches the snapshot 1`] = `
                 "smallPointer": "Clock-smallPointer-14",
               }
             }
+            minutesStep={1}
             mode="24h"
             onChange={[Function]}
             onMouseUp={[Function]}
