@@ -59,6 +59,7 @@ class TimeInput extends React.Component {
       autoOk,
       cancelLabel,
       classes,
+      inputClasses,
       defaultValue, // eslint-disable-line
       disabled: disabledProp,
       mode,
@@ -88,6 +89,7 @@ class TimeInput extends React.Component {
         value={formattedValue}
         readOnly
         key='TimeInput-input'
+        classes={inputClasses || {}}
       />,
       <Dialog
         maxWidth='xs'
@@ -130,7 +132,9 @@ TimeInput.propTypes = {
   /** Steps between minutes. */
   minutesStep: PropTypes.number,
   /** Returns init date when dialog is closed (clicking background). */
-  cancelOnClose: PropTypes.bool
+  cancelOnClose: PropTypes.bool,
+  /** Classes applied to input. */
+  inputClasses: PropTypes.object
 }
 
 TimeInput.defaultProps = {

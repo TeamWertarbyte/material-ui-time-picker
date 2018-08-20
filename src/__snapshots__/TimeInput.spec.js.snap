@@ -21,6 +21,7 @@ exports[`<TimeInput /> 12h matches the snapshot 1`] = `
     okLabel="Ok"
   >
     <WithStyles(Input)
+      classes={Object {}}
       disabled={false}
       key="TimeInput-input"
       onClick={[Function]}
@@ -191,6 +192,7 @@ exports[`<TimeInput /> 24h matches the snapshot 1`] = `
     okLabel="Ok"
   >
     <WithStyles(Input)
+      classes={Object {}}
       disabled={false}
       key="TimeInput-input"
       onClick={[Function]}
