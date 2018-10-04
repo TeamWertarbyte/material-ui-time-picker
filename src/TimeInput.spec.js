@@ -65,6 +65,12 @@ describe('<TimeInput />', () => {
     expect(getValue(tree)).toBe('14:42')
   })
 
+  // it('hides input value when hideDefaultFromInput is true', () => {
+  //   const tree = mount(<TimeInput defaultValue={new Date(2017, 10, 15, 12, 0, 0, 0)} mode='24h' hideDefaultFromInput />);
+
+  //   expect(getValue(tree)).toBe('--.--');
+  // })
+
   describe('uncontrolled mode', () => {
     afterEach(() => {
       MockDate.reset()

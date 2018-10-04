@@ -15,6 +15,7 @@ exports[`<TimeInput /> 12h matches the snapshot 1`] = `
       }
     }
     defaultValue={2017-10-15T13:37:00.000Z}
+    hideDefaultFromInput={false}
     mode="12h"
     okLabel="Ok"
   >
@@ -177,6 +178,7 @@ exports[`<TimeInput /> 24h matches the snapshot 1`] = `
       }
     }
     defaultValue={2017-10-15T13:37:00.000Z}
+    hideDefaultFromInput={false}
     mode="24h"
     okLabel="Ok"
   >
