@@ -57,12 +57,19 @@ describe('<TimeInput />', () => {
     })
   })
 
-  it('supports controlled mode', () => {
-    const tree = mount(<TimeInput value={new Date(2017, 10, 15, 13, 37, 0, 0)} mode='24h' />)
-    expect(getValue(tree)).toBe('13:37')
+  describe('controlled mode', () => {
+    it('supports controlled mode', () => {
+      const tree = mount(<TimeInput value={new Date(2017, 10, 15, 13, 37, 0, 0)} mode='24h' />)
+      expect(getValue(tree)).toBe('13:37')
 
-    tree.setProps({ value: new Date(2017, 10, 15, 14, 42, 0, 0) })
-    expect(getValue(tree)).toBe('14:42')
+      tree.setProps({ value: new Date(2017, 10, 15, 14, 42, 0, 0) })
+      expect(getValue(tree)).toBe('14:42')
+    })
+
+    it('displays no value if the value is null', () => {
+      const tree = mount(<TimeInput value={null} />)
+      expect(getValue(tree)).toBe('')
+    })
   })
 
   describe('uncontrolled mode', () => {
@@ -78,6 +85,12 @@ describe('<TimeInput />', () => {
     it('supports uncontrolled mode with an initial time', () => {
       const tree = mount(<TimeInput initialTime={new Date(2017, 10, 15, 13, 37, 0, 0)} mode='24h' />)
       expect(getValue(tree)).toBe('13:37')
+    })
+
+    it('supports a null defaultValue', () => {
+      const tree = mount(<TimeInput defaultValue={null} mode='24h' />)
+
+      expect(getValue(tree)).toBe('')
     })
 
     it('uses the current time if no value or default value is set', () => {

@@ -30,7 +30,6 @@ class TimeInput extends React.Component {
       value: props.value || props.initialTime || defaultValue,
       hasChanged: false
     }
-    this.defaultValue = defaultValue
   }
 
   componentWillReceiveProps (nextProps) {
@@ -60,7 +59,16 @@ class TimeInput extends React.Component {
 
     const is12h = mode === '12h'
 
-    if (defaultValue && !hasChanged) return defaultValue
+    // hasOwnProperty is important here, we want `null` and `undefined` to display different things.
+    if (this.props.hasOwnProperty('defaultValue') && !hasChanged) {
+      // Empty string if defaultValue is null
+      return defaultValue == null ? '' : defaultValue
+    }
+
+    // Allow a null/undefined value for controlled inputs
+    if (this.props.hasOwnProperty('value') && this.props.value == null) {
+      return ''
+    }
 
     const { hours, isPm } = formatHours(value.getHours(), mode)
 
