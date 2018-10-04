@@ -2,7 +2,7 @@
 
 exports[`<TimeInput /> 12h matches the snapshot 1`] = `
 <WithStyles(TimeInput)
-  defaultValue={2017-10-15T13:37:00.000Z}
+  initialTime={2017-10-15T13:37:00.000Z}
   mode="12h"
 >
   <TimeInput
@@ -14,8 +14,7 @@ exports[`<TimeInput /> 12h matches the snapshot 1`] = `
         "header": "TimeInput-header-1",
       }
     }
-    defaultValue={2017-10-15T13:37:00.000Z}
-    hideDefaultFromInput={false}
+    initialTime={2017-10-15T13:37:00.000Z}
     mode="12h"
     okLabel="Ok"
   >
@@ -165,7 +164,7 @@ exports[`<TimeInput /> 12h matches the snapshot 1`] = `
 
 exports[`<TimeInput /> 24h matches the snapshot 1`] = `
 <WithStyles(TimeInput)
-  defaultValue={2017-10-15T13:37:00.000Z}
+  initialTime={2017-10-15T13:37:00.000Z}
   mode="24h"
 >
   <TimeInput
@@ -177,8 +176,7 @@ exports[`<TimeInput /> 24h matches the snapshot 1`] = `
         "header": "TimeInput-header-1",
       }
     }
-    defaultValue={2017-10-15T13:37:00.000Z}
-    hideDefaultFromInput={false}
+    initialTime={2017-10-15T13:37:00.000Z}
     mode="24h"
     okLabel="Ok"
   >

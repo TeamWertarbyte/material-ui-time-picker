@@ -50,6 +50,6 @@ storiesOf('TimeInput', module)
   .add('german', () => (
     <TimeInput mode='24h' onChange={action('onChange')} cancelLabel='Abbrechen' okLabel='Ok' />
   ))
-  .add('hideDefaultFromInput', () => (
-    <TimeInput mode='12h' defaultValue={new Date(2018, 8, 3, 12, 0, 0, 0)} hideDefaultFromInput />
+  .add('default input value and initial time', () => (
+    <TimeInput mode='12h' defaultValue='--:--' initialTime={new Date(2018, 8, 4, 12, 0, 0, 0, 0)} />
   ))

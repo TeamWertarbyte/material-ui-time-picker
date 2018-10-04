@@ -25,7 +25,11 @@ class TimeInput extends React.Component {
     defaultValue.setSeconds(0)
     defaultValue.setMilliseconds(0)
 
-    this.state = { open: false, value: props.value || props.defaultValue || defaultValue }
+    this.state = {
+      open: false,
+      value: props.value || props.initialTime || defaultValue,
+      hasChanged: false
+    }
     this.defaultValue = defaultValue
   }
 
@@ -38,7 +42,7 @@ class TimeInput extends React.Component {
   showDialog = () => this.setState({ open: true, newValue: this.state.value })
 
   handleChange = (newValue) => {
-    this.setState({ newValue })
+    this.setState({ newValue, hasChanged: true })
   }
 
   handleOk = () => {
@@ -51,12 +55,12 @@ class TimeInput extends React.Component {
   handleCancel = () => this.setState({ open: false, newValue: null })
 
   getFormattedValue = () => {
-    const { mode, hideDefaultFromInput, defaultValue } = this.props
-    const { value } = this.state
+    const { mode, defaultValue } = this.props
+    const { value, hasChanged } = this.state
 
     const is12h = mode === '12h'
 
-    if ((value === this.defaultValue || value === defaultValue) && hideDefaultFromInput) return '--:--'
+    if (defaultValue && !hasChanged) return defaultValue
 
     const { hours, isPm } = formatHours(value.getHours(), mode)
 
@@ -75,11 +79,11 @@ class TimeInput extends React.Component {
       classes,
       defaultValue, // eslint-disable-line
       disabled: disabledProp,
+      initialTime, //eslint-disable-line
       mode,
       okLabel,
       onChange, // eslint-disable-line
       value: valueProp, // eslint-disable-line
-      hideDefaultFromInput, //eslint-disable-line
       ...other
     } = this.props
 
@@ -124,11 +128,11 @@ TimeInput.propTypes = {
   autoOk: PropTypes.bool,
   /** Override the label of the cancel button. */
   cancelLabel: PropTypes.string,
-  /** The initial value of the time picker. */
-  defaultValue: PropTypes.instanceOf(Date),
-  // /** For controlled inputs show the default value in the input or just in the time select */
-  hideDefaultFromInput: PropTypes.bool,
-  // /** Sets the clock mode, 12-hour or 24-hour clocks are supported. */
+  /** The default value for the Input */
+  defaultValue: PropTypes.string,
+  /** The default value for the time picker */
+  initialTime: PropTypes.instanceOf(Date),
+  /** Sets the clock mode, 12-hour or 24-hour clocks are supported. */
   mode: PropTypes.oneOf(['12h', '24h']),
   /** Override the label of the ok button. */
   okLabel: PropTypes.string,
@@ -141,7 +145,6 @@ TimeInput.propTypes = {
 TimeInput.defaultProps = {
   autoOk: false,
   cancelLabel: 'Cancel',
-  hideDefaultFromInput: false,
   mode: '12h',
   okLabel: 'Ok'
 }
