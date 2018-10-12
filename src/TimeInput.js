@@ -30,7 +30,7 @@ class TimeInput extends React.Component {
 
   componentWillReceiveProps (nextProps) {
     if (nextProps.value !== this.props.value) {
-      this.setState({ value: nextProps.value })
+      this.setState({ initValue: nextProps.value, value: nextProps.value })
     }
   }
 
