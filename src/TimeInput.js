@@ -59,7 +59,6 @@ class TimeInput extends React.Component {
       autoOk,
       cancelLabel,
       classes,
-      inputClasses,
       defaultValue, // eslint-disable-line
       disabled: disabledProp,
       mode,
@@ -89,7 +88,7 @@ class TimeInput extends React.Component {
         value={formattedValue}
         readOnly
         key='TimeInput-input'
-        classes={inputClasses || {}}
+        classes={{ input: classes.input }}
       />,
       <Dialog
         maxWidth='xs'
@@ -103,7 +102,7 @@ class TimeInput extends React.Component {
           onChange={this.handleChange}
           onMinutesSelected={autoOk ? this.handleOk : null}
           classes={{ header: classes.header, body: classes.body }}
-          minutesStep={minutesStep || 1}
+          minutesStep={minutesStep}
         />
         <DialogActions>
           <Button onClick={this.handleCancel} color='primary'>{cancelLabel}</Button>
@@ -119,8 +118,12 @@ TimeInput.propTypes = {
   autoOk: PropTypes.bool,
   /** Override the label of the cancel button. */
   cancelLabel: PropTypes.string,
+  /** Returns init date when dialog is closed (clicking background). */
+  cancelOnClose: PropTypes.bool,
   /** The initial value of the time picker. */
   defaultValue: PropTypes.instanceOf(Date),
+  /** Steps between minutes. */
+  minutesStep: PropTypes.number,
   /** Sets the clock mode, 12-hour or 24-hour clocks are supported. */
   mode: PropTypes.oneOf(['12h', '24h']),
   /** Override the label of the ok button. */
@@ -128,22 +131,16 @@ TimeInput.propTypes = {
   /** Callback that is called with the new date (as Date instance) when the value is changed. */
   onChange: PropTypes.func,
   /** The value of the time picker, for use in controlled mode. */
-  value: PropTypes.instanceOf(Date),
-  /** Steps between minutes. */
-  minutesStep: PropTypes.number,
-  /** Returns init date when dialog is closed (clicking background). */
-  cancelOnClose: PropTypes.bool,
-  /** Classes applied to input. */
-  inputClasses: PropTypes.object
+  value: PropTypes.instanceOf(Date)
 }
 
 TimeInput.defaultProps = {
   autoOk: false,
   cancelLabel: 'Cancel',
-  mode: '12h',
-  okLabel: 'Ok',
+  cancelOnClose: true,
   minutesStep: 1,
-  cancelOnClose: true
+  mode: '12h',
+  okLabel: 'Ok'
 }
 
 TimeInput.contextTypes = {

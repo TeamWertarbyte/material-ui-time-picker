@@ -83,7 +83,7 @@ class TimePicker extends React.Component {
       } else {
         this.setState({ hours: value }, this.propagateChange)
       }
-    } else if (value % (this.props.minutesStep || 1) === 0) {
+    } else if (value % (this.props.minutesStep) === 0) {
       this.setState({ minutes: value }, this.propagateChange)
     }
   }
@@ -184,7 +184,7 @@ class TimePicker extends React.Component {
             value={clockMode === 'minutes' ? minutes : hours}
             onMouseUp={this.handleClockChangeDone}
             onTouchEnd={this.handleClockChangeDone}
-            minutesStep={this.props.minutesStep || 1}
+            minutesStep={this.props.minutesStep}
           />
         </div>
       </div>
@@ -195,6 +195,8 @@ class TimePicker extends React.Component {
 TimePicker.propTypes = {
   /** The initial value of the time picker. */
   defaultValue: PropTypes.instanceOf(Date),
+  /** Steps between minutes. */
+  minutesStep: PropTypes.number,
   /** Sets the clock mode, 12-hour or 24-hour clocks are supported. */
   mode: PropTypes.oneOf(['12h', '24h']),
   /** Callback that is called with the new date (as Date instance) when the value is changed. */
@@ -202,13 +204,12 @@ TimePicker.propTypes = {
   /** Callback that is called when the minutes are changed. Can be used to automatically hide the picker after selecting a time. */
   onMinutesSelected: PropTypes.func,
   /** The value of the time picker, for use in controlled mode. */
-  value: PropTypes.instanceOf(Date),
-  /** Steps between minutes. */
-  minutesStep: PropTypes.number
+  value: PropTypes.instanceOf(Date)
 }
 
 TimePicker.defaultProps = {
-  mode: '12h'
+  mode: '12h',
+  minutesStep: 1
 }
 
 export default withStyles(styles)(TimePicker)
