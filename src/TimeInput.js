@@ -123,8 +123,6 @@ TimeInput.propTypes = {
   autoOk: PropTypes.bool,
   /** Override the label of the cancel button. */
   cancelLabel: PropTypes.string,
-  /** Sets the date when dialog is closed (clicking background). */
-  selectOnClose: PropTypes.bool,
   /** The initial value of the time picker. */
   defaultValue: PropTypes.instanceOf(Date),
   /** Steps between minutes. */
@@ -135,6 +133,8 @@ TimeInput.propTypes = {
   okLabel: PropTypes.string,
   /** Callback that is called with the new date (as Date instance) when the value is changed. */
   onChange: PropTypes.func,
+  /** Sets the date when dialog is closed (clicking background). */
+  selectOnClose: PropTypes.bool,
   /** Updates the input field when clock hands are moved */
   updateImmediately: PropTypes.bool,
   /** The value of the time picker, for use in controlled mode. */
@@ -144,10 +144,10 @@ TimeInput.propTypes = {
 TimeInput.defaultProps = {
   autoOk: false,
   cancelLabel: 'Cancel',
-  selectOnClose: false,
   minutesStep: 1,
   mode: '12h',
   okLabel: 'Ok',
+  selectOnClose: false,
   updateImmediately: false
 }
 
