@@ -75,7 +75,7 @@ class TimeInput extends React.Component {
     } = this.props
 
     const { initValue, value } = this.state
-    const inputValue = updateImmediately ? value : initValue;
+    const inputValue = updateImmediately ? value : initValue
 
     const { hours, isPm } = formatHours(inputValue.getHours(), mode)
     const formattedValue = mode === '12h'
