@@ -19,9 +19,14 @@ exports[`<TimeInput /> 12h matches the snapshot 1`] = `
     minutesStep={1}
     mode="12h"
     okLabel="Ok"
+    updateImmediately={false}
   >
     <WithStyles(Input)
-      classes={Object {}}
+      classes={
+        Object {
+          "input": undefined,
+        }
+      }
       disabled={false}
       key="TimeInput-input"
       onClick={[Function]}
@@ -184,9 +189,14 @@ exports[`<TimeInput /> 24h matches the snapshot 1`] = `
     minutesStep={1}
     mode="24h"
     okLabel="Ok"
+    updateImmediately={false}
   >
     <WithStyles(Input)
-      classes={Object {}}
+      classes={
+        Object {
+          "input": undefined,
+        }
+      }
       disabled={false}
       key="TimeInput-input"
       onClick={[Function]}

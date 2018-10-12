@@ -17,6 +17,7 @@ exports[`<TimePicker /> 12h matches the snapshot 1`] = `
         "time": "TimePicker-time-3",
       }
     }
+    minutesStep={1}
     mode="12h"
     value={2017-10-15T13:37:00.000Z}
   >
@@ -284,6 +285,7 @@ exports[`<TimePicker /> 24h matches the snapshot 1`] = `
         "time": "TimePicker-time-3",
       }
     }
+    minutesStep={1}
     mode="24h"
     value={2017-10-15T13:37:00.000Z}
   >

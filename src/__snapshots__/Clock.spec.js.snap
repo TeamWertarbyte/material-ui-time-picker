@@ -20,6 +20,7 @@ exports[`<Clock /> 12h matches the snapshot 1`] = `
         "smallPointer": "Clock-smallPointer-7",
       }
     }
+    minutesStep={1}
     mode="12h"
     value={7}
   >
@@ -209,6 +210,7 @@ exports[`<Clock /> 24h matches the snapshot 1`] = `
         "smallPointer": "Clock-smallPointer-7",
       }
     }
+    minutesStep={1}
     mode="24h"
     value={7}
   >
@@ -530,6 +532,7 @@ exports[`<Clock /> minutes matches the snapshot 1`] = `
         "smallPointer": "Clock-smallPointer-7",
       }
     }
+    minutesStep={1}
     mode="minutes"
     value={42}
   >
