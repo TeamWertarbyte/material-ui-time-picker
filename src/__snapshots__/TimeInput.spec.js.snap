@@ -8,7 +8,6 @@ exports[`<TimeInput /> 12h matches the snapshot 1`] = `
   <TimeInput
     autoOk={false}
     cancelLabel="Cancel"
-    cancelOnClose={true}
     classes={
       Object {
         "body": "TimeInput-body-2",
@@ -19,6 +18,7 @@ exports[`<TimeInput /> 12h matches the snapshot 1`] = `
     minutesStep={1}
     mode="12h"
     okLabel="Ok"
+    selectOnClose={false}
     updateImmediately={false}
   >
     <WithStyles(Input)
@@ -178,7 +178,6 @@ exports[`<TimeInput /> 24h matches the snapshot 1`] = `
   <TimeInput
     autoOk={false}
     cancelLabel="Cancel"
-    cancelOnClose={true}
     classes={
       Object {
         "body": "TimeInput-body-2",
@@ -189,6 +188,7 @@ exports[`<TimeInput /> 24h matches the snapshot 1`] = `
     minutesStep={1}
     mode="24h"
     okLabel="Ok"
+    selectOnClose={false}
     updateImmediately={false}
   >
     <WithStyles(Input)

@@ -69,7 +69,7 @@ class TimeInput extends React.Component {
       onChange, // eslint-disable-line
       value: valueProp, // eslint-disable-line
       minutesStep,
-      cancelOnClose,
+      selectOnClose,
       updateImmediately,
       ...other
     } = this.props
@@ -99,7 +99,7 @@ class TimeInput extends React.Component {
         maxWidth='xs'
         open={this.state.open}
         key='TimeInput-dialog'
-        onClose={cancelOnClose ? this.handleCancel : this.handleOk}
+        onClose={selectOnClose ? this.handleOk : this.handleCancel}
       >
         <TimePicker
           mode={mode}
@@ -123,8 +123,8 @@ TimeInput.propTypes = {
   autoOk: PropTypes.bool,
   /** Override the label of the cancel button. */
   cancelLabel: PropTypes.string,
-  /** Returns init date when dialog is closed (clicking background). */
-  cancelOnClose: PropTypes.bool,
+  /** Sets the date when dialog is closed (clicking background). */
+  selectOnClose: PropTypes.bool,
   /** The initial value of the time picker. */
   defaultValue: PropTypes.instanceOf(Date),
   /** Steps between minutes. */
@@ -144,7 +144,7 @@ TimeInput.propTypes = {
 TimeInput.defaultProps = {
   autoOk: false,
   cancelLabel: 'Cancel',
-  cancelOnClose: true,
+  selectOnClose: false,
   minutesStep: 1,
   mode: '12h',
   okLabel: 'Ok',
