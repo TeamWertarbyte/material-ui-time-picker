@@ -27,7 +27,7 @@ class TimeInput extends React.Component {
 
     this.state = {
       open: false,
-      value: props.value || props.initialTime || defaultValue,
+      value: props.value || props.defaultValue || props.initialTime || defaultValue,
       hasChanged: false
     }
   }
@@ -54,16 +54,12 @@ class TimeInput extends React.Component {
   handleCancel = () => this.setState({ open: false, newValue: null })
 
   getFormattedValue = () => {
-    const { mode, defaultValue } = this.props
+    const { mode, placeholder } = this.props
     const { value, hasChanged } = this.state
 
     const is12h = mode === '12h'
 
-    // hasOwnProperty is important here, we want `null` and `undefined` to display different things.
-    if (this.props.hasOwnProperty('defaultValue') && !hasChanged) {
-      // Empty string if defaultValue is null
-      return defaultValue == null ? '' : defaultValue
-    }
+    if (placeholder && !hasChanged) return placeholder
 
     // Allow a null/undefined value for controlled inputs
     if (this.props.hasOwnProperty('value') && this.props.value == null) {
@@ -71,12 +67,9 @@ class TimeInput extends React.Component {
     }
 
     const { hours, isPm } = formatHours(value.getHours(), mode)
-
     const minutes = twoDigits(value.getMinutes())
     const displayHours = is12h ? hours : twoDigits(value.getHours())
-
     const ending = is12h ? (isPm ? ' pm' : ' am') : ''
-
     return `${displayHours}:${minutes}${ending}`
   }
 
@@ -88,6 +81,7 @@ class TimeInput extends React.Component {
       defaultValue, // eslint-disable-line
       disabled: disabledProp,
       initialTime, //eslint-disable-line
+      placeholder, // eslint-disable-line
       mode,
       okLabel,
       onChange, // eslint-disable-line
@@ -136,10 +130,12 @@ TimeInput.propTypes = {
   autoOk: PropTypes.bool,
   /** Override the label of the cancel button. */
   cancelLabel: PropTypes.string,
-  /** The default value for the Input */
-  defaultValue: PropTypes.string,
+  /** This default value overrides initialTime and placeholder */
+  defaultValue: PropTypes.instanceOf(Date),
   /** The default value for the time picker */
   initialTime: PropTypes.instanceOf(Date),
+  /** The placeholder value for the time picker before a time has been selected */
+  placeholder: PropTypes.string,
   /** Sets the clock mode, 12-hour or 24-hour clocks are supported. */
   mode: PropTypes.oneOf(['12h', '24h']),
   /** Override the label of the ok button. */

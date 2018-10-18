@@ -14,7 +14,7 @@ describe('<TimeInput />', () => {
     it('matches the snapshot', () => {
       const originalGetHours = Date.prototype.getHours
       Date.prototype.getHours = Date.prototype.getUTCHours // eslint-disable-line
-      const tree = mount(<TimeInput initialTime={new Date('2017-10-15T13:37Z')} mode='24h' />)
+      const tree = mount(<TimeInput defaultValue={new Date('2017-10-15T13:37Z')} mode='24h' />)
       expect(tree).toMatchSnapshot()
       Date.prototype.getHours = originalGetHours // eslint-disable-line
     })
@@ -37,7 +37,7 @@ describe('<TimeInput />', () => {
     it('matches the snapshot', () => {
       const originalGetHours = Date.prototype.getHours
       Date.prototype.getHours = Date.prototype.getUTCHours // eslint-disable-line
-      const tree = mount(<TimeInput initialTime={new Date('2017-10-15T13:37Z')} mode='12h' />)
+      const tree = mount(<TimeInput defaultValue={new Date('2017-10-15T13:37Z')} mode='12h' />)
       expect(tree).toMatchSnapshot()
       Date.prototype.getHours = originalGetHours // eslint-disable-line
     })
@@ -78,19 +78,25 @@ describe('<TimeInput />', () => {
     })
 
     it('supports uncontrolled mode with a default value', () => {
-      const tree = mount(<TimeInput defaultValue='--:--' mode='24h' />)
+      const tree = mount(<TimeInput placeholder='--:--' mode='24h' />)
       expect(getValue(tree)).toBe('--:--')
     })
 
     it('supports uncontrolled mode with an initial time', () => {
-      const tree = mount(<TimeInput initialTime={new Date(2017, 10, 15, 13, 37, 0, 0)} mode='24h' />)
+      const tree = mount(<TimeInput defaultValue={new Date(2017, 10, 15, 13, 37, 0, 0)} mode='24h' />)
       expect(getValue(tree)).toBe('13:37')
     })
 
-    it('supports a null defaultValue', () => {
-      const tree = mount(<TimeInput defaultValue={null} mode='24h' />)
+    it('supports a null value', () => {
+      const tree = mount(<TimeInput value={null} mode='24h' />)
 
       expect(getValue(tree)).toBe('')
+    })
+
+    it('overrides a null value with a placeholder', () => {
+      const tree = mount(<TimeInput value={null} placeholder='--:--' mode='24h' />)
+
+      expect(getValue(tree)).toBe('--:--')
     })
 
     it('uses the current time if no value or default value is set', () => {
@@ -160,6 +166,12 @@ describe('<TimeInput />', () => {
 
       expect(getValue(tree)).toBe('13:37') // unchanged
       expect(changeHandler).not.toHaveBeenCalled()
+    })
+
+    it('supports an initialTime prop', () => {
+      const tree = mount(<TimeInput classes={{}} initialTime={new Date(2017, 10, 15, 13, 37, 0, 0)} mode='24h' />)
+      tree.simulate('click')
+      expect(getValue(tree)).toBe('13:37')
     })
   })
 })
