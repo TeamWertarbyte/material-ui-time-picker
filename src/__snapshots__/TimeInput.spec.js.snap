@@ -15,10 +15,18 @@ exports[`<TimeInput /> 12h matches the snapshot 1`] = `
       }
     }
     defaultValue={2017-10-15T13:37:00.000Z}
+    minutesStep={1}
     mode="12h"
     okLabel="Ok"
+    selectOnClose={false}
+    updateImmediately={false}
   >
     <WithStyles(Input)
+      classes={
+        Object {
+          "input": undefined,
+        }
+      }
       disabled={false}
       key="TimeInput-input"
       onClick={[Function]}
@@ -177,10 +185,18 @@ exports[`<TimeInput /> 24h matches the snapshot 1`] = `
       }
     }
     defaultValue={2017-10-15T13:37:00.000Z}
+    minutesStep={1}
     mode="24h"
     okLabel="Ok"
+    selectOnClose={false}
+    updateImmediately={false}
   >
     <WithStyles(Input)
+      classes={
+        Object {
+          "input": undefined,
+        }
+      }
       disabled={false}
       key="TimeInput-input"
       onClick={[Function]}

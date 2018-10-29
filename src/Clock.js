@@ -35,7 +35,8 @@ const styles = (theme) => ({
     userSelect: 'none',
     '&.selected': {
       color: getContrastRatio(theme.palette.primary.main, theme.palette.common.black) < 7 ? theme.palette.common.white : theme.palette.common.black
-    }
+    },
+    '&.disabled': { opacity: '0.3' }
   },
   smallNumber: {
     fontSize: '12px',
@@ -134,7 +135,7 @@ class Clock extends React.PureComponent {
   }
 
   render () {
-    const { classes, mode, value, ...other } = this.props
+    const { classes, mode, value, minutesStep, ...other } = this.props
     const { touching } = this.state
 
     return (
@@ -191,7 +192,9 @@ class Clock extends React.PureComponent {
           {mode === 'minutes' && getNumbers(12, { size, start: 5, step: 5 }).map((digit, i) => (
             <span
               key={digit.display}
-              className={classNames(classes.number, { selected: value === digit.display || (digit.display === 60 && value === 0) })}
+              className={classNames(
+                classes.number,
+                { selected: value === digit.display || (digit.display === 60 && value === 0), disabled: digit.display % (this.props.minutesStep) })}
               style={{
                 transform: `translate(${digit.translateX}px, ${digit.translateY}px)`
               }}
@@ -206,12 +209,18 @@ class Clock extends React.PureComponent {
 }
 
 Clock.propTypes = {
+  /** Steps between minutes. */
+  minutesStep: PropTypes.number,
   /** Sets the mode of this clock. It can either select hours (supports 12- and 24-hour-clock) or minutes. */
   mode: PropTypes.oneOf(['12h', '24h', 'minutes']).isRequired,
   /** Callback that is called with the new hours/minutes (as a number) when the value is changed. */
   onChange: PropTypes.func,
   /** The value of the clock. */
   value: PropTypes.number.isRequired
+}
+
+Clock.defaultProps = {
+  minutesStep: 1
 }
 
 export default withStyles(styles)(Clock)

@@ -24,29 +24,38 @@ class TimeInput extends React.Component {
     const defaultValue = new Date()
     defaultValue.setSeconds(0)
     defaultValue.setMilliseconds(0)
-    this.state = { open: false, value: props.value || props.defaultValue || defaultValue }
+    const initValue = props.value || props.defaultValue || defaultValue
+    this.state = { open: false, initValue, value: initValue }
   }
 
   componentWillReceiveProps (nextProps) {
     if (nextProps.value !== this.props.value) {
-      this.setState({ value: nextProps.value })
+      this.setState({ initValue: nextProps.value, value: nextProps.value })
     }
   }
 
-  showDialog = () => this.setState({ open: true, newValue: this.state.value })
+  showDialog = () => this.setState({ open: true })
 
-  handleChange = (newValue) => {
-    this.setState({ newValue })
+  handleChange = (value) => {
+    if (this.props.updateImmediately && this.props.onChange != null) {
+      this.props.onChange(value)
+    }
+    this.setState({ value })
   }
 
   handleOk = () => {
-    if (this.props.onChange != null) {
-      this.props.onChange(this.state.newValue)
+    if (!this.props.updateImmediately && this.props.onChange != null) {
+      this.props.onChange(this.state.value)
     }
-    this.setState({ open: false, value: this.state.newValue, newValue: null })
+    this.setState({ open: false, initValue: this.state.value })
   }
 
-  handleCancel = () => this.setState({ open: false, newValue: null })
+  handleCancel = () => {
+    if (this.props.updateImmediately && this.props.onChange != null) {
+      this.props.onChange(this.state.initValue)
+    }
+    this.setState({ open: false, value: this.state.initValue })
+  }
 
   render () {
     const {
@@ -59,15 +68,19 @@ class TimeInput extends React.Component {
       okLabel,
       onChange, // eslint-disable-line
       value: valueProp, // eslint-disable-line
+      minutesStep,
+      selectOnClose,
+      updateImmediately,
       ...other
     } = this.props
 
-    const { value, newValue } = this.state
+    const { initValue, value } = this.state
+    const inputValue = updateImmediately ? value : initValue
 
-    const { hours, isPm } = formatHours(value.getHours(), mode)
+    const { hours, isPm } = formatHours(inputValue.getHours(), mode)
     const formattedValue = mode === '12h'
-      ? `${hours}:${twoDigits(value.getMinutes())} ${isPm ? 'pm' : 'am'}`
-      : `${twoDigits(value.getHours())}:${twoDigits(value.getMinutes())}`
+      ? `${hours}:${twoDigits(inputValue.getMinutes())} ${isPm ? 'pm' : 'am'}`
+      : `${twoDigits(inputValue.getHours())}:${twoDigits(inputValue.getMinutes())}`
 
     const { muiFormControl } = this.context
     const disabled = disabledProp || (muiFormControl != null && muiFormControl.disabled)
@@ -80,16 +93,18 @@ class TimeInput extends React.Component {
         value={formattedValue}
         readOnly
         key='TimeInput-input'
+        classes={{ input: classes.input }}
       />,
       <Dialog
         maxWidth='xs'
         open={this.state.open}
         key='TimeInput-dialog'
-        onClose={this.handleCancel}
+        onClose={selectOnClose ? this.handleOk : this.handleCancel}
       >
         <TimePicker
           mode={mode}
-          value={newValue}
+          minutesStep={minutesStep}
+          value={value}
           onChange={this.handleChange}
           onMinutesSelected={autoOk ? this.handleOk : null}
           classes={{ header: classes.header, body: classes.body }}
@@ -110,12 +125,18 @@ TimeInput.propTypes = {
   cancelLabel: PropTypes.string,
   /** The initial value of the time picker. */
   defaultValue: PropTypes.instanceOf(Date),
+  /** Steps between minutes. */
+  minutesStep: PropTypes.number,
   /** Sets the clock mode, 12-hour or 24-hour clocks are supported. */
   mode: PropTypes.oneOf(['12h', '24h']),
   /** Override the label of the ok button. */
   okLabel: PropTypes.string,
   /** Callback that is called with the new date (as Date instance) when the value is changed. */
   onChange: PropTypes.func,
+  /** Sets the date when dialog is closed (clicking background). */
+  selectOnClose: PropTypes.bool,
+  /** Updates the input field when clock hands are moved */
+  updateImmediately: PropTypes.bool,
   /** The value of the time picker, for use in controlled mode. */
   value: PropTypes.instanceOf(Date)
 }
@@ -123,8 +144,11 @@ TimeInput.propTypes = {
 TimeInput.defaultProps = {
   autoOk: false,
   cancelLabel: 'Cancel',
+  minutesStep: 1,
   mode: '12h',
-  okLabel: 'Ok'
+  okLabel: 'Ok',
+  selectOnClose: false,
+  updateImmediately: false
 }
 
 TimeInput.contextTypes = {

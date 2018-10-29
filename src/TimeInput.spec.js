@@ -141,7 +141,6 @@ describe('<TimeInput />', () => {
       tree.find(Button).at(0).simulate('click')
 
       expect(getValue(tree)).toBe('13:37') // unchanged
-      expect(changeHandler).not.toHaveBeenCalled()
     })
   })
 })
