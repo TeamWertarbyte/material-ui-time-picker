@@ -91,6 +91,8 @@ class TimeInput extends React.Component {
       okLabel,
       onChange,
       value: valueProp,
+      ClockProps,
+      TimePickerProps,
       ...other
     } = this.props
 
@@ -114,11 +116,13 @@ class TimeInput extends React.Component {
           onClose={this.handleCancel}
         >
           <TimePicker
+            {...TimePickerProps}
             mode={mode}
             value={newValue}
             onChange={this.handleChange}
             onMinutesSelected={autoOk ? this.handleOk : null}
             classes={{ header: classes.header, body: classes.body }}
+            ClockProps={ClockProps}
           />
           <DialogActions>
             <Button onClick={this.handleCancel} color='primary'>{cancelLabel}</Button>
@@ -150,7 +154,11 @@ TimeInput.propTypes = {
   /** Callback that is called with the new date (as Date instance) when the value is changed. */
   onChange: PropTypes.func,
   /** The value of the time picker, for use in controlled mode. */
-  value: PropTypes.instanceOf(Date)
+  value: PropTypes.instanceOf(Date),
+  /** Properties to pass down to the TimePicker component */
+  TimePickerProps: PropTypes.object,
+  /** Properties to pass down to the Clock component */
+  ClockProps: PropTypes.object
 }
 
 TimeInput.defaultProps = {
