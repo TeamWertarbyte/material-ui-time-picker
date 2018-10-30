@@ -25,10 +25,14 @@ class TimeInput extends React.Component {
     defaultValue.setSeconds(0)
     defaultValue.setMilliseconds(0)
 
+    const open = !!props.autoOpen
+    const value = props.value || props.defaultValue || props.initialTime || defaultValue
+
     this.state = {
-      open: false,
-      value: props.value || props.defaultValue || props.initialTime || defaultValue,
-      hasChanged: false
+      open,
+      value,
+      hasChanged: false,
+      newValue: open ? value : null
     }
   }
 
@@ -80,6 +84,7 @@ class TimeInput extends React.Component {
   render () {
     const {
       autoOk,
+      autoOpen, // eslint-disable-line
       cancelLabel,
       classes,
       defaultValue,
@@ -137,6 +142,8 @@ class TimeInput extends React.Component {
 TimeInput.propTypes = {
   /** If true, automatically accept and close the picker on set minutes. */
   autoOk: PropTypes.bool,
+  /** If true, automatically opens the dialog when the component is mounted */
+  autoOpen: PropTypes.bool,
   /** Override the label of the cancel button. */
   cancelLabel: PropTypes.string,
   /** This default value overrides initialTime and placeholder. */
