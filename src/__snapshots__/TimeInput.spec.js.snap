@@ -20,7 +20,6 @@ exports[`<TimeInput /> 12h matches the snapshot 1`] = `
   >
     <WithStyles(Input)
       disabled={false}
-      key="TimeInput-input"
       onClick={[Function]}
       readOnly={true}
       value="1:37 pm"
@@ -70,7 +69,6 @@ exports[`<TimeInput /> 12h matches the snapshot 1`] = `
       </Input>
     </WithStyles(Input)>
     <WithStyles(Dialog)
-      key="TimeInput-dialog"
       maxWidth="xs"
       onClose={[Function]}
       open={false}
@@ -182,7 +180,6 @@ exports[`<TimeInput /> 24h matches the snapshot 1`] = `
   >
     <WithStyles(Input)
       disabled={false}
-      key="TimeInput-input"
       onClick={[Function]}
       readOnly={true}
       value="13:37"
@@ -232,7 +229,6 @@ exports[`<TimeInput /> 24h matches the snapshot 1`] = `
       </Input>
     </WithStyles(Input)>
     <WithStyles(Dialog)
-      key="TimeInput-dialog"
       maxWidth="xs"
       onClose={[Function]}
       open={false}

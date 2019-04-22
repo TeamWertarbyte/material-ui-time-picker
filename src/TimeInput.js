@@ -78,14 +78,14 @@ class TimeInput extends React.Component {
       autoOk,
       cancelLabel,
       classes,
-      defaultValue, // eslint-disable-line
+      defaultValue,
       disabled: disabledProp,
-      initialTime, //eslint-disable-line
-      placeholder, // eslint-disable-line
+      initialTime,
+      placeholder,
       mode,
       okLabel,
-      onChange, // eslint-disable-line
-      value: valueProp, // eslint-disable-line
+      onChange,
+      value: valueProp,
       ...other
     } = this.props
 
@@ -94,34 +94,34 @@ class TimeInput extends React.Component {
     const { muiFormControl } = this.context
     const disabled = disabledProp || (muiFormControl != null && muiFormControl.disabled)
 
-    return [
-      <Input
-        {...other}
-        disabled={disabled}
-        onClick={!disabled ? this.showDialog : null}
-        value={this.getFormattedValue()}
-        readOnly
-        key='TimeInput-input'
-      />,
-      <Dialog
-        maxWidth='xs'
-        open={this.state.open}
-        key='TimeInput-dialog'
-        onClose={this.handleCancel}
-      >
-        <TimePicker
-          mode={mode}
-          value={newValue}
-          onChange={this.handleChange}
-          onMinutesSelected={autoOk ? this.handleOk : null}
-          classes={{ header: classes.header, body: classes.body }}
+    return (
+      <React.Fragment>
+        <Input
+          {...other}
+          disabled={disabled}
+          onClick={!disabled ? this.showDialog : null}
+          value={this.getFormattedValue()}
+          readOnly
         />
-        <DialogActions>
-          <Button onClick={this.handleCancel} color='primary'>{cancelLabel}</Button>
-          <Button onClick={this.handleOk} color='primary'>{okLabel}</Button>
-        </DialogActions>
-      </Dialog>
-    ]
+        <Dialog
+          maxWidth='xs'
+          open={this.state.open}
+          onClose={this.handleCancel}
+        >
+          <TimePicker
+            mode={mode}
+            value={newValue}
+            onChange={this.handleChange}
+            onMinutesSelected={autoOk ? this.handleOk : null}
+            classes={{ header: classes.header, body: classes.body }}
+          />
+          <DialogActions>
+            <Button onClick={this.handleCancel} color='primary'>{cancelLabel}</Button>
+            <Button onClick={this.handleOk} color='primary'>{okLabel}</Button>
+          </DialogActions>
+        </Dialog>
+      </React.Fragment>
+    )
   }
 }
 
