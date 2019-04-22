@@ -15,6 +15,7 @@ exports[`<TimeInput /> 12h matches the snapshot 1`] = `
       }
     }
     defaultValue={2017-10-15T13:37:00.000Z}
+    inputComponent={[Function]}
     mode="12h"
     okLabel="Ok"
   >
@@ -42,30 +43,118 @@ exports[`<TimeInput /> 12h matches the snapshot 1`] = `
             "underline": "MuiInput-underline-7",
           }
         }
-        disableUnderline={false}
         disabled={false}
-        fullWidth={false}
-        multiline={false}
         onClick={[Function]}
         readOnly={true}
-        type="text"
         value="1:37 pm"
       >
-        <div
-          className="MuiInput-root-3 MuiInput-underline-7"
+        <WithStyles(WithFormControlContext(InputBase))
+          classes={
+            Object {
+              "disabled": "MuiInput-disabled-6",
+              "error": "MuiInput-error-8",
+              "focused": "MuiInput-focused-5",
+              "formControl": "MuiInput-formControl-4",
+              "fullWidth": "MuiInput-fullWidth-10",
+              "input": "MuiInput-input-11",
+              "inputMarginDense": "MuiInput-inputMarginDense-12",
+              "inputMultiline": "MuiInput-inputMultiline-13",
+              "inputType": "MuiInput-inputType-14",
+              "inputTypeSearch": "MuiInput-inputTypeSearch-15",
+              "multiline": "MuiInput-multiline-9",
+              "root": "MuiInput-root-3 MuiInput-underline-7",
+              "underline": null,
+            }
+          }
+          disabled={false}
+          fullWidth={false}
+          inputComponent="input"
+          multiline={false}
           onClick={[Function]}
+          readOnly={true}
+          type="text"
+          value="1:37 pm"
         >
-          <input
-            className="MuiInput-input-11"
+          <WithFormControlContext(InputBase)
+            classes={
+              Object {
+                "adornedEnd": "MuiInputBase-adornedEnd-21",
+                "adornedStart": "MuiInputBase-adornedStart-20",
+                "disabled": "MuiInputBase-disabled-19 MuiInput-disabled-6",
+                "error": "MuiInputBase-error-22 MuiInput-error-8",
+                "focused": "MuiInputBase-focused-18 MuiInput-focused-5",
+                "formControl": "MuiInputBase-formControl-17 MuiInput-formControl-4",
+                "fullWidth": "MuiInputBase-fullWidth-25 MuiInput-fullWidth-10",
+                "input": "MuiInputBase-input-26 MuiInput-input-11",
+                "inputAdornedEnd": "MuiInputBase-inputAdornedEnd-32",
+                "inputAdornedStart": "MuiInputBase-inputAdornedStart-31",
+                "inputMarginDense": "MuiInputBase-inputMarginDense-27 MuiInput-inputMarginDense-12",
+                "inputMultiline": "MuiInputBase-inputMultiline-28 MuiInput-inputMultiline-13",
+                "inputType": "MuiInputBase-inputType-29 MuiInput-inputType-14",
+                "inputTypeSearch": "MuiInputBase-inputTypeSearch-30 MuiInput-inputTypeSearch-15",
+                "marginDense": "MuiInputBase-marginDense-23",
+                "multiline": "MuiInputBase-multiline-24 MuiInput-multiline-9",
+                "root": "MuiInputBase-root-16 MuiInput-root-3 MuiInput-underline-7",
+              }
+            }
             disabled={false}
-            onBlur={[Function]}
-            onChange={[Function]}
-            onFocus={[Function]}
+            fullWidth={false}
+            inputComponent="input"
+            multiline={false}
+            onClick={[Function]}
             readOnly={true}
             type="text"
             value="1:37 pm"
-          />
-        </div>
+          >
+            <InputBase
+              classes={
+                Object {
+                  "adornedEnd": "MuiInputBase-adornedEnd-21",
+                  "adornedStart": "MuiInputBase-adornedStart-20",
+                  "disabled": "MuiInputBase-disabled-19 MuiInput-disabled-6",
+                  "error": "MuiInputBase-error-22 MuiInput-error-8",
+                  "focused": "MuiInputBase-focused-18 MuiInput-focused-5",
+                  "formControl": "MuiInputBase-formControl-17 MuiInput-formControl-4",
+                  "fullWidth": "MuiInputBase-fullWidth-25 MuiInput-fullWidth-10",
+                  "input": "MuiInputBase-input-26 MuiInput-input-11",
+                  "inputAdornedEnd": "MuiInputBase-inputAdornedEnd-32",
+                  "inputAdornedStart": "MuiInputBase-inputAdornedStart-31",
+                  "inputMarginDense": "MuiInputBase-inputMarginDense-27 MuiInput-inputMarginDense-12",
+                  "inputMultiline": "MuiInputBase-inputMultiline-28 MuiInput-inputMultiline-13",
+                  "inputType": "MuiInputBase-inputType-29 MuiInput-inputType-14",
+                  "inputTypeSearch": "MuiInputBase-inputTypeSearch-30 MuiInput-inputTypeSearch-15",
+                  "marginDense": "MuiInputBase-marginDense-23",
+                  "multiline": "MuiInputBase-multiline-24 MuiInput-multiline-9",
+                  "root": "MuiInputBase-root-16 MuiInput-root-3 MuiInput-underline-7",
+                }
+              }
+              disabled={false}
+              fullWidth={false}
+              inputComponent="input"
+              multiline={false}
+              onClick={[Function]}
+              readOnly={true}
+              type="text"
+              value="1:37 pm"
+            >
+              <div
+                className="MuiInputBase-root-16 MuiInput-root-3 MuiInput-underline-7"
+                onClick={[Function]}
+              >
+                <input
+                  className="MuiInputBase-input-26 MuiInput-input-11"
+                  disabled={false}
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  readOnly={true}
+                  type="text"
+                  value="1:37 pm"
+                />
+              </div>
+            </InputBase>
+          </WithFormControlContext(InputBase)>
+        </WithStyles(WithFormControlContext(InputBase))>
       </Input>
     </WithStyles(Input)>
     <WithStyles(Dialog)
@@ -74,16 +163,24 @@ exports[`<TimeInput /> 12h matches the snapshot 1`] = `
       open={false}
     >
       <Dialog
+        PaperComponent={[Function]}
         TransitionComponent={[Function]}
         classes={
           Object {
-            "paper": "MuiDialog-paper-17",
-            "paperFullScreen": "MuiDialog-paperFullScreen-22",
-            "paperFullWidth": "MuiDialog-paperFullWidth-21",
-            "paperWidthMd": "MuiDialog-paperWidthMd-20",
-            "paperWidthSm": "MuiDialog-paperWidthSm-19",
-            "paperWidthXs": "MuiDialog-paperWidthXs-18",
-            "root": "MuiDialog-root-16",
+            "container": "MuiDialog-container-36",
+            "paper": "MuiDialog-paper-37",
+            "paperFullScreen": "MuiDialog-paperFullScreen-46",
+            "paperFullWidth": "MuiDialog-paperFullWidth-45",
+            "paperScrollBody": "MuiDialog-paperScrollBody-39",
+            "paperScrollPaper": "MuiDialog-paperScrollPaper-38",
+            "paperWidthLg": "MuiDialog-paperWidthLg-43",
+            "paperWidthMd": "MuiDialog-paperWidthMd-42",
+            "paperWidthSm": "MuiDialog-paperWidthSm-41",
+            "paperWidthXl": "MuiDialog-paperWidthXl-44",
+            "paperWidthXs": "MuiDialog-paperWidthXs-40",
+            "root": "MuiDialog-root-33",
+            "scrollBody": "MuiDialog-scrollBody-35",
+            "scrollPaper": "MuiDialog-scrollPaper-34",
           }
         }
         disableBackdropClick={false}
@@ -93,6 +190,7 @@ exports[`<TimeInput /> 12h matches the snapshot 1`] = `
         maxWidth="xs"
         onClose={[Function]}
         open={false}
+        scroll="paper"
         transitionDuration={
           Object {
             "enter": 225,
@@ -109,7 +207,8 @@ exports[`<TimeInput /> 12h matches the snapshot 1`] = `
               },
             }
           }
-          className="MuiDialog-root-16"
+          className="MuiDialog-root-33"
+          closeAfterTransition={true}
           disableBackdropClick={false}
           disableEscapeKeyDown={false}
           onClose={[Function]}
@@ -126,23 +225,24 @@ exports[`<TimeInput /> 12h matches the snapshot 1`] = `
                 },
               }
             }
-            className="MuiDialog-root-16"
+            className="MuiDialog-root-33"
             classes={
               Object {
-                "hidden": "MuiModal-hidden-24",
-                "root": "MuiModal-root-23",
+                "hidden": "MuiModal-hidden-48",
+                "root": "MuiModal-root-47",
               }
             }
+            closeAfterTransition={true}
             disableAutoFocus={false}
             disableBackdropClick={false}
             disableEnforceFocus={false}
             disableEscapeKeyDown={false}
+            disablePortal={false}
             disableRestoreFocus={false}
             hideBackdrop={false}
             keepMounted={false}
             manager={
               ModalManager {
-                "containers": Array [],
                 "data": Array [],
                 "handleContainerOverflow": true,
                 "hideSiblingNodes": true,
@@ -175,6 +275,7 @@ exports[`<TimeInput /> 24h matches the snapshot 1`] = `
       }
     }
     defaultValue={2017-10-15T13:37:00.000Z}
+    inputComponent={[Function]}
     mode="24h"
     okLabel="Ok"
   >
@@ -202,30 +303,118 @@ exports[`<TimeInput /> 24h matches the snapshot 1`] = `
             "underline": "MuiInput-underline-7",
           }
         }
-        disableUnderline={false}
         disabled={false}
-        fullWidth={false}
-        multiline={false}
         onClick={[Function]}
         readOnly={true}
-        type="text"
         value="13:37"
       >
-        <div
-          className="MuiInput-root-3 MuiInput-underline-7"
+        <WithStyles(WithFormControlContext(InputBase))
+          classes={
+            Object {
+              "disabled": "MuiInput-disabled-6",
+              "error": "MuiInput-error-8",
+              "focused": "MuiInput-focused-5",
+              "formControl": "MuiInput-formControl-4",
+              "fullWidth": "MuiInput-fullWidth-10",
+              "input": "MuiInput-input-11",
+              "inputMarginDense": "MuiInput-inputMarginDense-12",
+              "inputMultiline": "MuiInput-inputMultiline-13",
+              "inputType": "MuiInput-inputType-14",
+              "inputTypeSearch": "MuiInput-inputTypeSearch-15",
+              "multiline": "MuiInput-multiline-9",
+              "root": "MuiInput-root-3 MuiInput-underline-7",
+              "underline": null,
+            }
+          }
+          disabled={false}
+          fullWidth={false}
+          inputComponent="input"
+          multiline={false}
           onClick={[Function]}
+          readOnly={true}
+          type="text"
+          value="13:37"
         >
-          <input
-            className="MuiInput-input-11"
+          <WithFormControlContext(InputBase)
+            classes={
+              Object {
+                "adornedEnd": "MuiInputBase-adornedEnd-21",
+                "adornedStart": "MuiInputBase-adornedStart-20",
+                "disabled": "MuiInputBase-disabled-19 MuiInput-disabled-6",
+                "error": "MuiInputBase-error-22 MuiInput-error-8",
+                "focused": "MuiInputBase-focused-18 MuiInput-focused-5",
+                "formControl": "MuiInputBase-formControl-17 MuiInput-formControl-4",
+                "fullWidth": "MuiInputBase-fullWidth-25 MuiInput-fullWidth-10",
+                "input": "MuiInputBase-input-26 MuiInput-input-11",
+                "inputAdornedEnd": "MuiInputBase-inputAdornedEnd-32",
+                "inputAdornedStart": "MuiInputBase-inputAdornedStart-31",
+                "inputMarginDense": "MuiInputBase-inputMarginDense-27 MuiInput-inputMarginDense-12",
+                "inputMultiline": "MuiInputBase-inputMultiline-28 MuiInput-inputMultiline-13",
+                "inputType": "MuiInputBase-inputType-29 MuiInput-inputType-14",
+                "inputTypeSearch": "MuiInputBase-inputTypeSearch-30 MuiInput-inputTypeSearch-15",
+                "marginDense": "MuiInputBase-marginDense-23",
+                "multiline": "MuiInputBase-multiline-24 MuiInput-multiline-9",
+                "root": "MuiInputBase-root-16 MuiInput-root-3 MuiInput-underline-7",
+              }
+            }
             disabled={false}
-            onBlur={[Function]}
-            onChange={[Function]}
-            onFocus={[Function]}
+            fullWidth={false}
+            inputComponent="input"
+            multiline={false}
+            onClick={[Function]}
             readOnly={true}
             type="text"
             value="13:37"
-          />
-        </div>
+          >
+            <InputBase
+              classes={
+                Object {
+                  "adornedEnd": "MuiInputBase-adornedEnd-21",
+                  "adornedStart": "MuiInputBase-adornedStart-20",
+                  "disabled": "MuiInputBase-disabled-19 MuiInput-disabled-6",
+                  "error": "MuiInputBase-error-22 MuiInput-error-8",
+                  "focused": "MuiInputBase-focused-18 MuiInput-focused-5",
+                  "formControl": "MuiInputBase-formControl-17 MuiInput-formControl-4",
+                  "fullWidth": "MuiInputBase-fullWidth-25 MuiInput-fullWidth-10",
+                  "input": "MuiInputBase-input-26 MuiInput-input-11",
+                  "inputAdornedEnd": "MuiInputBase-inputAdornedEnd-32",
+                  "inputAdornedStart": "MuiInputBase-inputAdornedStart-31",
+                  "inputMarginDense": "MuiInputBase-inputMarginDense-27 MuiInput-inputMarginDense-12",
+                  "inputMultiline": "MuiInputBase-inputMultiline-28 MuiInput-inputMultiline-13",
+                  "inputType": "MuiInputBase-inputType-29 MuiInput-inputType-14",
+                  "inputTypeSearch": "MuiInputBase-inputTypeSearch-30 MuiInput-inputTypeSearch-15",
+                  "marginDense": "MuiInputBase-marginDense-23",
+                  "multiline": "MuiInputBase-multiline-24 MuiInput-multiline-9",
+                  "root": "MuiInputBase-root-16 MuiInput-root-3 MuiInput-underline-7",
+                }
+              }
+              disabled={false}
+              fullWidth={false}
+              inputComponent="input"
+              multiline={false}
+              onClick={[Function]}
+              readOnly={true}
+              type="text"
+              value="13:37"
+            >
+              <div
+                className="MuiInputBase-root-16 MuiInput-root-3 MuiInput-underline-7"
+                onClick={[Function]}
+              >
+                <input
+                  className="MuiInputBase-input-26 MuiInput-input-11"
+                  disabled={false}
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  readOnly={true}
+                  type="text"
+                  value="13:37"
+                />
+              </div>
+            </InputBase>
+          </WithFormControlContext(InputBase)>
+        </WithStyles(WithFormControlContext(InputBase))>
       </Input>
     </WithStyles(Input)>
     <WithStyles(Dialog)
@@ -234,16 +423,24 @@ exports[`<TimeInput /> 24h matches the snapshot 1`] = `
       open={false}
     >
       <Dialog
+        PaperComponent={[Function]}
         TransitionComponent={[Function]}
         classes={
           Object {
-            "paper": "MuiDialog-paper-17",
-            "paperFullScreen": "MuiDialog-paperFullScreen-22",
-            "paperFullWidth": "MuiDialog-paperFullWidth-21",
-            "paperWidthMd": "MuiDialog-paperWidthMd-20",
-            "paperWidthSm": "MuiDialog-paperWidthSm-19",
-            "paperWidthXs": "MuiDialog-paperWidthXs-18",
-            "root": "MuiDialog-root-16",
+            "container": "MuiDialog-container-36",
+            "paper": "MuiDialog-paper-37",
+            "paperFullScreen": "MuiDialog-paperFullScreen-46",
+            "paperFullWidth": "MuiDialog-paperFullWidth-45",
+            "paperScrollBody": "MuiDialog-paperScrollBody-39",
+            "paperScrollPaper": "MuiDialog-paperScrollPaper-38",
+            "paperWidthLg": "MuiDialog-paperWidthLg-43",
+            "paperWidthMd": "MuiDialog-paperWidthMd-42",
+            "paperWidthSm": "MuiDialog-paperWidthSm-41",
+            "paperWidthXl": "MuiDialog-paperWidthXl-44",
+            "paperWidthXs": "MuiDialog-paperWidthXs-40",
+            "root": "MuiDialog-root-33",
+            "scrollBody": "MuiDialog-scrollBody-35",
+            "scrollPaper": "MuiDialog-scrollPaper-34",
           }
         }
         disableBackdropClick={false}
@@ -253,6 +450,7 @@ exports[`<TimeInput /> 24h matches the snapshot 1`] = `
         maxWidth="xs"
         onClose={[Function]}
         open={false}
+        scroll="paper"
         transitionDuration={
           Object {
             "enter": 225,
@@ -269,7 +467,8 @@ exports[`<TimeInput /> 24h matches the snapshot 1`] = `
               },
             }
           }
-          className="MuiDialog-root-16"
+          className="MuiDialog-root-33"
+          closeAfterTransition={true}
           disableBackdropClick={false}
           disableEscapeKeyDown={false}
           onClose={[Function]}
@@ -286,23 +485,24 @@ exports[`<TimeInput /> 24h matches the snapshot 1`] = `
                 },
               }
             }
-            className="MuiDialog-root-16"
+            className="MuiDialog-root-33"
             classes={
               Object {
-                "hidden": "MuiModal-hidden-24",
-                "root": "MuiModal-root-23",
+                "hidden": "MuiModal-hidden-48",
+                "root": "MuiModal-root-47",
               }
             }
+            closeAfterTransition={true}
             disableAutoFocus={false}
             disableBackdropClick={false}
             disableEnforceFocus={false}
             disableEscapeKeyDown={false}
+            disablePortal={false}
             disableRestoreFocus={false}
             hideBackdrop={false}
             keepMounted={false}
             manager={
               ModalManager {
-                "containers": Array [],
                 "data": Array [],
                 "handleContainerOverflow": true,
                 "hideSiblingNodes": true,

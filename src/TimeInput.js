@@ -81,6 +81,7 @@ class TimeInput extends React.Component {
       defaultValue,
       disabled: disabledProp,
       initialTime,
+      inputComponent: InputComponent,
       placeholder,
       mode,
       okLabel,
@@ -89,14 +90,14 @@ class TimeInput extends React.Component {
       ...other
     } = this.props
 
-    const { newValue } = this.state
+    const { newValue, open } = this.state
 
     const { muiFormControl } = this.context
     const disabled = disabledProp || (muiFormControl != null && muiFormControl.disabled)
 
     return (
       <React.Fragment>
-        <Input
+        <InputComponent
           {...other}
           disabled={disabled}
           onClick={!disabled ? this.showDialog : null}
@@ -105,7 +106,7 @@ class TimeInput extends React.Component {
         />
         <Dialog
           maxWidth='xs'
-          open={this.state.open}
+          open={open}
           onClose={this.handleCancel}
         >
           <TimePicker
@@ -130,11 +131,13 @@ TimeInput.propTypes = {
   autoOk: PropTypes.bool,
   /** Override the label of the cancel button. */
   cancelLabel: PropTypes.string,
-  /** This default value overrides initialTime and placeholder */
+  /** This default value overrides initialTime and placeholder. */
   defaultValue: PropTypes.instanceOf(Date),
-  /** The default value for the time picker */
+  /** The default value for the time picker. */
   initialTime: PropTypes.instanceOf(Date),
-  /** The placeholder value for the time picker before a time has been selected */
+  /** The component used for the input. Either a string to use a DOM element or a component. */
+  inputComponent: PropTypes.elementType,
+  /** The placeholder value for the time picker before a time has been selected. */
   placeholder: PropTypes.string,
   /** Sets the clock mode, 12-hour or 24-hour clocks are supported. */
   mode: PropTypes.oneOf(['12h', '24h']),
@@ -149,6 +152,7 @@ TimeInput.propTypes = {
 TimeInput.defaultProps = {
   autoOk: false,
   cancelLabel: 'Cancel',
+  inputComponent: Input,
   mode: '12h',
   okLabel: 'Ok'
 }

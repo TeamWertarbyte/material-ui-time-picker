@@ -41,6 +41,7 @@ For detailed documentation, take a look into the [styleguide][]. The source code
 |cancelLabel|`string`|`'Cancel'`|Override the label of the cancel button.|
 |defaultValue|`Date`||The default value of the input and picker.|
 |initialTime|`Date`||The initial value of the time picker.|
+|inputComponent|`elementType`|`Input`|The component used for the input. Either a string to use a DOM element or a component.|
 |placeholder|`string`||The initial value of the actual input before a value is selected.|
 |mode|`enum: '12h' '24h'`|`'12h'`|Sets the clock mode, 12-hour or 24-hour clocks are supported.|
 |okLabel|`string`|`'Ok'`|Override the label of the ok button.|

@@ -110,7 +110,7 @@ describe('<TimeInput />', () => {
     it('opens when clicking the input', () => {
       const UnstyledTimeInput = unwrap(TimeInput)
       const tree = mount(<UnstyledTimeInput classes={{}} />)
-      tree.simulate('click')
+      tree.find(Input).simulate('click')
       expect(tree.state('open')).toBe(true)
     })
 
@@ -124,7 +124,7 @@ describe('<TimeInput />', () => {
     it('closes when clicking ok', () => {
       const UnstyledTimeInput = unwrap(TimeInput)
       const tree = mount(<UnstyledTimeInput classes={{}} />)
-      tree.simulate('click')
+      tree.find(Input).simulate('click')
       tree.find(Button).at(1).simulate('click')
       expect(tree.state('open')).toBe(false)
     })
@@ -173,6 +173,12 @@ describe('<TimeInput />', () => {
       tree.simulate('click')
       expect(getValue(tree)).toBe('13:37')
     })
+  })
+
+  it('supports changing the input component', () => {
+    const CustomInput = (props) => <input type='text' {...props} />
+    const tree = mount(<TimeInput value={new Date(2017, 10, 15, 13, 37, 0, 0)} mode='24h' inputComponent={CustomInput} />)
+    expect(tree.find(CustomInput).length).toBe(1)
   })
 })
 
