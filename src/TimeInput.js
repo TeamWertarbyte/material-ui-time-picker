@@ -55,15 +55,19 @@ class TimeInput extends React.Component {
 
   getFormattedValue = () => {
     const { mode, placeholder } = this.props
-    const { value, hasChanged } = this.state
+    const { hasChanged } = this.state
 
     const is12h = mode === '12h'
 
     if (placeholder && !hasChanged) return placeholder
 
-    // Allow a null/undefined value for controlled inputs
-    if (this.props.hasOwnProperty('value') && this.props.value == null) {
-      return ''
+    let value = this.state.value
+    if (this.props.hasOwnProperty('value')) {
+      if (this.props.value == null) {
+        // Allow a null/undefined value for controlled inputs
+        return ''
+      }
+      value = this.props.value
     }
 
     const { hours, isPm } = formatHours(value.getHours(), mode)

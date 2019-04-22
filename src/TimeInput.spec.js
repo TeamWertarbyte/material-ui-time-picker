@@ -70,6 +70,18 @@ describe('<TimeInput />', () => {
       const tree = mount(<TimeInput value={null} />)
       expect(getValue(tree)).toBe('')
     })
+
+    it('always ignores the internal state if a value is specified', () => {
+      const UnstyledTimeInput = unwrap(TimeInput)
+      const tree = mount(<UnstyledTimeInput classes={{}} value={new Date(2017, 10, 15, 14, 42, 0, 0)} mode='24h' />)
+
+      // simulate time selection
+      tree.instance().handleChange(new Date(2017, 10, 15, 13, 37, 0, 0))
+      tree.instance().handleOk()
+
+      // controlled component, so value should stay as specified by the prop (issue #11)
+      expect(getValue(tree)).toBe('14:42')
+    })
   })
 
   describe('uncontrolled mode', () => {
