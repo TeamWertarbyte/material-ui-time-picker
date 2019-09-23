@@ -6,6 +6,7 @@ import { unwrap } from '@material-ui/core/test-utils'
 import Button from '@material-ui/core/Button'
 import Input from '@material-ui/core/Input'
 import TimeInput from './TimeInput'
+import TimePicker from './TimePicker'
 import Clock from './Clock'
 import * as testUtils from '../test/utils'
 
@@ -191,6 +192,32 @@ describe('<TimeInput />', () => {
     const CustomInput = (props) => <input type='text' {...props} />
     const tree = mount(<TimeInput value={new Date(2017, 10, 15, 13, 37, 0, 0)} mode='24h' inputComponent={CustomInput} />)
     expect(tree.find(CustomInput).length).toBe(1)
+  })
+
+  it('automatically opens when the autoOpen prop is true', () => {
+    const tree = mount(<TimeInput />)
+    expect(tree.find(TimePicker).length).toBe(0)
+
+    const tree2 = mount(<TimeInput autoOpen />)
+    expect(tree2.find(TimePicker).length).toBe(1)
+  })
+
+  it('supports sending properties down to the time picker via TimePickerProps', () => {
+    const TimePickerProps = {
+      some: 'timePickerProp'
+    }
+
+    const tree = mount(<TimeInput TimePickerProps={TimePickerProps} autoOpen />)
+    expect(tree.find(TimePicker).prop('some')).toEqual('timePickerProp')
+  })
+
+  it('supports sending properties down to the clock via ClockProps', () => {
+    const ClockProps = {
+      some: 'clockProp'
+    }
+
+    const tree = mount(<TimeInput ClockProps={ClockProps} autoOpen />)
+    expect(tree.find(Clock).prop('some')).toEqual('clockProp')
   })
 })
 
