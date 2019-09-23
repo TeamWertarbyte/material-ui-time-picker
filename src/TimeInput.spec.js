@@ -194,11 +194,11 @@ describe('<TimeInput />', () => {
     expect(tree.find(CustomInput).length).toBe(1)
   })
 
-  it('automatically opens when the autoOpen prop is true', () => {
+  it('automatically opens when the openOnMount prop is true', () => {
     const tree = mount(<TimeInput />)
     expect(tree.find(TimePicker).length).toBe(0)
 
-    const tree2 = mount(<TimeInput autoOpen />)
+    const tree2 = mount(<TimeInput openOnMount />)
     expect(tree2.find(TimePicker).length).toBe(1)
   })
 
@@ -207,7 +207,7 @@ describe('<TimeInput />', () => {
       some: 'timePickerProp'
     }
 
-    const tree = mount(<TimeInput TimePickerProps={TimePickerProps} autoOpen />)
+    const tree = mount(<TimeInput TimePickerProps={TimePickerProps} openOnMount />)
     expect(tree.find(TimePicker).prop('some')).toEqual('timePickerProp')
   })
 
@@ -216,7 +216,7 @@ describe('<TimeInput />', () => {
       some: 'clockProp'
     }
 
-    const tree = mount(<TimeInput ClockProps={ClockProps} autoOpen />)
+    const tree = mount(<TimeInput ClockProps={ClockProps} openOnMount />)
     expect(tree.find(Clock).prop('some')).toEqual('clockProp')
   })
 })

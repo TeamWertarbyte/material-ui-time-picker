@@ -25,7 +25,7 @@ class TimeInput extends React.Component {
     defaultValue.setSeconds(0)
     defaultValue.setMilliseconds(0)
 
-    const open = !!props.autoOpen
+    const open = !!props.openOnMount
     const value = props.value || props.defaultValue || props.initialTime || defaultValue
 
     this.state = {
@@ -84,9 +84,9 @@ class TimeInput extends React.Component {
   render () {
     const {
       autoOk,
-      autoOpen, // eslint-disable-line
       cancelLabel,
       classes,
+      ClockProps,
       defaultValue,
       disabled: disabledProp,
       initialTime,
@@ -95,9 +95,9 @@ class TimeInput extends React.Component {
       mode,
       okLabel,
       onChange,
-      value: valueProp,
-      ClockProps,
+      openOnMount,
       TimePickerProps,
+      value: valueProp,
       ...other
     } = this.props
 
@@ -142,10 +142,10 @@ class TimeInput extends React.Component {
 TimeInput.propTypes = {
   /** If true, automatically accept and close the picker on set minutes. */
   autoOk: PropTypes.bool,
-  /** If true, automatically opens the dialog when the component is mounted */
-  autoOpen: PropTypes.bool,
   /** Override the label of the cancel button. */
   cancelLabel: PropTypes.string,
+  /** Properties to pass down to the Clock component. */
+  ClockProps: PropTypes.object,
   /** This default value overrides initialTime and placeholder. */
   defaultValue: PropTypes.instanceOf(Date),
   /** The default value for the time picker. */
@@ -160,12 +160,12 @@ TimeInput.propTypes = {
   okLabel: PropTypes.string,
   /** Callback that is called with the new date (as Date instance) when the value is changed. */
   onChange: PropTypes.func,
-  /** The value of the time picker, for use in controlled mode. */
-  value: PropTypes.instanceOf(Date),
-  /** Properties to pass down to the TimePicker component */
+  /** If true, automatically opens the dialog when the component is mounted. */
+  openOnMount: PropTypes.bool,
+  /** Properties to pass down to the TimePicker component. */
   TimePickerProps: PropTypes.object,
-  /** Properties to pass down to the Clock component */
-  ClockProps: PropTypes.object
+  /** The value of the time picker, for use in controlled mode. */
+  value: PropTypes.instanceOf(Date)
 }
 
 TimeInput.defaultProps = {

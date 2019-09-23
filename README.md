@@ -39,13 +39,16 @@ For detailed documentation, take a look into the [styleguide][]. The source code
 |---|---|---|---|
 |autoOk|`bool`|`false`|If true, automatically accept and close the picker on set minutes.|
 |cancelLabel|`string`|`'Cancel'`|Override the label of the cancel button.|
-|defaultValue|`Date`||The default value of the input and picker.|
-|initialTime|`Date`||The initial value of the time picker.|
+|ClockProps|`object`||Properties to pass down to the Clock component.|
+|defaultValue|`Date`||This default value overrides initialTime and placeholder.|
+|initialTime|`Date`||The default value for the time picker.|
 |inputComponent|`elementType`|`Input`|The component used for the input. Either a string to use a DOM element or a component.|
-|placeholder|`string`||The initial value of the actual input before a value is selected.|
+|placeholder|`string`||The placeholder value for the time picker before a time has been selected.|
 |mode|`enum: '12h' '24h'`|`'12h'`|Sets the clock mode, 12-hour or 24-hour clocks are supported.|
 |okLabel|`string`|`'Ok'`|Override the label of the ok button.|
 |onChange|`func`||Callback that is called with the new date (as Date instance) when the value is changed.|
+|openOnMount|`bool`||If true, automatically opens the dialog when the component is mounted.|
+|TimePickerProps|`object`||Properties to pass down to the TimePicker component.|
 |value|`Date`||The value of the time picker, for use in controlled mode.|
 
 Note: `TimeInput` behaves like Material-UI's `Input` component and can be used inside `FormControl`s.
