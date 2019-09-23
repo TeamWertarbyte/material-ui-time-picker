@@ -136,7 +136,8 @@ class TimePicker extends React.Component {
   render () {
     const {
       classes,
-      mode
+      mode,
+      ClockProps
     } = this.props
 
     const clockMode = this.state.select === 'm' ? 'minutes' : mode
@@ -181,6 +182,7 @@ class TimePicker extends React.Component {
         </div>
         <div className={classes.body}>
           <Clock
+            {...ClockProps}
             mode={clockMode}
             onChange={this.handleClockChange}
             value={clockMode === 'minutes' ? minutes : hours}
@@ -203,7 +205,9 @@ TimePicker.propTypes = {
   /** Callback that is called when the minutes are changed. Can be used to automatically hide the picker after selecting a time. */
   onMinutesSelected: PropTypes.func,
   /** The value of the time picker, for use in controlled mode. */
-  value: PropTypes.instanceOf(Date)
+  value: PropTypes.instanceOf(Date),
+  /** Properties to pass down to the Clock component */
+  ClockProps: PropTypes.object
 }
 
 TimePicker.defaultProps = {
