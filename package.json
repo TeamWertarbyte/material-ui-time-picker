@@ -48,7 +48,7 @@
     "@babel/preset-react": "^7.0.0",
     "@material-ui/core": "^3.9.3",
     "@storybook/addon-actions": "^3.4.5",
-    "@storybook/react": "^3.4.5",
+    "@storybook/react": "^6.5.15",
     "babel-eslint": "^8.2.3",
     "coveralls": "^3.0.0",
     "enzyme": "^3.9.0",
@@ -59,11 +59,11 @@
     "mockdate": "^2.0.2",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
-    "react-styleguidist": "^7.0.14",
+    "react-styleguidist": "^13.0.0",
     "react-test-renderer": "^16.8.6",
     "standard": "^11.0.1",
-    "webpack": "^3.7.1",
-    "webpack-blocks": "^1.0.0-rc"
+    "webpack": "^5.75.0",
+    "webpack-blocks": "^2.1.0"
   },
   "jest": {
     "setupFiles": [
